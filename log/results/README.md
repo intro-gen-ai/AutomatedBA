@@ -1,0 +1,1 @@
+Results - This folder is for the evaluation of different sets of inputs and should be reserved for outputs of test runs.

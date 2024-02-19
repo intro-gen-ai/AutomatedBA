@@ -1,0 +1,3 @@
+Model - This is where all the functions needed to communicate with the models and parse the responses will occur. It will likely require some support for the models run on local GPU when necessary - could cause massive lead times if done poorly. May need to spin up instances for this purpose if we cannot get our wait times down. The functions must contain time limiting. 
+
+Detail Files & Purpose below:

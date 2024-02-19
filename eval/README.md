@@ -1,0 +1,1 @@
+Eval - This folder's purpose is contain the code for evaluating logs, results, and more for all of our conclusions. It must contain all algorithmns we use to get to our results we present on. We will mostly be filling this late into the project.
