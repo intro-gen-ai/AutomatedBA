@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="MoveProjectSettingsService_1">
+    <option name="aptosPath" value="/opt/homebrew/bin/aptos" />
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_18" project-jdk-name="Python 3.9 (AutomatedBA)" project-jdk-type="Python SDK">
+    <output url="file://$PROJECT_DIR$/out" />
+  </component>
+</project>
