@@ -6,3 +6,6 @@ Core - This is the core of the project, it drives all actions and will be contro
     - models: selects the chosen model and uses the methods contained in its model's file (from the model folder)
 
 Detail Files & Purpose below:
+
+
+convert.json - after adding a new feature you want to be usable from commmandline add it to this file, use the tags {e,m,p,s} as shown in the cmdline.py file for the type it is.
