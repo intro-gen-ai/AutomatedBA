@@ -55,7 +55,18 @@ try:
     delete_sql = "DELETE FROM EXAMPLE_TABLE WHERE ID = 2"
     cur.execute(delete_sql)
 
-    
+    ''' NEEDS WORK
+    # 6. Create a View
+    create_view_sql = """
+    CREATE OR REPLACE VIEW VIEW_EXAMPLE_TABLE AS
+    SELECT *
+    FROM EXAMPLE_TABLE
+    WHERE comments LIKE '%Sample%'
+    """
+    cur.execute(create_view_sql)
+
+    NEEDS WORK
+    '''
 
     # 7. Aggregate Functions
     aggregate_sql = "SELECT COUNT(*) FROM EXAMPLE_TABLE"
