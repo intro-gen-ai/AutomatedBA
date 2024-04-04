@@ -1,15 +1,24 @@
 
 import os
 import sys
-# Add the parent directory of the current file to sys.path
-current_dir = os.path.dirname(os.path.abspath(__file__))
-parent_dir = os.path.dirname(current_dir)
-sys.path.append(parent_dir)
-print(current_dir)
+from pathlib import Path
+
+# This check ensures that the following code block runs only when the script is executed directly
+if __name__ == '__main__':
+    # Get the absolute path to the directory containing cmdline.py
+    current_dir = Path(__file__).parent.absolute()
+
+    # Get the project root directory by going up two levels from the current directory
+    # Adjust the number of parents based on your project structure
+    project_root = current_dir.parent.parent
+
+    # Add the project root directory to sys.path
+    sys.path.insert(0, str(project_root))
+
 
 import argparse
-from converter import ControlDict
-from driver import layoutProcess
+from src.util import ControlDict
+from src.core.driver import layoutProcess
 
 
 
@@ -21,7 +30,7 @@ def parse_arguments():
     parser.add_argument('-e', '--e_set', nargs='+', type=int, default=[], help='Set of integers for encoding options')
     parser.add_argument('-m', '--m_set', nargs='+', type=int, default=[], help='Set of integers for model options')
     parser.add_argument('-p', '--p_set', nargs='+', type=int, default=[], help='Set of integers for prompt options')
-    parser.add_argument('-i', '--i_set', nargs='+', type=int, default=[], help='Set of integers for prompt options')
+    parser.add_argument('-i', '--i_set', nargs='+', type=int, default=[], help='Set of integers for instruction options')
     parser.add_argument('-s', '--s_set', nargs='+', type=int, default=[], help='Set of integers for semantics layer options')
 
     # Parse the arguments
@@ -43,10 +52,10 @@ def main():
     x = ControlDict()
     x.mode = 0
 
-    my_set = set()
-    my_set.add(1)
+    m_set = set()
+    m_set.add(1)
 
-    layoutProcess(e_set, my_set, p_set, i_set, s_set)
+    layoutProcess(e_set, m_set, p_set, i_set, s_set)
 
 if __name__ == "__main__":
     main()

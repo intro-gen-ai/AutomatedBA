@@ -1,6 +1,5 @@
 from .gpt_models_completion import GptModels
 from .model_result import ModelResult
-from .decrypt import *
 import time
 
 class Gpt_3_5_Turbo(GptModels):

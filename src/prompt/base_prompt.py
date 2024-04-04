@@ -1,5 +1,5 @@
-from step import Step
-from get_instance import get_instance
+from src.step import Step
+from src.get_instance import get_instance
 from . import prompt_text 
 
 def make_user_prompt():

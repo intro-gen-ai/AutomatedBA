@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 from .model_result import ModelResult
-from step import Step
+from src.step import Step
 
 # abstract class for all models to inherit from
 

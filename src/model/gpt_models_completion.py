@@ -1,6 +1,6 @@
 from .base_model import BaseModel
 # from .model_result import ModelResult
-from .decrypt import *
+from src.util import decrypt_externally
 import openai
 import os
 
@@ -12,10 +12,12 @@ class GptModels(BaseModel):
     """
     def __init__(self, args=None):
         super().__init__(args)
-        self.token_location = os.path.join('src','util', '.openai_secret')
+        self.token_location = '.openai_secret'
+        # self.token_location = os.path.join('src','util', '.openai_secret')
 
     def getToken(self):
-        return decrypt(self.token_location)
+        return decrypt_externally(self.token_location)
+        # return decrypt(self.token_location)
     
     def query_model(self, system_message, user_message, temp = -1, count=0):
 

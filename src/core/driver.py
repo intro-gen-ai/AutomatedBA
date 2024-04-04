@@ -1,13 +1,13 @@
-from converter import ControlDict
+from ..util import ControlDict
 # import os
 # import sys
 # current_dir = os.path.dirname(os.path.abspath(__file__))
 # parent_dir = os.path.dirname(current_dir)
 # sys.path.append(parent_dir)
 # print(current_dir)
-import model 
-from prompt import BasePrompt
-from get_instance import get_instance
+from src import model
+from src.prompt import BasePrompt
+from src.get_instance import get_instance
 
 
 def layoutProcess(e_set, m_set, p_set, i_set, s_set):
@@ -21,7 +21,8 @@ def layoutProcess(e_set, m_set, p_set, i_set, s_set):
     #     e.append(converter.convert( ('e', i) ))
 
     for i in m_set:
-        steps.append(get_instance(model, converter.convert( f"('m', {i})" ) ))
+        print(converter.convert( 'm', i ))
+        steps.append(get_instance(model, converter.convert( 'm', i ) ) )
 
     for i in p_set:
         i_s.append(converter.convert( ('p', i) ))
