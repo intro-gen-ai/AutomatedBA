@@ -2,9 +2,6 @@ from .base_model import BaseModel
 # from .model_result import ModelResult
 from src.util import decrypt_externally
 import openai
-import os
-
-
 
 class GptModels(BaseModel):
     """
@@ -20,7 +17,8 @@ class GptModels(BaseModel):
         # return decrypt(self.token_location)
     
     def query_model(self, system_message, user_message, temp = -1, count=0):
-
+        if not self.checkRequirements:
+            return {"error" : f"missing {self.getRequirements}"}
         openai.api_key = self.getToken()
         client = openai.OpenAI(api_key=openai.api_key)
         
@@ -54,3 +52,9 @@ class GptModels(BaseModel):
        
         print("Failed to get a complete response after 3 attempts")
         return response_list
+    
+    def getRequirements(self):
+        return [self.token_location]
+
+    # def checkRequirements(self):
+    #     return validate_file_exists(self.getRequirements())

@@ -10,12 +10,12 @@ from src.prompt import BasePrompt
 from src.get_instance import get_instance
 
 
-def layoutProcess(e_set, m_set, p_set, i_set, s_set):
+def layoutProcess(e_set, m_set, p_set, i_set, s_set, text_prompt = None):
     converter = ControlDict()
     steps = list()
     p_s = list()
     i_s = list()
-
+    print("entering layout")
 # TODO not implemented
     # for i in e_set:
     #     e.append(converter.convert( ('e', i) ))
@@ -42,16 +42,19 @@ def layoutProcess(e_set, m_set, p_set, i_set, s_set):
         dict['instruction_set']= i_s[0]
     if len(p_s) > 1:
         dict['pre_prompt'] = p_s[0]
+    if not text_prompt == None:
+        dict['user_prompt'] = text_prompt
     steps.append(BasePrompt(dict))
     # 
 
     order_steps = sorted(steps, key=lambda x: x.getOrder())
     # snowflake is not set up so we cannot do that set yet.
     # TODO ananth once u build the integrations for this tell me and I will insert it
-    runProcess(order_steps)
+    return runProcess(order_steps)
 
 def runProcess(steps):
     # we can add looping later
+    print("Running Process")
     k = None
     for i in steps:
         print(i.getOrder())
@@ -68,5 +71,7 @@ def runProcess(steps):
     if k.log is not None:
         print(k.log)
     print(k)
+    if k.message is not None:
+        return k.message
 
 # layoutProcess(None, None, list(1), None, None)

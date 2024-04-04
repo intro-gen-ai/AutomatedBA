@@ -27,7 +27,7 @@ def encrypt_and_save(message, public_key, filename):
     )
 
     dir_path = os.path.dirname(os.path.realpath(__file__))  # Gets the directory where the script is located
-    secret_file_path = os.path.join(dir_path, '.openai_secret')
+    secret_file_path = os.path.join(dir_path, filename)
     # Write the encrypted message to .gptsecret
     with open(secret_file_path, 'wb') as secret_file:
         secret_file.write(encrypted)

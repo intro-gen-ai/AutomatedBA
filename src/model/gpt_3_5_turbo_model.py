@@ -13,8 +13,11 @@ class Gpt_3_5_Turbo(GptModels):
         start_time = time.time()
         responses = self.query_model(input.get('system_message', None), input.get('user_message'), temp=temp)
         end_time = time.time()
-
         if responses is not None and len(responses) > 0:
+            if isinstance(responses, dict):
+                if 'error' in responses:
+                    return ModelResult(message=responses['error'])
+            
             # Process the last response in the list, assuming it's the most complete
             last_response = responses[-1]
             # content = last_response[1]["choices"][0]["message"]["content"]
@@ -23,13 +26,12 @@ class Gpt_3_5_Turbo(GptModels):
             content = last_response.choices[0].message.content  # Changed from ["message"]["content"] to .text
             finish_reason = last_response.choices[0].finish_reason 
             # responses.choices[0].text # Direct attribute access
-            # You might want to implement a better confidence estimation
+            # need to improve this shit later
             confidence = 1.0 if finish_reason == "stop" else 0.0
             log = responses
             response_time = end_time - start_time
             return ModelResult(message=content, confidence=confidence, log=log, execution_time=response_time)
-        # elif len(responses):
-        #     print('break point')
+    
         else:
             return ModelResult.empty()
     

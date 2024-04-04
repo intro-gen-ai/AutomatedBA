@@ -1,6 +1,5 @@
 import json
 import os
-import re 
 
 class ControlDict:
     _instance = None
@@ -54,8 +53,8 @@ class ControlDict:
 
     def convert(self, char, num):
         """Return the value corresponding to the given (char, num) key from the loaded dictionary."""
-        temp = self.data_dict.get(char, {})
-        temp1 = temp.get(str(num), None)
+        # temp = self.data_dict.get(char, {})
+        # temp1 = temp.get(str(num), None)
         return self.data_dict.get(char, {}).get(str(num), None)  # Returns None if the key or char is not found
 
     def update(self, char, num, value):
@@ -64,6 +63,25 @@ class ControlDict:
             self.data_dict[char] = {}
         self.data_dict[char][num] = value  # Update or add the key-value pair
         self._write_dict_to_file(self.data_dict)  # Write the updated dictionary back to the file
+
+    def get_set(self, input):
+        if input == None:
+            return list(self.data_dict.keys())
+        elif input in self.data_dict.keys():
+            if isinstance(self.data_dict[input], dict):
+                return list(self.data_dict[input].keys()), list(self.data_dict[input].values())
+            else:
+                raise ValueError("The value is not a dict")
+        else:
+            raise KeyError(f"Key '{input}' not found in the outer dictionary.")
+    
+    def get_dict(self, input):
+        if input == None:
+            return self.data_dict
+        elif input in self.data_dict.keys():
+            return self.data_dict[input]
+        else:
+            raise KeyError(f"Key '{input}' not found in the outer dictionary.")
 
 def _backup_and_rewrite_file(file_path, nested_dict):
     base, extension = os.path.splitext(file_path)

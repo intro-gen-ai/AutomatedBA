@@ -9,6 +9,8 @@ from .decrypt_keys import decrypt_externally
 # Import the encrypt_externally function from the encrypt_keys module
 from .encrypt_keys import encrypt_externally
 
+from .manage_requirement import validate_file_exists
+
 # Other parts of your project can now access ControlDict, decrypt_externally, and encrypt_externally directly
 # from the util package like this:
 # from automatedba.util import ControlDict, decrypt_externally, encrypt_externally

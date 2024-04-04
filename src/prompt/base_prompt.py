@@ -15,7 +15,7 @@ class BasePrompt(Step):
         
         i = args.pop('instruction_set', None)
         pp = args.pop('pre_prompt_info', None)
-
+        user_p = args.pop('user_prompt', None)
         if i is not None:
             self.instruction_set = get_instance(prompt_text, i)
         else:
@@ -26,7 +26,10 @@ class BasePrompt(Step):
             self.pre_prompt_info = None
 
         self.pre_prompt = args.pop('pre_prompt', None)
-        self.user_prompt = make_user_prompt()
+        if user_p is not None:
+            self.user_prompt = user_p
+        else:
+            self.user_prompt = make_user_prompt()
         # self.mask = self.args.pop('mask', None)
         self.order = args.pop('size', 0) + 10
         self.args = args or {}
@@ -34,6 +37,9 @@ class BasePrompt(Step):
     def run(self, arg):
         return form_prompt(self)
 
+    def getRequirements(self):
+        return []
+    
 
 def form_prompt(prompt):
     if not isinstance(prompt, BasePrompt):
