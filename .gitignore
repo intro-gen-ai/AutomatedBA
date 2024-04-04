@@ -3,6 +3,10 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+# ignore .DS_Store
+**/.DS_Store
+.DS_Store
+
 # Distribution / packaging
 .Python
 build/
