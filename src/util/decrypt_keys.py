@@ -22,7 +22,8 @@ def load_private_key():
 def decrypt_message(private_key, file_name):
     # Read the encrypted message from .gptsecret
     dir_path = os.path.dirname(os.path.realpath(__file__))  # Gets the directory where the script is located
-    secret_file_path = os.path.join(dir_path, file_name)
+    # secret_file_path = os.path.join(dir_path, file_name)
+    secret_file_path = os.path.join(dir_path, "keys", file_name)
     with open(secret_file_path, 'rb') as secret_file:
         encrypted_message = secret_file.read()
 

@@ -34,3 +34,4 @@ share/python-wheels/
 # Custom stuffs
 *_oldForm.json
 src/util/saved/
+src/util/keys/

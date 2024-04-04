@@ -28,7 +28,7 @@ def layoutProcess(e_set, m_set, p_set, i_set, s_set, text_prompt = None):
         i_s.append(converter.convert( ('p', i) ))
 
     for i in i_set:
-        p_s.append(converter.convert( ('p', i) ))
+        p_s.append(converter.convert( ('i', i) ))
 
 # TODO not implemeneted
     # for i in s_set:
