@@ -55,7 +55,6 @@ st.set_page_config(
 )
 
 optionset = ControlDict()
-
 selected_keys = {}
 
 columns = st.columns(len(optionset.data_dict.keys()))
@@ -114,7 +113,7 @@ allow_input = len(selected_keys['m']) > 0
 bottomText = "Input Your Choices Then Prompt the Model"
 if tot > 5 and allow_input:
     bottomText = "Ask Something"
-elif allow_input and len(st.session_state.messages) > 0:
+elif allow_input:
     bottomText = "You can still add some features if you want!"
 elif not allow_input and len(st.session_state.messages) > 0:
     bottomText = "You must choose a model!"
@@ -130,9 +129,9 @@ if allow_input:
             st.markdown(prompt)
         # Add user message to chat history
         st.session_state.messages.append({"role": "user", "content": prompt})
-        
+        response = response_generator(selected_keys, prompt)
         with st.chat_message("assistant"):
-            response = st.write(response_generator(selected_keys, prompt))
+            st.write(response)
         # Add assistant response to chat history
         st.session_state.messages.append({"role": "assistant", "content": response})
 else:
@@ -142,8 +141,8 @@ else:
             st.markdown(prompt)
         # Add user message to chat history
         st.session_state.messages.append({"role": "user", "content": prompt})
-        
+        response = "You must choose a model for me to be able to assist!"
         with st.chat_message("assistant"):
-            response = st.write("You must choose a model for me to be able to assist!")
+            st.write(response)
 
         st.session_state.messages.append({"role": "assistant", "content": response})
