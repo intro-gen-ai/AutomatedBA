@@ -1,0 +1,1 @@
+Convert natural language descriptions of data filtering into SQL conditions.

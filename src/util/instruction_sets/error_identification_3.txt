@@ -1,1 +1,1 @@
-Identify and list assumptions made about data distribution and index presence that could affect query performance.
+Analyze generated SQL queries for patterns that could expose the database to SQL injection or other security vulnerabilities. Provide a security assessment summary alongside the query and suggest modifications to mitigate identified risks, such as parameterizing inputs or applying stricter access controls.

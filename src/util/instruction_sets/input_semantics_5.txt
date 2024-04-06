@@ -1,1 +1,1 @@
-Invent a concise format for expressing SQL subqueries, enabling you to outline complex queries more straightforwardly.
+For inputs requesting the 'top 5 highest selling products,' interpret 'top 5' as a limit for the query result set and 'highest selling' as an instruction to sort the results in descending order by sales figure. Generate an SQL query using ORDER BY and LIMIT clauses to fulfill the request accurately.

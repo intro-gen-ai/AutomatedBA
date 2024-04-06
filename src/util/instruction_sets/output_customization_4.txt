@@ -1,1 +1,1 @@
-Supply a batch file alongside any data modification queries that backs up relevant tables before execution.
+For a user request like 'I want to compare this year's sales to last year's,' analyze the prompt to identify the need for a comparative SQL query. Generate a complex SQL statement that selects sales data for the current and previous years, possibly using a JOIN to combine this data into a single result set for direct comparison.

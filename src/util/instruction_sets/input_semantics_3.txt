@@ -1,1 +1,1 @@
-Develop shorthand notations for frequent database names and table joins, such as 'CJ' for 'INNER JOIN customers ON orders.customer_id = customers.id'.
+Recognize requests for data summaries expressed in natural language, such as 'total sales by region' or 'average employee age.' Map these requests to SQL aggregate functions, associating 'total sales' with SUM() and grouping by 'region,' or calculating 'average age' using AVG() for employees.

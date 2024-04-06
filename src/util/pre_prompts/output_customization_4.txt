@@ -1,0 +1,1 @@
+Adapt user prompts into detailed SQL queries that reflect the full context of the request.

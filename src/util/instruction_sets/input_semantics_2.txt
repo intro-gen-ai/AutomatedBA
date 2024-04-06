@@ -1,1 +1,1 @@
-Use abbreviations for common SQL operations, such as 'AGG' for 'GROUP BY' aggregations, to speed up query planning discussions.
+Analyze user inputs for filtering descriptors like 'older than 20 years' or 'within the last month' and translate them into SQL WHERE clauses. For 'older than 20 years', generate a date comparison operation using the current date minus 20 years. For 'within the last month', calculate the start of the previous month to the current date as the date range.

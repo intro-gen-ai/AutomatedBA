@@ -1,1 +1,1 @@
-Maintain a context manager that tracks the current database schema and table structures.
+Implement a context management system that tracks and analyzes the user's session history, including previous queries, feedback, and any stated preferences or constraints. Use this accumulated context to inform the generation of subsequent SQL queries, ensuring they are relevant and appropriately tailored to the user's ongoing interaction narrative.

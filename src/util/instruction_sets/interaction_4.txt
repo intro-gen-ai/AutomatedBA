@@ -1,1 +1,1 @@
-Inquire about the historical context of data to tailor time-series analysis queries more accurately.
+Offer options for how SQL query results are presented (e.g., tabular format, summary statistics, charts) and adjust future result presentations based on user preferences. This customization enhances the usability of the interface by tailoring information presentation to the user's needs and preferences.

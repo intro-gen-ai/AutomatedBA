@@ -1,1 +1,1 @@
-For each SQL report query, include a visualization script that automatically generates a chart or graph from the query results.
+Use domain-specific language models or knowledge bases tailored to the user's business or industry to interpret the context of queries more accurately. For instance, understanding that 'ACME product returns' refers to a dataset on returned products for a company named ACME and generating SQL queries that specifically target this dataset within the broader database.

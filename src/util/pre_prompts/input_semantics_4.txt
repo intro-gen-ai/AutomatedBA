@@ -1,0 +1,1 @@
+Translate user requests for data groupings into SQL GROUP BY clauses.

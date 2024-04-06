@@ -1,0 +1,1 @@
+Detect natural language instructions for sorting and limiting query results and convert them into SQL syntax.

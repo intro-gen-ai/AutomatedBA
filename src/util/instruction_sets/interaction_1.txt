@@ -1,1 +1,1 @@
-Initiate a flipped interaction where you ask questions to gather necessary information for SQL queries.
+Implement a feedback loop where the user can react to the SQL query or its results, indicating satisfaction or requesting adjustments. Use this feedback to iteratively refine the query, asking clarifying questions as needed to hone in on the user's exact requirements and improving the query's accuracy and relevance.

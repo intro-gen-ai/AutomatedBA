@@ -1,0 +1,1 @@
+Adjust the complexity of SQL queries based on user preferences.

@@ -1,1 +1,1 @@
-When presenting a database design, discuss potential scalability and normalization issues that could arise.
+Review generated SQL queries for adherence to SQL best practices that enhance code readability and maintainability. Suggest formatting adjustments, comment additions for complex logic explanations, and restructuring for simpler interpretation without sacrificing performance.

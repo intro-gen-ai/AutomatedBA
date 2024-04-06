@@ -1,0 +1,1 @@
+Assemble SQL queries that evolve with user interactions within a session.

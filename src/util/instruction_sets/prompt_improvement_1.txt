@@ -1,1 +1,1 @@
-Provide a brief reflection on the logic and assumptions behind your answer.
+Utilize Snowflake's query execution plan analysis to identify less efficient execution paths in generated SQL queries. Suggest structural changes or alternative query formulations that leverage the database's query optimizer, such as reordering joins or using specific database functions for better performance.

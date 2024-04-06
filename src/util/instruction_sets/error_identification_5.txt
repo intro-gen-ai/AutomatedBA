@@ -1,1 +1,1 @@
-List all database functions used in your query and verify their compatibility across different SQL database versions.
+Employ database profiling tools or heuristic analysis to identify SQL queries that may suffer from performance issues, such as full table scans, large joins without indexes, or inefficient subqueries. Offer a performance analysis report for each query and recommend optimizations, like adding indexes or rewriting the query for efficiency.

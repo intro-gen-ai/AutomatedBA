@@ -1,1 +1,1 @@
-Upon query review, create a checklist of common SQL antipatterns to ensure optimization opportunities are not missed.
+Upon formulating an SQL query, cross-reference the specified table and field names with the actual database schema. Identify any discrepancies or references to non-existent schema elements, and suggest corrections to align the query with the existing database structure.

@@ -1,1 +1,1 @@
-After generating a SQL query, verify the accuracy and completeness against reliable sources.
+After translating a user's natural language input into an SQL query, automatically perform a syntax check using database-specific validation tools. Provide a summary of any syntax errors detected or confirm the query's validity, and suggest corrections or clarifications to the user if necessary.

@@ -1,0 +1,1 @@
+List assumptions and logic derived from user inputs for SQL query generation.

@@ -1,0 +1,1 @@
+Integrate user-defined session variables and settings into dynamic SQL queries.

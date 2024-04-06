@@ -1,0 +1,1 @@
+Use ongoing user session context to inform and adjust SQL query generation.

@@ -1,1 +1,1 @@
-Keep a log of frequently queried data segments to anticipate data caching strategies and improve query response times.
+Provide users with the ability to define session-specific variables and settings, such as date ranges, numerical thresholds, or categorical filters. Seamlessly integrate these user-defined elements into the SQL query generation process, customizing queries to reflect these personalized settings and preferences.

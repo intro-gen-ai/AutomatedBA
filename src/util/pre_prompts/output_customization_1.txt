@@ -1,0 +1,1 @@
+Utilize contextual information from user inputs to refine SQL query generation.

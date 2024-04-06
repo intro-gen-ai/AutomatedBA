@@ -1,1 +1,1 @@
-After explaining a complex query, outline alternative solutions considered and why they were discarded.
+For queries identified as suboptimal, recommend specific SQL constructs that are known to improve performance on the target database platform. This could include using window functions for analytical queries, applying CTEs (Common Table Expressions) for complex joins, or employing database-specific hints to guide the optimizer.

@@ -1,1 +1,1 @@
-Create a symbol system for quick reference to filter conditions, like '=>10' to denote 'WHERE column_name > 10'.
+When users ask for data to be organized in a specific way, such as 'show revenue by product category,' parse the request to identify the main subject ('revenue') and the grouping criterion ('product category'). Formulate an SQL query that selects the revenue data and applies a GROUP BY clause on the product category.

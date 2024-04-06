@@ -1,0 +1,1 @@
+Rephrase natural language queries for direct conversion into optimized SQL statements.

@@ -1,0 +1,1 @@
+Interpret natural language aggregation requests into corresponding SQL queries.

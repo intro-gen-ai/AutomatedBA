@@ -1,1 +1,1 @@
-Provide a Python script that logs the execution time and row count for any analytics query, aiding in performance monitoring.
+When a user input suggests a common query pattern but is phrased inefficiently for SQL conversion, rephrase the query into a standard form known for efficient execution by the database engine. For example, convert 'list all employees who started in the last 30 days' into an SQL query using the most efficient date comparison operations available in the database's query language.

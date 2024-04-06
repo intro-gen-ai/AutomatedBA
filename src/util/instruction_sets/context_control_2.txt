@@ -1,1 +1,1 @@
-Update the context manager with user preferences for data visualization styles, ensuring consistent report generation.
+Utilize insights gleaned from a user's session history to refine and adjust current SQL query formulations. For example, if a user consistently modifies generated queries to include a specific filter, preemptively include similar filters in future queries within the same session, enhancing relevance and efficiency.

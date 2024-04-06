@@ -1,1 +1,1 @@
-Question the expected output format to adjust the SQL query for optimal compatibility with downstream applications.
+Monitor and analyze user interactions over time to discern patterns in their query requests and feedback. Adapt the SQL query generation process to anticipate user preferences, streamlining their experience by preemptively adjusting queries and presentations to match their historical tendencies and feedback.

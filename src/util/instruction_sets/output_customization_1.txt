@@ -1,1 +1,1 @@
-Whenever you provide a SQL query, include a code snippet for automation.
+Before generating an SQL query, apply a contextual analysis process to the user's prompt to identify key entities, their attributes, and potential relationships within the database schema. This may involve recognizing a user's reference to 'last quarter's sales' as a request for sales data from a specific time period and formulating the SQL query accordingly, incorporating the recognized temporal context.

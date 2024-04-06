@@ -1,1 +1,1 @@
-Record performance metrics of past queries in the context manager to guide optimization of similar future queries.
+Develop a dynamic query assembly mechanism that adjusts SQL query construction in real-time based on evolving user interactions within a session. This includes integrating new user-defined variables, adjusting query scope or complexity, and refining query parameters to reflect the user's exploration and discoveries as the session progresses.

@@ -1,1 +1,1 @@
-After solving a data modeling challenge, contemplate the model's flexibility towards future business requirements changes.
+Analyze generated SQL queries for operations that may affect data integrity or require transactional safety. Suggest the inclusion of transaction controls (e.g., BEGIN TRANSACTION, COMMIT, ROLLBACK) or modifications to ensure operations are atomic and consistent, particularly in multi-step data manipulation scenarios.

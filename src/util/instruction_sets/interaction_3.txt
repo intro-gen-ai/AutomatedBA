@@ -1,1 +1,1 @@
-Ask about user requirements for data visualization to determine the most suitable chart types before writing the SQL query.
+Learn from user corrections and suggestions, incorporating this feedback into the natural language processing model. This continuous learning approach ensures the system progressively improves in generating SQL queries that more closely align with user expectations and database realities.

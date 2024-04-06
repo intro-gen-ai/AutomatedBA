@@ -1,0 +1,1 @@
+Facilitate an iterative dialogue with the user to refine generated SQL queries.

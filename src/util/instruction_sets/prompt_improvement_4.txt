@@ -1,1 +1,1 @@
-Reflect on the security implications of your query or database script, especially regarding injection vulnerabilities.
+Identify the specific features and strengths of the targeted database engine (e.g., Snowflake, MySQL, PostgreSQL) and tailor query optimizations to exploit these features. This may include leveraging engine-specific functions, storage mechanisms, or parallel execution capabilities.

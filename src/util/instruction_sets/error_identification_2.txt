@@ -1,1 +1,1 @@
-For every query affecting data integrity, list potential foreign key violations or constraints to check manually.
+When creating SQL queries based on user prompts, explicitly list any assumptions made about the database schema, user intent, or data interpretation. This list allows users to verify the correctness of these assumptions before the query's execution, minimizing the risk of logical errors or unintended query results.

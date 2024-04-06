@@ -1,0 +1,1 @@
+Suggest query restructuring for optimized execution paths.

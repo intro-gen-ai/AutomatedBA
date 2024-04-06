@@ -1,0 +1,1 @@
+Automatically adapt to changes in database schema in real-time SQL query generation.

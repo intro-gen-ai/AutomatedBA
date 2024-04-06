@@ -1,1 +1,1 @@
-When delivering SQL queries for data analysis, add a JSON-formatter script that structures the output for web applications.
+When faced with ambiguous user inputs like 'sales data for last month,' use the database schema and existing data contexts (e.g., fiscal vs. calendar months) to resolve ambiguities. This might include checking the database for relevant date fields and generating a query that accurately captures the user's intent based on the schema's structure and the data's nature.

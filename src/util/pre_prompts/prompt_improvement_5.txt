@@ -1,0 +1,1 @@
+Adjust SQL queries for data integrity and transactional safety.

@@ -1,1 +1,1 @@
-Incorporate a versioning system within the context manager to track schema changes over time, aiding in historical data analysis.
+Implement schema monitoring and adaptation mechanisms that detect changes in the database schema, such as the addition of new tables or columns, changes in data types, or alterations in relationships. Automatically update the SQL query generation logic to accommodate these schema changes, ensuring that queries remain accurate and fully reflective of the current database structure.
