@@ -49,8 +49,9 @@ def create_requirement_file(file_name, input):
 def get_requirement_file(file_name):
     dir_path = os.path.dirname(os.path.realpath(__file__))  
     # full_path = os.path.join(dir_path, file_name)
-    full_path = os.path.join(dir_path, "keys", file_name)
+    full_path = os.path.join(dir_path, file_name)
     if file_name[0] == '.':
+        full_path = os.path.join(dir_path, "keys", file_name)
         try:
             return decrypt_externally(file_name)
         except: 

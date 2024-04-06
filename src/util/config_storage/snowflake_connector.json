@@ -1,0 +1,8 @@
+{
+    "user": "TASTY_USER",
+    "password": "securePassword123!",
+    "account": "xuogpub-eq51122",
+    "warehouse": "TASTY_BITES_WH",
+    "database": "TASTY_BITES_SAMPLE_DATA",
+    "schema": "PUBLIC"
+}

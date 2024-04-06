@@ -10,7 +10,7 @@ if __name__ == '__main__':
 
 from src.util import get_requirement_file
 class SnowflakeInstance:
-    def __init__(self, config_file='snowflake_connector.json'):
+    def __init__(self, config_file="config_storage/snowflake_connector.json"):
         try:
             config = get_requirement_file(config_file)[1]
             self.account = config['account']
