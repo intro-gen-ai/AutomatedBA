@@ -1,0 +1,1 @@
+Keep a log of frequently queried data segments to anticipate data caching strategies and improve query response times.

@@ -1,0 +1,1 @@
+Initiate a flipped interaction where you ask questions to gather necessary information for SQL queries.

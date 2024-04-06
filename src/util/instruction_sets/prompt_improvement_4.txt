@@ -1,0 +1,1 @@
+Reflect on the security implications of your query or database script, especially regarding injection vulnerabilities.

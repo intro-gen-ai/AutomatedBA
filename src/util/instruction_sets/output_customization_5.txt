@@ -1,0 +1,1 @@
+Provide a Python script that logs the execution time and row count for any analytics query, aiding in performance monitoring.

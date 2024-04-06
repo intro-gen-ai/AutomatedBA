@@ -1,0 +1,1 @@
+Invent a concise format for expressing SQL subqueries, enabling you to outline complex queries more straightforwardly.

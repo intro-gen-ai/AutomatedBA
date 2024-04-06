@@ -1,0 +1,1 @@
+Use abbreviations for common SQL operations, such as 'AGG' for 'GROUP BY' aggregations, to speed up query planning discussions.

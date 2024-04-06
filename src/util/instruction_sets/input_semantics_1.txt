@@ -1,0 +1,1 @@
+Whenever you encounter unfamiliar SQL syntax or concepts, create a custom glossary or dictionary to define their meanings.

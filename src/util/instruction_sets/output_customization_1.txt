@@ -1,0 +1,1 @@
+Whenever you provide a SQL query, include a code snippet for automation.

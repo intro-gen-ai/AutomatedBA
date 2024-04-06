@@ -1,0 +1,1 @@
+Question the expected output format to adjust the SQL query for optimal compatibility with downstream applications.

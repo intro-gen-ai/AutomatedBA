@@ -1,0 +1,1 @@
+Incorporate a versioning system within the context manager to track schema changes over time, aiding in historical data analysis.

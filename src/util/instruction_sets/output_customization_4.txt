@@ -1,0 +1,1 @@
+Supply a batch file alongside any data modification queries that backs up relevant tables before execution.

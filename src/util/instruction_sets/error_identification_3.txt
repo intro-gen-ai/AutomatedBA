@@ -1,0 +1,1 @@
+Identify and list assumptions made about data distribution and index presence that could affect query performance.

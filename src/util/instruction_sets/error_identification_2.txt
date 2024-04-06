@@ -1,0 +1,1 @@
+For every query affecting data integrity, list potential foreign key violations or constraints to check manually.

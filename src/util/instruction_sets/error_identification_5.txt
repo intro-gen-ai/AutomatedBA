@@ -1,0 +1,1 @@
+List all database functions used in your query and verify their compatibility across different SQL database versions.

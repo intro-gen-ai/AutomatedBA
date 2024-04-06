@@ -92,6 +92,20 @@ try:
     cur.execute(join_sql)
     for row in cur.fetchall():
         print(row)
+
+
+    # Execute a query to describe the table
+    describe_table_sql = "DESCRIBE TABLE EXAMPLE_TABLE"
+    cur.execute(describe_table_sql)
+
+    # Fetch all rows from the executed statement
+    describe_results = cur.fetchall()
+
+    # Print column details
+    print("Column Details:")
+    for row in describe_results:
+        print(row)  # Each row contains details about a column
+        
 finally:
     # Close the cursor and connection
     cur.close()

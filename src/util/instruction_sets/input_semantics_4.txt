@@ -1,0 +1,1 @@
+Create a symbol system for quick reference to filter conditions, like '=>10' to denote 'WHERE column_name > 10'.

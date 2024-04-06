@@ -1,0 +1,1 @@
+When delivering SQL queries for data analysis, add a JSON-formatter script that structures the output for web applications.

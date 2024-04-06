@@ -12,8 +12,11 @@
       "2": "RandomWord6"
     },
     "i": {
-      "1": "RandomWord7",
-      "2": "RandomWord8"
+      "1": "src/util/instruction_sets/input_semantics_1.txt",
+      "2": "src/util/instruction_sets/input_semantics_2.txt",
+      "3": "src/util/instruction_sets/input_semantics_3.txt",
+      "4": "src/util/instruction_sets/input_semantics_4.txt",
+      "5": "src/util/instruction_sets/input_semantics_5.txt"
     },
     "s": {
       "1": "RandomWord9",

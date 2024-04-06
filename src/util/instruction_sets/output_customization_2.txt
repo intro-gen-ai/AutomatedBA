@@ -1,0 +1,1 @@
+For each SQL report query, include a visualization script that automatically generates a chart or graph from the query results.

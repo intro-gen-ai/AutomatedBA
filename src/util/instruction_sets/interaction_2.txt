@@ -1,0 +1,1 @@
+Prompt for specifics about the data source and quality before suggesting data cleaning SQL scripts.

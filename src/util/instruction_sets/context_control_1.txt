@@ -1,0 +1,1 @@
+Maintain a context manager that tracks the current database schema and table structures.

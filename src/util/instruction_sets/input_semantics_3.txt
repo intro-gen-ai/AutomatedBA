@@ -1,0 +1,1 @@
+Develop shorthand notations for frequent database names and table joins, such as 'CJ' for 'INNER JOIN customers ON orders.customer_id = customers.id'.

@@ -1,0 +1,1 @@
+After explaining a complex query, outline alternative solutions considered and why they were discarded.

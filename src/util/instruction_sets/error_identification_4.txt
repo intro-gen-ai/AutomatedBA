@@ -1,0 +1,1 @@
+Upon query review, create a checklist of common SQL antipatterns to ensure optimization opportunities are not missed.
