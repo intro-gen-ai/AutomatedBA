@@ -9,6 +9,7 @@ if __name__ == '__main__':
     sys.path.insert(0, str(project_root))
 
 from src.util import get_requirement_file
+
 class SnowflakeInstance:
     def __init__(self, config_file="config_storage/snowflake_connector.json"):
         try:
