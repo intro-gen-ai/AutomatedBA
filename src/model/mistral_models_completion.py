@@ -1,9 +1,6 @@
 from .base_model import BaseModel
-from .model_result import ModelResult
 from mistralai.client import MistralClient
-from mistralai.models.chat_completion import ChatMessage
 from src.util import decrypt_externally
-import time
 import mistralai
 
 class MistralModels(BaseModel):
