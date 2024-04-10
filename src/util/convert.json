@@ -5,7 +5,8 @@
     },
     "m": {
       "1": "Gpt_3_5_Turbo",
-      "2": "Open_mistral_7b"
+      "2": "Open_mistral_7b",
+      "3": "Llama_7b_chat"
     },
     "p": {
       "1": "RandomWord5",
