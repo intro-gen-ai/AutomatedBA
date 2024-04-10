@@ -9,13 +9,26 @@ def load_private_key():
     private_key_path = os.path.expanduser('~/.ssh/id_rsa')
 
     with open(private_key_path, 'rb') as key_file:
-        # If your private key is encrypted, add the password argument to load_pem_private_key
-        # e.g., password=b'my_passphrase'
+        key_data = key_file.read()
+
+    # Check for PEM format
+    if b'BEGIN RSA PRIVATE KEY' in key_data:
         private_key = serialization.load_pem_private_key(
-            key_file.read(),
+            key_data,
             password=None,  # Change this if your key is password-protected
             backend=default_backend()
         )
+
+    # Check for OpenSSH format
+    elif b'BEGIN OPENSSH PRIVATE KEY' in key_data:
+        private_key = serialization.load_ssh_private_key(
+            key_data,
+            password=None,  # Change this if your key is password-protected
+            backend=default_backend()
+        )
+
+    else:
+        raise ValueError("Unsupported key format or key is encrypted with an unsupported method.")
 
     return private_key
 

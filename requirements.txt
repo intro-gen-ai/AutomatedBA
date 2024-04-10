@@ -2,4 +2,4 @@ langchain~=0.1.9
 pymilvus~=2.3.6
 cryptography >= 42.0.5
 streamlit >= 1.32.2
-snowflake-connector-python >= 2.3.8
+snowflake-connector-python
