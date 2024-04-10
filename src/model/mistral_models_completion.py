@@ -9,9 +9,7 @@ class MistralModels(BaseModel):
         self.token_location = '.mistral_secret'
 
     def getToken(self):
-        # In Mistral, API key is used directly without decryption
         return decrypt_externally(self.token_location)
-
 
     def query_model(self, system_message, user_message, temp=-1, count=0):
         if not self.checkRequirements:
@@ -46,7 +44,6 @@ class MistralModels(BaseModel):
 
                 count += 1
         
-       
         print("Failed to get a complete response after 3 attempts")
         return response_list
     
