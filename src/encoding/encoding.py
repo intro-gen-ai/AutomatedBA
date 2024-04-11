@@ -1,8 +1,8 @@
 from ..step import Step
 from langchain_openai import OpenAIEmbeddings
-from pymilvus import connections, Collection
+from pymilvus import Collection, connections
+import os
 
-# TODO return from the step run should look like list(userprompt, [relevant knowldege])
 
 class KnowledgeInjectionStep(Step):
     def __init__(
@@ -33,7 +33,7 @@ class KnowledgeInjectionStep(Step):
             self.fetch_document_text_by_line_number(line_num)
             for line_num in similar_doc_ids
         ]
-        return self.construct_prompt_with_knowledge(base_prompt, knowledge_texts)
+        return [base_prompt, knowledge_texts]
 
     def getRequirements(self):
         return [self.file_path]
@@ -54,15 +54,11 @@ class KnowledgeInjectionStep(Step):
         ]  # Assuming the ID corresponds to the line number in the file
 
     def fetch_document_text_by_line_number(self, line_num):
-        # Retrieve the specific line from the file using the line number
-        with open(self.file_path, "r") as file:
-            for current_line, text in enumerate(file, 1):
-                if current_line == line_num:
-                    return text.strip()
-        return f"Document text for line {line_num} not found"
-
-    def construct_prompt_with_knowledge(self, base_prompt, knowledge_texts):
-        combined_prompt = (
-            base_prompt + "\nRelevant context:\n" + "\n".join(knowledge_texts)
-        )
-        return combined_prompt
+        try:
+            with open(self.file_path, "r") as file:
+                for current_line, text in enumerate(file, 1):
+                    if current_line == line_num:
+                        return text.strip()
+            raise ValueError(f"Document text for line {line_num} not found")
+        except FileNotFoundError:
+            raise FileNotFoundError(f"File {self.file_path} not found")
