@@ -60,6 +60,7 @@ def runProcess(steps):
         print(i.getOrder())
         j=i.run(k)
         k = j
+        
     if k.execution_time is not None:
         print(k.execution_time)
     if k.code is not None:
