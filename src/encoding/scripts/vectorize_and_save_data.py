@@ -29,6 +29,7 @@ def get_embedding_with_retry(
 
 
 def check_milvus_connection():
+    # TO DO: un-hardcode
     try:
         milvus_uri = "https://in03-10fc789d75c4b64.api.gcp-us-west1.zillizcloud.com"
         token = "bf430bccd895611a762829314dcf5205ba81e416f365fa6104f94f4851542dfe3ba7a00a2453d61b20bd928a80a7d5b1453cc157"
@@ -50,18 +51,19 @@ def check_data_folder(path="./data"):
 def vectorize_and_store(client, file_path, collection_name):
     text_loader = TextLoader(file_path)
     docs = text_loader.load()
-    text_splitter = CharacterTextSplitter(chunk_size=50, chunk_overlap=0)
     vectors = []
     ids = []  # List to store unique IDs for each vector
-    doc_id = 0  # Start with an ID, increment for each vector
+    doc_id = 0  # Start with an ID, increment for each line/document
 
     for doc in docs:
         print(doc)
-        chunks = text_splitter.split_text(doc.page_content)
-        for chunk in chunks:
-            vectors.append(get_embedding_with_retry(client, chunk))
-            ids.append(doc_id)
-            doc_id += 1  # Increment the ID for the next vector
+        lines = doc.page_content.split("\n")  # Split the document into lines
+        for line in lines:
+            if line.strip():  # Only process non-empty lines
+                embedding = get_embedding_with_retry(client, line)
+                vectors.append(embedding)
+                ids.append(doc_id)
+                doc_id += 1  # Increment the ID for the next line/document
 
     # Define the schema with a key field
     id_field = FieldSchema(
