@@ -39,13 +39,16 @@ def create_requirement_file(file_name, input):
         parts = file_name.split('.')
         if len(parts) > 1:
             if parts[-1] == 'json':
-                try:
-                    json.loads(input)
+                if isinstance(input, dict):
                     with open(full_path, 'w') as file:
                         json.dump(input, file, indent=4)
-                except ValueError:
-                    raise ValueError("Input must be in JSON form!")
-                
+                else:
+                    try:
+                        json.loads(input)
+                        with open(full_path, 'w') as file:
+                            json.dump(input, file, indent=4)
+                    except ValueError:
+                        raise ValueError("Input must be in JSON or Dict form!")
             elif parts[-1] == 'txt':
                 with open(full_path, 'w') as file:
                     file.write(input)

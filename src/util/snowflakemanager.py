@@ -41,10 +41,10 @@ class SnowflakeManager:
             #     print(f"Config file '{config_file}' not found.")
             # except json.JSONDecodeError:
             #     print(f"Error decoding JSON from '{config_file}'.")
-            try:
-                cls._instance.set_schema()
-            except:
-                print('setting schema failed')
+            # try:
+            #     cls._instance.set_schema()
+            # except:
+            #     print('setting schema failed')
         return cls._instance
 
     def set_config(self, config_file="config_storage/snowflake_connector.json", args = None):
@@ -189,17 +189,17 @@ class SnowflakeManager:
         return db_structure
     
     def set_schema(self, schema_file = "config_storage/snowflake_schema.json"):
-        if self.schema:
+        if hasattr(self, 'schema') and self.schema:
             return
         if validate_file_exists(schema_file):
             self.schema = get_requirement_file(schema_file)[1]
         else:
-            temp = self.fetch_metadata
-            create_requirement_file(temp)
+            temp = self.fetch_metadata()
+            create_requirement_file(file_name = schema_file, input = temp)
             self.schema = temp
 
     def get_schema(self):
-        if self.schema:
+        if hasattr(self, 'schema') and self.schema:
             return self.schema
         else:
             self.set_schema()

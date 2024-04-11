@@ -12,7 +12,7 @@ from src.util import decrypt_externally
 from ..step import Step
 from src.encoding.encoding import KnowledgeInjectionStep
 from langchain_openai import OpenAIEmbeddings
-
+from src import semantic_layer
 
 
 def layoutProcess(e_set, m_set, p_set, i_set, s_set, text_prompt = None):
@@ -45,9 +45,9 @@ def layoutProcess(e_set, m_set, p_set, i_set, s_set, text_prompt = None):
     for i in i_set:
         p_s.append(converter.convert( ('i', i) ))
 
-    # TODO not implemeneted
-    # for i in s_set:
-    #     s.append(converter.convert( ('s', i) ))
+    for i in s_set:
+        steps.append(get_instance(semantic_layer, converter.convert('s', i) ))
+
     # if len(i_set) > 1:
         # TODO we need to talk about what to do here to combine them so for now its just an empty case
         # i implemented the single form case

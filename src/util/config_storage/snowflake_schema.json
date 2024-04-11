@@ -1,0 +1,730 @@
+{
+    "ACADEMIC": {
+        "PUBLIC": {
+            "AUTHOR": {
+                "AID": "NUMBER(38,0)",
+                "HOMEPAGE": "VARCHAR(16777216)",
+                "NAME": "VARCHAR(16777216)",
+                "OID": "NUMBER(38,0)"
+            },
+            "CITE": {
+                "CITED": "NUMBER(38,0)",
+                "CITING": "NUMBER(38,0)"
+            },
+            "CONFERENCE": {
+                "CID": "NUMBER(38,0)",
+                "HOMEPAGE": "VARCHAR(16777216)",
+                "NAME": "VARCHAR(16777216)"
+            },
+            "DOMAIN": {
+                "DID": "NUMBER(38,0)",
+                "NAME": "VARCHAR(16777216)"
+            },
+            "DOMAIN_AUTHOR": {
+                "AID": "NUMBER(38,0)",
+                "DID": "NUMBER(38,0)"
+            },
+            "DOMAIN_CONFERENCE": {
+                "CID": "NUMBER(38,0)",
+                "DID": "NUMBER(38,0)"
+            },
+            "DOMAIN_JOURNAL": {
+                "DID": "NUMBER(38,0)",
+                "JID": "NUMBER(38,0)"
+            },
+            "DOMAIN_KEYWORD": {
+                "DID": "NUMBER(38,0)",
+                "KID": "NUMBER(38,0)"
+            },
+            "DOMAIN_PUBLICATION": {
+                "DID": "NUMBER(38,0)",
+                "PID": "NUMBER(38,0)"
+            },
+            "JOURNAL": {
+                "HOMEPAGE": "VARCHAR(16777216)",
+                "JID": "NUMBER(38,0)",
+                "NAME": "VARCHAR(16777216)"
+            },
+            "KEYWORD": {
+                "KEYWORD": "VARCHAR(16777216)",
+                "KID": "NUMBER(38,0)"
+            },
+            "ORGANIZATION": {
+                "CONTINENT": "VARCHAR(16777216)",
+                "HOMEPAGE": "VARCHAR(16777216)",
+                "NAME": "VARCHAR(16777216)",
+                "OID": "NUMBER(38,0)"
+            },
+            "PUBLICATION": {
+                "ABSTRACT": "VARCHAR(16777216)",
+                "CID": "NUMBER(38,0)",
+                "CITATION_NUM": "NUMBER(38,0)",
+                "JID": "NUMBER(38,0)",
+                "PID": "NUMBER(38,0)",
+                "REFERENCE_NUM": "NUMBER(38,0)",
+                "TITLE": "VARCHAR(16777216)",
+                "YEAR": "NUMBER(38,0)"
+            },
+            "PUBLICATION_KEYWORD": {
+                "PID": "NUMBER(38,0)",
+                "KID": "NUMBER(38,0)"
+            },
+            "WRITES": {
+                "AID": "NUMBER(38,0)",
+                "PID": "NUMBER(38,0)"
+            }
+        }
+    },
+    "ADVISING": {
+        "PUBLIC": {
+            "AREA": {
+                "COURSE_ID": "NUMBER(38,0)",
+                "AREA": "VARCHAR(16777216)"
+            },
+            "COMMENT_INSTRUCTOR": {
+                "INSTRUCTOR_ID": "NUMBER(38,0)",
+                "STUDENT_ID": "NUMBER(38,0)",
+                "SCORE": "NUMBER(38,0)",
+                "COMMENT_TEXT": "VARCHAR(16777216)"
+            },
+            "COURSE": {
+                "COURSE_ID": "NUMBER(38,0)",
+                "NAME": "VARCHAR(16777216)",
+                "DEPARTMENT": "VARCHAR(16777216)",
+                "NUMBER": "VARCHAR(16777216)",
+                "CREDITS": "VARCHAR(16777216)",
+                "ADVISORY_REQUIREMENT": "VARCHAR(16777216)",
+                "ENFORCED_REQUIREMENT": "VARCHAR(16777216)",
+                "DESCRIPTION": "VARCHAR(16777216)",
+                "NUM_SEMESTERS": "NUMBER(38,0)",
+                "NUM_ENROLLED": "NUMBER(38,0)",
+                "HAS_DISCUSSION": "BOOLEAN",
+                "HAS_LAB": "BOOLEAN",
+                "HAS_PROJECTS": "BOOLEAN",
+                "HAS_EXAMS": "BOOLEAN",
+                "NUM_REVIEWS": "NUMBER(38,0)",
+                "CLARITY_SCORE": "NUMBER(38,0)",
+                "EASINESS_SCORE": "NUMBER(38,0)",
+                "HELPFULNESS_SCORE": "NUMBER(38,0)"
+            },
+            "COURSE_OFFERING": {
+                "OFFERING_ID": "NUMBER(38,0)",
+                "COURSE_ID": "NUMBER(38,0)",
+                "SEMESTER": "NUMBER(38,0)",
+                "SECTION_NUMBER": "NUMBER(38,0)",
+                "START_TIME": "TIME(9)",
+                "END_TIME": "TIME(9)",
+                "MONDAY": "VARCHAR(16777216)",
+                "TUESDAY": "VARCHAR(16777216)",
+                "WEDNESDAY": "VARCHAR(16777216)",
+                "THURSDAY": "VARCHAR(16777216)",
+                "FRIDAY": "VARCHAR(16777216)",
+                "SATURDAY": "VARCHAR(16777216)",
+                "SUNDAY": "VARCHAR(16777216)",
+                "HAS_FINAL_PROJECT": "BOOLEAN",
+                "HAS_FINAL_EXAM": "BOOLEAN",
+                "TEXTBOOK": "VARCHAR(16777216)",
+                "CLASS_ADDRESS": "VARCHAR(16777216)",
+                "ALLOW_AUDIT": "VARCHAR(16777216)"
+            },
+            "COURSE_PREREQUISITE": {
+                "PRE_COURSE_ID": "NUMBER(38,0)",
+                "COURSE_ID": "NUMBER(38,0)"
+            },
+            "COURSE_TAGS_COUNT": {
+                "COURSE_ID": "NUMBER(38,0)",
+                "CLEAR_GRADING": "NUMBER(38,0)",
+                "POP_QUIZ": "NUMBER(38,0)",
+                "GROUP_PROJECTS": "NUMBER(38,0)",
+                "INSPIRATIONAL": "NUMBER(38,0)",
+                "LONG_LECTURES": "NUMBER(38,0)",
+                "EXTRA_CREDIT": "NUMBER(38,0)",
+                "FEW_TESTS": "NUMBER(38,0)",
+                "GOOD_FEEDBACK": "NUMBER(38,0)",
+                "TOUGH_TESTS": "NUMBER(38,0)",
+                "HEAVY_PAPERS": "NUMBER(38,0)",
+                "CARES_FOR_STUDENTS": "NUMBER(38,0)",
+                "HEAVY_ASSIGNMENTS": "NUMBER(38,0)",
+                "RESPECTED": "NUMBER(38,0)",
+                "PARTICIPATION": "NUMBER(38,0)",
+                "HEAVY_READING": "NUMBER(38,0)",
+                "TOUGH_GRADER": "NUMBER(38,0)",
+                "HILARIOUS": "NUMBER(38,0)",
+                "WOULD_TAKE_AGAIN": "NUMBER(38,0)",
+                "GOOD_LECTURE": "NUMBER(38,0)",
+                "NO_SKIP": "NUMBER(38,0)"
+            },
+            "GSI": {
+                "COURSE_OFFERING_ID": "NUMBER(38,0)",
+                "STUDENT_ID": "NUMBER(38,0)"
+            },
+            "INSTRUCTOR": {
+                "INSTRUCTOR_ID": "NUMBER(38,0)",
+                "NAME": "VARCHAR(16777216)",
+                "UNIQNAME": "VARCHAR(16777216)"
+            },
+            "OFFERING_INSTRUCTOR": {
+                "OFFERING_INSTRUCTOR_ID": "NUMBER(38,0)",
+                "OFFERING_ID": "NUMBER(38,0)",
+                "INSTRUCTOR_ID": "NUMBER(38,0)"
+            },
+            "PROGRAM": {
+                "PROGRAM_ID": "NUMBER(38,0)",
+                "NAME": "VARCHAR(16777216)",
+                "COLLEGE": "VARCHAR(16777216)",
+                "INTRODUCTION": "VARCHAR(16777216)"
+            },
+            "PROGRAM_COURSE": {
+                "PROGRAM_ID": "NUMBER(38,0)",
+                "COURSE_ID": "NUMBER(38,0)",
+                "WORKLOAD": "NUMBER(38,0)",
+                "CATEGORY": "VARCHAR(16777216)"
+            },
+            "PROGRAM_REQUIREMENT": {
+                "PROGRAM_ID": "NUMBER(38,0)",
+                "CATEGORY": "VARCHAR(16777216)",
+                "MIN_CREDIT": "NUMBER(38,0)",
+                "ADDITIONAL_REQ": "VARCHAR(16777216)"
+            },
+            "SEMESTER": {
+                "SEMESTER_ID": "NUMBER(38,0)",
+                "SEMESTER": "VARCHAR(16777216)",
+                "YEAR": "NUMBER(38,0)"
+            },
+            "STUDENT": {
+                "STUDENT_ID": "NUMBER(38,0)",
+                "LASTNAME": "VARCHAR(16777216)",
+                "FIRSTNAME": "VARCHAR(16777216)",
+                "PROGRAM_ID": "NUMBER(38,0)",
+                "DECLARE_MAJOR": "VARCHAR(16777216)",
+                "TOTAL_CREDIT": "NUMBER(38,0)",
+                "TOTAL_GPA": "NUMBER(38,0)",
+                "ENTERED_AS": "VARCHAR(16777216)",
+                "ADMIT_TERM": "DATE",
+                "PREDICTED_GRADUATION_SEMESTER": "DATE",
+                "DEGREE": "VARCHAR(16777216)",
+                "MINOR": "VARCHAR(16777216)",
+                "INTERNSHIP": "VARCHAR(16777216)"
+            },
+            "STUDENT_RECORD": {
+                "STUDENT_ID": "NUMBER(38,0)",
+                "COURSE_ID": "NUMBER(38,0)",
+                "SEMESTER": "NUMBER(38,0)",
+                "GRADE": "VARCHAR(16777216)",
+                "HOW": "VARCHAR(16777216)",
+                "TRANSFER_SOURCE": "VARCHAR(16777216)",
+                "EARN_CREDIT": "VARCHAR(16777216)",
+                "REPEAT_TERM": "VARCHAR(16777216)",
+                "TEST_ID": "VARCHAR(16777216)",
+                "OFFERING_ID": "NUMBER(38,0)"
+            }
+        }
+    },
+    "ATIS": {
+        "PUBLIC": {
+            "AIRCRAFT": {
+                "AIRCRAFT_CODE": "VARCHAR(16777216)",
+                "AIRCRAFT_DESCRIPTION": "VARCHAR(16777216)",
+                "MANUFACTURER": "VARCHAR(16777216)",
+                "BASIC_TYPE": "VARCHAR(16777216)",
+                "ENGINES": "NUMBER(38,0)",
+                "PROPULSION": "VARCHAR(16777216)",
+                "WIDE_BODY": "VARCHAR(16777216)",
+                "WING_SPAN": "NUMBER(38,0)",
+                "LENGTH": "NUMBER(38,0)",
+                "WEIGHT": "NUMBER(38,0)",
+                "CAPACITY": "NUMBER(38,0)",
+                "PAY_LOAD": "NUMBER(38,0)",
+                "CRUISING_SPEED": "NUMBER(38,0)",
+                "RANGE_MILES": "NUMBER(38,0)",
+                "PRESSURIZED": "VARCHAR(16777216)"
+            },
+            "AIRLINE": {
+                "AIRLINE_CODE": "VARCHAR(16777216)",
+                "AIRLINE_NAME": "VARCHAR(16777216)",
+                "NOTE": "VARCHAR(16777216)"
+            },
+            "AIRPORT": {
+                "AIRPORT_CODE": "VARCHAR(16777216)",
+                "AIRPORT_NAME": "VARCHAR(16777216)",
+                "AIRPORT_LOCATION": "VARCHAR(16777216)",
+                "STATE_CODE": "VARCHAR(16777216)",
+                "COUNTRY_NAME": "VARCHAR(16777216)",
+                "TIME_ZONE_CODE": "VARCHAR(16777216)",
+                "MINIMUM_CONNECT_TIME": "NUMBER(38,0)"
+            },
+            "AIRPORT_SERVICE": {
+                "CITY_CODE": "VARCHAR(16777216)",
+                "AIRPORT_CODE": "VARCHAR(16777216)",
+                "MILES_DISTANT": "NUMBER(38,0)",
+                "DIRECTION": "VARCHAR(16777216)",
+                "MINUTES_DISTANT": "NUMBER(38,0)"
+            },
+            "CITY": {
+                "CITY_CODE": "VARCHAR(16777216)",
+                "CITY_NAME": "VARCHAR(16777216)",
+                "STATE_CODE": "VARCHAR(16777216)",
+                "COUNTRY_NAME": "VARCHAR(16777216)",
+                "TIME_ZONE_CODE": "VARCHAR(16777216)"
+            },
+            "CLASS_OF_SERVICE": {
+                "BOOKING_CLASS": "VARCHAR(16777216)",
+                "RANK": "NUMBER(38,0)",
+                "CLASS_DESCRIPTION": "VARCHAR(16777216)"
+            },
+            "CODE_DESCRIPTION": {
+                "CODE": "VARCHAR(16777216)",
+                "DESCRIPTION": "VARCHAR(16777216)"
+            },
+            "COMPARTMENT_CLASS": {
+                "COMPARTMENT": "VARCHAR(16777216)",
+                "CLASS_TYPE": "VARCHAR(16777216)"
+            },
+            "DAYS": {
+                "DAYS_CODE": "VARCHAR(16777216)",
+                "DAY_NAME": "VARCHAR(16777216)"
+            },
+            "DUAL_CARRIER": {
+                "MAIN_AIRLINE": "VARCHAR(16777216)",
+                "LOW_FLIGHT_NUMBER": "NUMBER(38,0)",
+                "HIGH_FLIGHT_NUMBER": "NUMBER(38,0)",
+                "DUAL_AIRLINE": "VARCHAR(16777216)",
+                "SERVICE_NAME": "VARCHAR(16777216)"
+            },
+            "EQUIPMENT_SEQUENCE": {
+                "AIRCRAFT_CODE_SEQUENCE": "VARCHAR(16777216)",
+                "AIRCRAFT_CODE": "VARCHAR(16777216)"
+            },
+            "FARE": {
+                "FARE_ID": "NUMBER(38,0)",
+                "FROM_AIRPORT": "VARCHAR(16777216)",
+                "TO_AIRPORT": "VARCHAR(16777216)",
+                "FARE_BASIS_CODE": "VARCHAR(16777216)",
+                "FARE_AIRLINE": "VARCHAR(16777216)",
+                "RESTRICTION_CODE": "VARCHAR(16777216)",
+                "ONE_DIRECTION_COST": "NUMBER(38,0)",
+                "ROUND_TRIP_COST": "NUMBER(38,0)",
+                "ROUND_TRIP_REQUIRED": "VARCHAR(16777216)"
+            },
+            "FARE_BASIS": {
+                "FARE_BASIS_CODE": "VARCHAR(16777216)",
+                "BOOKING_CLASS": "VARCHAR(16777216)",
+                "CLASS_TYPE": "VARCHAR(16777216)",
+                "PREMIUM": "VARCHAR(16777216)",
+                "ECONOMY": "VARCHAR(16777216)",
+                "DISCOUNTED": "VARCHAR(16777216)",
+                "NIGHT": "VARCHAR(16777216)",
+                "SEASON": "VARCHAR(16777216)",
+                "BASIS_DAYS": "VARCHAR(16777216)"
+            },
+            "FLIGHT": {
+                "FLIGHT_ID": "NUMBER(38,0)",
+                "FLIGHT_DAYS": "VARCHAR(16777216)",
+                "FROM_AIRPORT": "VARCHAR(16777216)",
+                "TO_AIRPORT": "VARCHAR(16777216)",
+                "DEPARTURE_TIME": "NUMBER(38,0)",
+                "ARRIVAL_TIME": "NUMBER(38,0)",
+                "AIRLINE_FLIGHT": "VARCHAR(16777216)",
+                "AIRLINE_CODE": "VARCHAR(16777216)",
+                "FLIGHT_NUMBER": "VARCHAR(16777216)",
+                "AIRCRAFT_CODE_SEQUENCE": "VARCHAR(16777216)",
+                "MEAL_CODE": "VARCHAR(16777216)",
+                "STOPS": "NUMBER(38,0)",
+                "CONNECTIONS": "NUMBER(38,0)",
+                "DUAL_CARRIER": "VARCHAR(16777216)",
+                "TIME_ELAPSED": "NUMBER(38,0)"
+            },
+            "FLIGHT_FARE": {
+                "FLIGHT_ID": "NUMBER(38,0)",
+                "FARE_ID": "NUMBER(38,0)"
+            },
+            "FLIGHT_LEG": {
+                "FLIGHT_ID": "NUMBER(38,0)",
+                "LEG_NUMBER": "NUMBER(38,0)",
+                "LEG_FLIGHT": "NUMBER(38,0)"
+            },
+            "FLIGHT_STOP": {
+                "FLIGHT_ID": "NUMBER(38,0)",
+                "STOP_NUMBER": "NUMBER(38,0)",
+                "STOP_DAYS": "VARCHAR(16777216)",
+                "STOP_AIRPORT": "VARCHAR(16777216)",
+                "ARRIVAL_TIME": "NUMBER(38,0)",
+                "ARRIVAL_AIRLINE": "VARCHAR(16777216)",
+                "ARRIVAL_FLIGHT_NUMBER": "VARCHAR(16777216)",
+                "DEPARTURE_TIME": "NUMBER(38,0)",
+                "DEPARTURE_AIRLINE": "VARCHAR(16777216)",
+                "DEPARTURE_FLIGHT_NUMBER": "VARCHAR(16777216)",
+                "STOP_TIME": "NUMBER(38,0)"
+            },
+            "FOOD_SERVICE": {
+                "MEAL_CODE": "VARCHAR(16777216)",
+                "MEAL_NUMBER": "NUMBER(38,0)",
+                "COMPARTMENT": "VARCHAR(16777216)",
+                "MEAL_DESCRIPTION": "VARCHAR(16777216)"
+            },
+            "GROUND_SERVICE": {
+                "CITY_CODE": "VARCHAR(16777216)",
+                "AIRPORT_CODE": "VARCHAR(16777216)",
+                "TRANSPORT_TYPE": "VARCHAR(16777216)",
+                "GROUND_FARE": "NUMBER(38,0)"
+            },
+            "MONTH": {
+                "MONTH_NUMBER": "NUMBER(38,0)",
+                "MONTH_NAME": "VARCHAR(16777216)"
+            },
+            "RESTRICTION": {
+                "RESTRICTION_CODE": "VARCHAR(16777216)",
+                "ADVANCE_PURCHASE": "NUMBER(38,0)",
+                "STOPOVERS": "VARCHAR(16777216)",
+                "SATURDAY_STAY_REQUIRED": "VARCHAR(16777216)",
+                "MINIMUM_STAY": "NUMBER(38,0)",
+                "MAXIMUM_STAY": "NUMBER(38,0)",
+                "APPLICATION": "VARCHAR(16777216)",
+                "NO_DISCOUNTS": "VARCHAR(16777216)"
+            },
+            "STATE": {
+                "STATE_CODE": "VARCHAR(16777216)",
+                "STATE_NAME": "VARCHAR(16777216)",
+                "COUNTRY_NAME": "VARCHAR(16777216)"
+            },
+            "TIME_INTERVAL": {
+                "PERIOD": "VARCHAR(16777216)",
+                "BEGIN_TIME": "NUMBER(38,0)",
+                "END_TIME": "NUMBER(38,0)"
+            },
+            "TIME_ZONE": {
+                "TIME_ZONE_CODE": "VARCHAR(16777216)",
+                "TIME_ZONE_NAME": "VARCHAR(16777216)",
+                "HOURS_FROM_GMT": "NUMBER(38,0)"
+            }
+        }
+    },
+    "BROKER": {
+        "PUBLIC": {
+            "SBCUSTOMER": {
+                "SBCUSTID": "VARCHAR(20)",
+                "SBCUSTNAME": "VARCHAR(100)",
+                "SBCUSTEMAIL": "VARCHAR(100)",
+                "SBCUSTPHONE": "VARCHAR(20)",
+                "SBCUSTADDRESS1": "VARCHAR(200)",
+                "SBCUSTADDRESS2": "VARCHAR(200)",
+                "SBCUSTCITY": "VARCHAR(50)",
+                "SBCUSTSTATE": "VARCHAR(20)",
+                "SBCUSTCOUNTRY": "VARCHAR(50)",
+                "SBCUSTPOSTALCODE": "VARCHAR(20)",
+                "SBCUSTJOINDATE": "DATE",
+                "SBCUSTSTATUS": "VARCHAR(20)"
+            },
+            "SBDAILYPRICE": {
+                "SBDPTICKERID": "VARCHAR(20)",
+                "SBDPDATE": "DATE",
+                "SBDPOPEN": "NUMBER(10,2)",
+                "SBDPHIGH": "NUMBER(10,2)",
+                "SBDPLOW": "NUMBER(10,2)",
+                "SBDPCLOSE": "NUMBER(10,2)",
+                "SBDPVOLUME": "NUMBER(38,0)",
+                "SBDPEPOCHMS": "NUMBER(38,0)",
+                "SBDPSOURCE": "VARCHAR(50)"
+            },
+            "SBTICKER": {
+                "SBTICKERID": "VARCHAR(20)",
+                "SBTICKERSYMBOL": "VARCHAR(10)",
+                "SBTICKERNAME": "VARCHAR(100)",
+                "SBTICKERTYPE": "VARCHAR(20)",
+                "SBTICKEREXCHANGE": "VARCHAR(50)",
+                "SBTICKERCURRENCY": "VARCHAR(10)",
+                "SBTICKERDB2X": "VARCHAR(20)",
+                "SBTICKERISACTIVE": "BOOLEAN"
+            },
+            "SBTRANSACTION": {
+                "SBTXID": "VARCHAR(50)",
+                "SBTXCUSTID": "VARCHAR(20)",
+                "SBTXTICKERID": "VARCHAR(20)",
+                "SBTXDATETIME": "TIMESTAMP_NTZ(9)",
+                "SBTXTYPE": "VARCHAR(20)",
+                "SBTXSHARES": "NUMBER(10,2)",
+                "SBTXPRICE": "NUMBER(10,2)",
+                "SBTXAMOUNT": "NUMBER(10,2)",
+                "SBTXCCY": "VARCHAR(10)",
+                "SBTXTAX": "NUMBER(10,2)",
+                "SBTXCOMMISSION": "NUMBER(10,2)",
+                "SBTXKPX": "VARCHAR(10)",
+                "SBTXSETTLEMENTDATESTR": "VARCHAR(25)",
+                "SBTXSTATUS": "VARCHAR(10)"
+            }
+        }
+    },
+    "CAR_DEALERSHIP": {
+        "PUBLIC": {}
+    },
+    "DERM_TREATMENT": {
+        "PUBLIC": {}
+    },
+    "EWALLET": {
+        "CONSUMER_DIV": {
+            "COUPONS": {
+                "CID": "NUMBER(38,0)",
+                "MERCHANT_ID": "NUMBER(38,0)",
+                "CODE": "VARCHAR(20)",
+                "DESCRIPTION": "VARCHAR(16777216)",
+                "START_DATE": "DATE",
+                "END_DATE": "DATE",
+                "DISCOUNT_TYPE": "VARCHAR(20)",
+                "DISCOUNT_VALUE": "NUMBER(10,2)",
+                "MIN_PURCHASE_AMOUNT": "NUMBER(10,2)",
+                "MAX_DISCOUNT_AMOUNT": "NUMBER(10,2)",
+                "REDEMPTION_LIMIT": "NUMBER(38,0)",
+                "STATUS": "VARCHAR(20)",
+                "CREATED_AT": "TIMESTAMP_NTZ(9)",
+                "UPDATED_AT": "TIMESTAMP_NTZ(9)"
+            },
+            "MERCHANTS": {
+                "MID": "NUMBER(38,0)",
+                "NAME": "VARCHAR(100)",
+                "DESCRIPTION": "VARCHAR(16777216)",
+                "WEBSITE_URL": "VARCHAR(200)",
+                "LOGO_URL": "VARCHAR(200)",
+                "CREATED_AT": "TIMESTAMP_NTZ(9)",
+                "COUNTRY": "VARCHAR(2)",
+                "STATE": "VARCHAR(50)",
+                "CITY": "VARCHAR(50)",
+                "POSTAL_CODE": "VARCHAR(20)",
+                "ADDRESS": "VARCHAR(16777216)",
+                "STATUS": "VARCHAR(20)",
+                "CATEGORY": "VARCHAR(50)",
+                "SUB_CATEGORY": "VARCHAR(50)",
+                "MCC": "NUMBER(38,0)",
+                "CONTACT_NAME": "VARCHAR(100)",
+                "CONTACT_EMAIL": "VARCHAR(100)",
+                "CONTACT_PHONE": "VARCHAR(20)"
+            },
+            "USERS": {
+                "UID": "NUMBER(38,0)",
+                "USERNAME": "VARCHAR(50)",
+                "EMAIL": "VARCHAR(100)",
+                "PHONE_NUMBER": "VARCHAR(20)",
+                "CREATED_AT": "TIMESTAMP_NTZ(9)",
+                "LAST_LOGIN_AT": "TIMESTAMP_NTZ(9)",
+                "USER_TYPE": "VARCHAR(20)",
+                "STATUS": "VARCHAR(20)",
+                "COUNTRY": "VARCHAR(2)",
+                "ADDRESS_BILLING": "VARCHAR(16777216)",
+                "ADDRESS_DELIVERY": "VARCHAR(16777216)",
+                "KYC_STATUS": "VARCHAR(20)",
+                "KYC_VERIFIED_AT": "TIMESTAMP_NTZ(9)"
+            },
+            "USER_SESSIONS": {
+                "USER_ID": "NUMBER(38,0)",
+                "SESSION_START_TS": "TIMESTAMP_NTZ(9)",
+                "SESSION_END_TS": "TIMESTAMP_NTZ(9)",
+                "DEVICE_TYPE": "VARCHAR(10)",
+                "DEVICE_ID": "VARCHAR(36)"
+            },
+            "USER_SETTING_SNAPSHOT": {
+                "USER_ID": "NUMBER(38,0)",
+                "SNAPSHOT_DATE": "DATE",
+                "TX_LIMIT_DAILY": "NUMBER(10,2)",
+                "TX_LIMIT_MONTHLY": "NUMBER(10,2)",
+                "MEMBERSHIP_STATUS": "NUMBER(38,0)",
+                "PASSWORD_HASH": "VARCHAR(255)",
+                "API_KEY": "VARCHAR(255)",
+                "VERIFIED_DEVICES": "VARCHAR(16777216)",
+                "VERIFIED_IPS": "VARCHAR(16777216)",
+                "MFA_ENABLED": "BOOLEAN",
+                "MARKETING_OPT_IN": "BOOLEAN",
+                "CREATED_AT": "TIMESTAMP_NTZ(9)"
+            },
+            "WALLET_MERCHANT_BALANCE_DAILY": {
+                "MERCHANT_ID": "NUMBER(38,0)",
+                "BALANCE": "NUMBER(10,2)",
+                "UPDATED_AT": "TIMESTAMP_NTZ(9)"
+            },
+            "WALLET_USER_BALANCE_DAILY": {
+                "USER_ID": "NUMBER(38,0)",
+                "BALANCE": "NUMBER(10,2)",
+                "UPDATED_AT": "TIMESTAMP_NTZ(9)"
+            }
+        },
+        "PUBLIC": {}
+    },
+    "GEOGRAPHY": {
+        "PUBLIC": {
+            "BORDER_INFO": {
+                "STATE_NAME": "VARCHAR(16777216)",
+                "BORDER": "VARCHAR(16777216)"
+            },
+            "CITY": {
+                "CITY_NAME": "VARCHAR(16777216)",
+                "POPULATION": "NUMBER(38,0)",
+                "COUNTRY_NAME": "VARCHAR(16777216)",
+                "STATE_NAME": "VARCHAR(16777216)"
+            },
+            "HIGHLOW": {
+                "STATE_NAME": "VARCHAR(16777216)",
+                "HIGHEST_ELEVATION": "VARCHAR(16777216)",
+                "LOWEST_POINT": "VARCHAR(16777216)",
+                "HIGHEST_POINT": "VARCHAR(16777216)",
+                "LOWEST_ELEVATION": "VARCHAR(16777216)"
+            },
+            "LAKE": {
+                "LAKE_NAME": "VARCHAR(16777216)",
+                "AREA": "FLOAT",
+                "COUNTRY_NAME": "VARCHAR(16777216)",
+                "STATE_NAME": "VARCHAR(16777216)"
+            },
+            "MOUNTAIN": {
+                "MOUNTAIN_NAME": "VARCHAR(16777216)",
+                "MOUNTAIN_ALTITUDE": "NUMBER(38,0)",
+                "COUNTRY_NAME": "VARCHAR(16777216)",
+                "STATE_NAME": "VARCHAR(16777216)"
+            },
+            "RIVER": {
+                "RIVER_NAME": "VARCHAR(16777216)",
+                "LENGTH": "NUMBER(38,0)",
+                "COUNTRY_NAME": "VARCHAR(16777216)",
+                "TRAVERSE": "VARCHAR(16777216)"
+            },
+            "STATE": {
+                "STATE_NAME": "VARCHAR(16777216)",
+                "POPULATION": "NUMBER(38,0)",
+                "AREA": "FLOAT",
+                "COUNTRY_NAME": "VARCHAR(16777216)",
+                "CAPITAL": "VARCHAR(16777216)",
+                "DENSITY": "FLOAT"
+            }
+        }
+    },
+    "RESTAURANTS": {
+        "PUBLIC": {
+            "GEOGRAPHIC": {
+                "CITY_NAME": "VARCHAR(16777216)",
+                "COUNTY": "VARCHAR(16777216)",
+                "REGION": "VARCHAR(16777216)"
+            },
+            "LOCATION": {
+                "RESTAURANT_ID": "NUMBER(38,0)",
+                "HOUSE_NUMBER": "NUMBER(38,0)",
+                "STREET_NAME": "VARCHAR(16777216)",
+                "CITY_NAME": "VARCHAR(16777216)"
+            },
+            "RESTAURANT": {
+                "ID": "NUMBER(38,0)",
+                "NAME": "VARCHAR(16777216)",
+                "FOOD_TYPE": "VARCHAR(16777216)",
+                "CITY_NAME": "VARCHAR(16777216)",
+                "RATING": "FLOAT"
+            }
+        }
+    },
+    "SCHOLAR": {
+        "PUBLIC": {
+            "AUTHOR": {
+                "AUTHORID": "NUMBER(38,0)",
+                "AUTHORNAME": "VARCHAR(16777216)"
+            },
+            "CITE": {
+                "CITINGPAPERID": "NUMBER(38,0)",
+                "CITEDPAPERID": "NUMBER(38,0)"
+            },
+            "DATASET": {
+                "DATASETID": "NUMBER(38,0)",
+                "DATASETNAME": "VARCHAR(16777216)"
+            },
+            "FIELD": {
+                "FIELDID": "NUMBER(38,0)"
+            },
+            "JOURNAL": {
+                "JOURNALID": "NUMBER(38,0)",
+                "JOURNALNAME": "VARCHAR(16777216)"
+            },
+            "KEYPHRASE": {
+                "KEYPHRASEID": "NUMBER(38,0)",
+                "KEYPHRASENAME": "VARCHAR(16777216)"
+            },
+            "PAPER": {
+                "PAPERID": "NUMBER(38,0)",
+                "TITLE": "VARCHAR(16777216)",
+                "VENUEID": "NUMBER(38,0)",
+                "YEAR": "NUMBER(38,0)",
+                "NUMCITING": "NUMBER(38,0)",
+                "NUMCITEDBY": "NUMBER(38,0)",
+                "JOURNALID": "NUMBER(38,0)"
+            },
+            "PAPERDATASET": {
+                "PAPERID": "NUMBER(38,0)",
+                "DATASETID": "NUMBER(38,0)"
+            },
+            "PAPERFIELD": {
+                "FIELDID": "NUMBER(38,0)",
+                "PAPERID": "NUMBER(38,0)"
+            },
+            "PAPERKEYPHRASE": {
+                "PAPERID": "NUMBER(38,0)",
+                "KEYPHRASEID": "NUMBER(38,0)"
+            },
+            "VENUE": {
+                "VENUEID": "NUMBER(38,0)",
+                "VENUENAME": "VARCHAR(16777216)"
+            },
+            "WRITES": {
+                "PAPERID": "NUMBER(38,0)",
+                "AUTHORID": "NUMBER(38,0)"
+            }
+        }
+    },
+    "YELP": {
+        "PUBLIC": {
+            "BUSINESS": {
+                "BID": "NUMBER(38,0)",
+                "BUSINESS_ID": "VARCHAR(16777216)",
+                "NAME": "VARCHAR(16777216)",
+                "FULL_ADDRESS": "VARCHAR(16777216)",
+                "CITY": "VARCHAR(16777216)",
+                "LATITUDE": "VARCHAR(16777216)",
+                "LONGITUDE": "VARCHAR(16777216)",
+                "REVIEW_COUNT": "NUMBER(38,0)",
+                "IS_OPEN": "NUMBER(38,0)",
+                "STATE": "VARCHAR(16777216)"
+            },
+            "CATEGORY": {
+                "ID": "NUMBER(38,0)",
+                "BUSINESS_ID": "VARCHAR(16777216)",
+                "CATEGORY_NAME": "VARCHAR(16777216)"
+            },
+            "CHECKIN": {
+                "CID": "NUMBER(38,0)",
+                "BUSINESS_ID": "VARCHAR(16777216)",
+                "COUNT": "NUMBER(38,0)",
+                "DAY": "VARCHAR(16777216)"
+            },
+            "NEIGHBOURHOOD": {
+                "ID": "NUMBER(38,0)",
+                "BUSINESS_ID": "VARCHAR(16777216)",
+                "NEIGHBOURHOOD_NAME": "VARCHAR(16777216)"
+            },
+            "REVIEW": {
+                "RID": "NUMBER(38,0)",
+                "BUSINESS_ID": "VARCHAR(16777216)",
+                "USER_ID": "VARCHAR(16777216)",
+                "RATING": "FLOAT",
+                "TEXT": "VARCHAR(16777216)",
+                "YEAR": "NUMBER(38,0)",
+                "MONTH": "VARCHAR(16777216)"
+            },
+            "TIP": {
+                "TIP_ID": "NUMBER(38,0)",
+                "BUSINESS_ID": "VARCHAR(16777216)",
+                "TEXT": "VARCHAR(16777216)",
+                "USER_ID": "VARCHAR(16777216)",
+                "LIKES": "NUMBER(38,0)",
+                "YEAR": "NUMBER(38,0)",
+                "MONTH": "VARCHAR(16777216)"
+            },
+            "USERS": {
+                "UID": "NUMBER(38,0)",
+                "USER_ID": "VARCHAR(16777216)",
+                "NAME": "VARCHAR(16777216)"
+            }
+        }
+    }
+}

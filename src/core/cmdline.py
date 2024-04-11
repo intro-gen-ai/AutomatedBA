@@ -54,7 +54,8 @@ def main():
 
     m_set = set()
     m_set.add(1)
-
+    s_set = set()
+    s_set.add(1)
     layoutProcess(e_set, m_set, p_set, i_set, s_set)
 
 if __name__ == "__main__":

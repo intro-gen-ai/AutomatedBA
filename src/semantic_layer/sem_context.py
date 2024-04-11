@@ -7,5 +7,5 @@ class SemanticContext(BaseSemantics):
         super().__init__(args=args)
         
 
-    def Run(self):
+    def run(self):
         return {"semantics_context": self.schema}

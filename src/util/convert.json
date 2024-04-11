@@ -73,7 +73,6 @@
       "30": "src/util/instruction_sets/context_control_5.txt"
     },
     "s": {
-      "1": "RandomWord9",
-      "2": "RandomWord10"
+      "1": "SemanticContext"
     }
   }
