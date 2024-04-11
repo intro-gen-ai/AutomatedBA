@@ -7,12 +7,12 @@ import os
 class KnowledgeInjectionStep(Step):
     def __init__(
         self,
-        order,
         client,
         collection_name,
         file_path,
         model="text-embedding-3-small",
         top_k=5,
+        order = 0,
     ):
         super().__init__()
         self.order = order
