@@ -2,6 +2,7 @@ from ..step import Step
 from langchain_openai import OpenAIEmbeddings
 from pymilvus import connections, Collection
 
+# TODO return from the step run should look like list(userprompt, [relevant knowldege])
 
 class KnowledgeInjectionStep(Step):
     def __init__(
