@@ -17,3 +17,7 @@ class BaseSemantics(Step):
     def getRequirements(self):
         return None
 
+    @abstractmethod
+    def run(self, args):
+        pass
+
