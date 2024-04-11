@@ -1,16 +1,23 @@
 import configparser
-from pymilvus import connections, Collection, FieldSchema, CollectionSchema, DataType, utility
+from pymilvus import (
+    connections,
+    Collection,
+    FieldSchema,
+    CollectionSchema,
+    DataType,
+    utility,
+)
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     # connect to milvus
     cfp = configparser.RawConfigParser()
-    cfp.read('config_serverless.ini')
-    milvus_uri = cfp.get('prior-knowledge', 'uri')
-    token = cfp.get('prior-knowledge', 'token')
+    files_read = cfp.read("config_serverless.ini")
 
-    connections.connect("default",
-                        uri=milvus_uri,
-                        token=token)
+    # TO DO: un-hardcode
+    milvus_uri = "https://in03-10fc789d75c4b64.api.gcp-us-west1.zillizcloud.com"
+    token = "bf430bccd895611a762829314dcf5205ba81e416f365fa6104f94f4851542dfe3ba7a00a2453d61b20bd928a80a7d5b1453cc157"
+
+    connections.connect("default", uri=milvus_uri, token=token)
     print(f"Connecting to DB: {milvus_uri}")
 
     # BA specific domain knowledge
