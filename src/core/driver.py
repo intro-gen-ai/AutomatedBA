@@ -70,7 +70,7 @@ def layoutProcess(e_set, m_set, p_set, i_set, s_set, text_prompt = None):
 def runProcess(steps):
     # we can add looping later
     print("Running Process")
-    k = None
+    k = {}
     for i in steps:
         print(i.getOrder())
         j=i.run(k)
