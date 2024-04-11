@@ -8,6 +8,11 @@ from ..util import ControlDict
 from src import model
 from src.prompt import BasePrompt
 from src.get_instance import get_instance
+from src.util import decrypt_externally
+from ..step import Step
+from src.encoding.encoding import KnowledgeInjectionStep
+from langchain_openai import OpenAIEmbeddings
+
 
 
 def layoutProcess(e_set, m_set, p_set, i_set, s_set, text_prompt = None):
@@ -16,9 +21,19 @@ def layoutProcess(e_set, m_set, p_set, i_set, s_set, text_prompt = None):
     p_s = list()
     i_s = list()
     print("entering layout")
-# TODO not implemented
-    # for i in e_set:
-    #     e.append(converter.convert( ('e', i) ))
+    
+    # TODO DOUBLE CHECK IMPLEMENTATION
+    # Apr 11: 02:16
+    for i in e_set:
+        config_entry = converter.convert(('e', i))
+        step_instance = KnowledgeInjectionStep(
+                client=OpenAIEmbeddings(decrypt_externally('.openai_secret')),
+                collection_name=f"{config_entry}",
+                file_path=f"src/encoding/data/{config_entry}.txt",  # Example dynamic path based on identifier
+                model="text-embedding-3-small",  # Customize as needed
+                top_k=5,
+                order=int(i))  # Example, setting order based on identifier
+        steps.append(step_instance)
 
     for i in m_set:
         print(converter.convert( 'm', i ))
@@ -30,7 +45,7 @@ def layoutProcess(e_set, m_set, p_set, i_set, s_set, text_prompt = None):
     for i in i_set:
         p_s.append(converter.convert( ('i', i) ))
 
-# TODO not implemeneted
+    # TODO not implemeneted
     # for i in s_set:
     #     s.append(converter.convert( ('s', i) ))
     # if len(i_set) > 1:
