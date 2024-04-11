@@ -17,8 +17,10 @@ def validate_file_exists(file_name):
     # Construct the full path to the file
     dir_path = os.path.dirname(os.path.realpath(__file__))  
     # full_path = os.path.join(dir_path, file_name)
-    full_path = os.path.join(dir_path, "keys", file_name)
-
+    if file_name[0] == '.':
+        full_path = os.path.join(dir_path, "keys", file_name)
+    else:
+        full_path = os.path.join(dir_path, file_name)
     # Check if the file exists
     if os.path.exists(full_path):
         return True
@@ -27,11 +29,13 @@ def validate_file_exists(file_name):
 
 def create_requirement_file(file_name, input):
     dir_path = os.path.dirname(os.path.realpath(__file__))  
-    # full_path = os.path.join(dir_path, file_name)
-    full_path = os.path.join(dir_path, "keys", file_name)
+
     if file_name[0] == '.':
+        full_path = os.path.join(dir_path, "keys", file_name)
         encrypt_externally(input, file_name)
+        
     else:
+        full_path = os.path.join(dir_path, file_name)
         parts = file_name.split('.')
         if len(parts) > 1:
             if parts[-1] == 'json':

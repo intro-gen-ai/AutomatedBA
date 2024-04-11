@@ -11,6 +11,8 @@ from .encrypt_keys import encrypt_externally
 
 from .manage_requirement import validate_file_exists, create_requirement_file, get_requirement_file
 
+from .snowflakemanager import SnowflakeManager
+
 # Other parts of your project can now access ControlDict, decrypt_externally, and encrypt_externally directly
 # from the util package like this:
 # from automatedba.util import ControlDict, decrypt_externally, encrypt_externally

@@ -1,1 +1,1 @@
-# empty for now
+from .semantics_template import BaseSemantics
