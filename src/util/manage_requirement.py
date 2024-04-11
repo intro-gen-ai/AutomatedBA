@@ -53,9 +53,9 @@ def get_requirement_file(file_name):
     if file_name[0] == '.':
         full_path = os.path.join(dir_path, "keys", file_name)
         try:
-            return decrypt_externally(file_name)
+            return decrypt_externally(file_name), None
         except: 
-            return ""
+            return "", None
     else:
         parts = file_name.split('.')
         if len(parts) > 1:
@@ -65,13 +65,13 @@ def get_requirement_file(file_name):
                         data = json.load(json_file)
                         # Convert JSON data to string
                         json_string = json.dumps(data)
-                        return json_string
+                        return json_string, data
                 except:
                     return ""
             elif parts[-1] == 'txt':
                 try:
                     with open(full_path, 'r') as text_file:
                         text_string = text_file.read()
-                        return text_string
+                        return text_string, None
                 except:
-                    return ""
+                    return "", None

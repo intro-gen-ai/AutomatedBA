@@ -86,7 +86,7 @@ if not selected_value == options[0]:
                     index = 0,
                 )
         if not reqs[0] == select:
-            text_input = st.text_area("Enter text:", value = get_requirement_file(select))
+            text_input = st.text_area("Enter text:", value = get_requirement_file(select)[0])
             submit_button = st.button("Submit")
             if submit_button:
                 try:

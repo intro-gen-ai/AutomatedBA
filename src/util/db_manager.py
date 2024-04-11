@@ -48,10 +48,18 @@ class DbInstance:
             print("Connected to Snowflake successfully.")
         except Exception as e:
             print("Error connecting to Snowflake:", str(e))
+    
+    
 
 def main():
+    b = get_requirement_file("config_storage/snowflake_connector.json")[1]
     a= DbInstance()
     print(a.get_config())
+    try:
+        a.connect()
+        print("sucessful connnection")
+    except:
+        print("failed to connect")
 
 if __name__ == "__main__":
     main()
