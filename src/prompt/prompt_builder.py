@@ -6,7 +6,7 @@ def build(user_in, args):
     cwd = Path.cwd()
     
     converter = ControlDict()
-    m, p, i, c = args
+    m, p, i, s = args
     model = converter.convert( 'm', m )
     pre_prompt = open((cwd / converter.convert( 'p', p )).resolve(), 'r').read()
     instruction_set = open((cwd / converter.convert( 'i', i )).resolve(), 'r').read()
@@ -25,6 +25,6 @@ def build(user_in, args):
     prompt = prompt.replace('`{preprompt}`', pre_prompt)
     prompt = prompt.replace('`{instructions}`', instruction_set)
     prompt = prompt.replace('`{user_question}`', user_in)
-    prompt = prompt.replace('{table_metadata_string}', c)
+    prompt = prompt.replace('{table_metadata_string}', s)
     
     return prompt
