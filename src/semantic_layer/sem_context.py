@@ -9,4 +9,13 @@ class SemanticContext(BaseSemantics):
 
     def run(self, args):
         args["semantics_context"] = self.schema
-        return {args}
+        return args
+
+def main():
+    a = SemanticContext()
+    b = a.schema
+    c = a.run({})
+    print(c)
+
+if __name__ == "__main__":
+    main()
