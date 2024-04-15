@@ -25,9 +25,9 @@ def layoutProcess(e_set, m_set, p_set, i_set, s_set, text_prompt = None):
     # TODO DOUBLE CHECK IMPLEMENTATION
     # Apr 11: 02:16
     for i in e_set:
-        config_entry = converter.convert(('e', i))
+        config_entry = converter.convert('e', i)
         step_instance = KnowledgeInjectionStep(
-                client=OpenAIEmbeddings(decrypt_externally('.openai_secret')),
+                client=OpenAIEmbeddings(api_key = decrypt_externally('.openai_secret')),
                 collection_name=f"{config_entry}",
                 file_path=f"src/encoding/data/{config_entry}.txt",  # Example dynamic path based on identifier
                 model="text-embedding-3-small",  # Customize as needed
@@ -40,10 +40,10 @@ def layoutProcess(e_set, m_set, p_set, i_set, s_set, text_prompt = None):
         steps.append(get_instance(model, converter.convert( 'm', i ) ) )
 
     for i in p_set:
-        i_s.append(converter.convert( ('p', i) ))
+        i_s.append(converter.convert('p', i))
 
     for i in i_set:
-        p_s.append(converter.convert( ('i', i) ))
+        p_s.append(converter.convert('i', i))
 
     for i in s_set:
         steps.append(get_instance(semantic_layer, converter.convert('s', i) ))

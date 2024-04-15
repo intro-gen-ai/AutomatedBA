@@ -1,5 +1,7 @@
 import openai
 from src.util import decrypt_externally
+from prompt_builder import build
+
 
 class PreMask():
     def __init__(self):
@@ -34,4 +36,6 @@ selector = PreMask()
 original_prompt = "I want a SQL function for joinining two named Hello and Goodbye"
 terms_list = ["join", "create", "colon", "soccer"]
 result = selector.select_terms(original_prompt, terms_list)
-print(result)
+
+final = build(result, "Gpt_3_5_Turbo", "../util/instruction_sets/context_control_1.txt", "../util/pre_prompts/context_control_1.txt")
+print(final)
