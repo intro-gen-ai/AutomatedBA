@@ -72,7 +72,10 @@ for i, (option_group, options) in enumerate(optionset.data_dict.items()):
     else:
         placeholder = ["Choose a " + convert[option_group]]
         inverted_options = {v: k for k, v in options.items()}
-        options_list = placeholder + list(inverted_options.keys())
+        if option_group == "s":
+            options_list = list(inverted_options.keys())
+        else:
+            options_list = placeholder + list(inverted_options.keys())
         with columns[i]:
             selected_value = st.selectbox(
                 label= convert[option_group],
