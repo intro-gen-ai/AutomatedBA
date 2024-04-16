@@ -5,7 +5,7 @@ from openai import OpenAI, RateLimitError
 from langchain.text_splitter import CharacterTextSplitter
 from pymilvus import connections, Collection, FieldSchema, DataType, CollectionSchema
 from langchain_community.document_loaders import TextLoader
-
+from src.util import get_requirement_file 
 
 def get_embedding_with_retry(
     client, text, model="text-embedding-3-small", max_retries=5
@@ -41,7 +41,7 @@ def check_milvus_connection():
     return True
 
 
-def check_data_folder(path="./data"):
+def check_data_folder(path="../data/"):
     if not os.path.exists(path):
         print(f"Data folder '{path}' does not exist.")
         return False
@@ -87,21 +87,21 @@ def vectorize_and_store(client, file_path, collection_name):
 
 
 def main(client):
-    if check_milvus_connection() and check_data_folder("./data"):
+    if check_milvus_connection() and check_data_folder("../data"):
         # Vectorize and store BA knowledge
-        ba_file_path = "./data/ba_knowledge.txt"
+        ba_file_path = "../data/ba_knowledge.txt"
         vectorize_and_store(client, ba_file_path, "ba_knowledge")
 
         # Vectorize and store SQL knowledge
-        sql_file_path = "./data/sql_knowledge.txt"
+        sql_file_path = "../data/sql_knowledge.txt"
         vectorize_and_store(client, sql_file_path, "sql_knowledge")
 
         connections.disconnect("default")
 
-
 if __name__ == "__main__":
-    openai_api_key = os.getenv("OPENAI_API_KEY")
+    openai_api_key = get_requirement_file(".openai_secret")
+    # openai_api_key = os.getenv()
     if not openai_api_key:
-        openai_api_key = "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"
+        raise KeyError("No OpenAI Key Provided")
     client = OpenAI(api_key=openai_api_key)
     main(client)
