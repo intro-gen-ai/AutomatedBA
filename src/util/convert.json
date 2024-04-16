@@ -5,7 +5,7 @@
     },
     "m": {
       "1": "Gpt_3_5_Turbo",
-      "2": "Gpt_4_turbo",
+      "2": "Gpt_4_Turbo",
       "3": "Open_mistral_7b",
       "4": "Llama_7b_chat"
     },
