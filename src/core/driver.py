@@ -9,6 +9,8 @@ from langchain_openai import OpenAIEmbeddings
 from src import semantic_layer
 from src.prompt import prompt_builder
 
+def make_user_prompt():
+    return input("Input your prompt: ") 
 
 def layoutProcess(e_set, m_set, p_set, i_set, s_set, text_prompt = None, database = None):
     converter = ControlDict()
@@ -49,7 +51,12 @@ def layoutProcess(e_set, m_set, p_set, i_set, s_set, text_prompt = None, databas
     order_steps = sorted(steps, key=lambda x: x.getOrder())
     # snowflake is not set up so we cannot do that set yet.
     # TODO ananth once u build the integrations for this tell me and I will insert it
+    if len(s_set) < 1:
+        return "SEMANTICS REQUIRED" 
 
+
+    if not text_prompt:
+        text_prompt = make_user_prompt()
 
     bdict = {'user_input' : text_prompt, "database" : database}
     if not i_s == list():

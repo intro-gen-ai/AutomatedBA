@@ -4,9 +4,6 @@ from . import prompt_text
 from pathlib import Path
 import os
 
-def make_user_prompt():
-    return input("Input your prompt: ") 
-
 
 class BasePrompt(Step):
     """
