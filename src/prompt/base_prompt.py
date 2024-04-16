@@ -58,6 +58,7 @@ def form_prompt(base_prompt):
     # r = RAG as a string (hopefully)
     instruction = ""
     pre_prompt = ""
+    user_message = "User Input: `{preprompt}` `{user_question}`. These definitions may help: `{rag}`."
     try:
         instruction = open(os.path.join(cwd, base_prompt.args['instructions_file']), 'r').read()
         base_prompt.args['instruction'] = instruction
@@ -72,43 +73,42 @@ def form_prompt(base_prompt):
     try:
         model = base_prompt.args['model_name']
         if "Gpt" in model or "gpt" in model:
-            prompt = open(os.path.join(cwd,'src/prompt/prompt_text/prompt_openai.md')).read()
-            system_message = "Your task is to convert a text question to a SQL query that runs on Snowflake, given a database schema."
+            system_message = open(os.path.join(cwd,'src/prompt/prompt_text/prompt_openai.md')).read()
         elif "claude" in model:
-            prompt = open(os.path.join(cwd,'src/prompt/prompt_text/prompt_anthropic.md')).read()
-            system_message = "Your task is to convert a text question to a SQL query that runs on Snowflake, given a database schema. Return the SQL as a markdown string, nothing else."
+            system_message = open(os.path.join(cwd,'src/prompt/prompt_text/prompt_anthropic.md')).read()
+
         elif "gemini" in model:
-            prompt = open(os.path.join(cwd,'src/prompt/prompt_text/prompt_gemini.md')).read()
-            system_message = "Your task is to convert a text question to a SQL query that runs on Snowflake given a database schema. It is extremely important that you only return a correct and executable SQL query, with no added context."
+            system_message = open(os.path.join(cwd,'src/prompt/prompt_text/prompt_gemini.md')).read()
+
         elif "mistral" in model:
-            prompt = open(os.path.join(cwd,'src/prompt/prompt_text/prompt_mistral.md')).read()
-            system_message = "Your task is to convert a text question to a SQL query that runs on Snowflake given a database schema. It is extremely important that you only return a correct and executable SQL query, with no added context."
+            system_message = open(os.path.join(cwd,'src/prompt/prompt_text/prompt_mistral.md')).read()
+
         else:
-            prompt = open(os.path.join(cwd,'src/prompt/prompt_text/prompt.md')).read()
-            system_message = "Your task is to convert a text question to a SQL query that runs on Snowflake given a database schema. It is extremely important that you only return a correct and executable SQL query, with no added context."
+            system_message = open(os.path.join(cwd,'src/prompt/prompt_text/prompt.md')).read()
+
         user_in = ""
         try:
             user_in = base_prompt.args['user_input']
         except:
             raise ValueError("No user message!!!")
 
-        prompt = prompt.replace('`{preprompt}`', pre_prompt)
-        prompt = prompt.replace('`{user_question}`', user_in)
-        prompt = prompt.replace('`{instruction_set}`', instruction)
+        user_message = user_message.replace('`{preprompt}`', pre_prompt)
+        user_message = user_message.replace('`{user_question}`', user_in)
+        system_message = system_message.replace('`{instruction_set}`', instruction)
         try:
             a = base_prompt.args['rag_set']
             rag = ""
             for i in a:
                 # TODO ananth fix this when you get it
                 b = b + " | " + i
-            prompt = prompt.replace('`{rag}`', rag)
+            user_message = user_message.replace('`{rag}`', rag)
         except:
-            prompt = prompt.replace('`{rag}`', "We don't have an relevant information to insert")
+            user_message = user_message.replace('`{rag}`', "We don't have an relevant information to insert")
         
         try:
             s = base_prompt.args['semantics_context']
-            prompt = prompt.replace('{table_metadata_string}', str(s))
-            base_prompt.args['user_message'] = user_in
+            system_message = system_message.replace('{table_metadata_string}', str(s))
+            base_prompt.args['user_message'] = user_message
             base_prompt.args['system_message'] = system_message
         except:
             ValueError("No semantics layer included - cannot view database schema")
