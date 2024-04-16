@@ -17,37 +17,29 @@ class BaseModel(Step):
         pass  # No need to raise NotImplementedError here due to @abstractmethod
 
     def get_sql(self, msg):
-        # Convert the entire string to lower case to ensure case insensitivity
-        lower_case_string = msg.lower()
+        # Convert the entire string to lower case
+        lower_case_string = input_string.lower()
 
-        # Initialize an empty string to collect all found substrings
+        # Initialize an empty string to append the found substring
         result_string = ""
 
-        # Start searching from the beginning of the string
-        start_index = 0
+        # Find the starting index of the substring "select"
+        start_index = lower_case_string.find("select")
+        if start_index == -1:
+            return "The keyword 'select' was not found."
 
-        # Loop until there are no more "select" keywords
-        while True:
-            # Find the starting index of the substring "select"
-            start_index = lower_case_string.find("select", start_index)
-            if start_index == -1:
-                break  # Break the loop if "select" is not found
+        # Find the index of the next semicolon after "select"
+        end_index = lower_case_string.find(";", start_index)
+        if end_index == -1:
+            return "No terminating semicolon (';') found after 'select'."
 
-            # Find the index of the next semicolon after "select"
-            end_index = lower_case_string.find(";", start_index)
-            if end_index == -1:
-                break  # Break the loop if there is no semicolon after "select"
+        # Extract the substring from "select" to the next ";"
+        substring = lower_case_string[start_index:end_index + 1]
 
-            # Extract the substring from "select" to the next ";"
-            substring = lower_case_string[start_index:end_index + 1]
+        # Append the found substring to the result string
+        result_string += substring
 
-            # Append the found substring to the result string, add a newline for separation
-            result_string += substring + "\n"
-
-            # Move start index past the current semicolon to search for the next "select"
-            start_index = end_index + 1
-
-        return result_string.strip()
+        return result_string
 
     def run(self, args):
         temp = self.call_model(args)
