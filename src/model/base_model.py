@@ -18,7 +18,7 @@ class BaseModel(Step):
 
     def get_sql(self, msg):
         # Convert the entire string to lower case
-        lower_case_string = input_string.lower()
+        lower_case_string = msg.lower()
 
         # Initialize an empty string to append the found substring
         result_string = ""
