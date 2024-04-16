@@ -28,7 +28,11 @@ def response_generator(selection, prompt):
     p_set = selection['p']
     i_set = selection['i']
     s_set = selection['s']
-    return layoutProcess(e_set, m_set, p_set, i_set, s_set, prompt)
+    response, result = layoutProcess(e_set, m_set, p_set, i_set, s_set, prompt)
+    if result:
+        return response, result
+    else:
+        return response, None
 
 multiselect = ['e']
 
@@ -124,11 +128,14 @@ if allow_input:
             st.markdown(prompt)
         # Add user message to chat history
         st.session_state.messages.append({"role": "user", "content": prompt})
-        response = response_generator(selected_keys, prompt)
+        response, result = response_generator(selected_keys, prompt)
         with st.chat_message("assistant"):
             st.write(response)
+            if not result == None:
+                st.dataframe(result)
         # Add assistant response to chat history
         st.session_state.messages.append({"role": "assistant", "content": response})
+        
 else:
     if prompt := st.chat_input(bottomText):
         # Display user message in chat message container

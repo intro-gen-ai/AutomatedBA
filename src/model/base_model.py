@@ -16,15 +16,6 @@ class BaseModel(Step):
     def call_model(self, input) -> ModelResult:
         pass  # No need to raise NotImplementedError here due to @abstractmethod
 
-    def run(self, args):
-        temp = self.call_model(args)
-        args['response_log'] = temp.log
-        args['response_confidence'] = temp.confidence
-        args['response_message'] = temp.message
-        args['response_code'] = temp.code
-        args['response_execution_time'] = temp.execution_time
-        return args
-
     def get_sql(self, msg):
         # Convert the entire string to lower case to ensure case insensitivity
         lower_case_string = msg.lower()
@@ -57,3 +48,12 @@ class BaseModel(Step):
             start_index = end_index + 1
 
         return result_string.strip()
+
+    def run(self, args):
+        temp = self.call_model(args)
+        args['response_log'] = temp.log
+        args['response_confidence'] = temp.confidence
+        args['response_message'] = temp.message
+        args['response_code'] = self.get_sql(temp.message)
+        args['response_execution_time'] = temp.execution_time
+        return args
