@@ -100,13 +100,15 @@ def runProcess(steps, args):
     if k["response_message"] is None:
         raise KeyError("Model Failed")
     if k["response_code"] is not None:
-        snowflake.connect()
+        snowflake.connect(k['database'])
         try:
-            query_result = snowflake.query_df(k["response_code"])
+            query_result = snowflake.query_df(str(k["response_code"]))
             print(query_result.head(10))
             return k["response_message"], query_result
         except Exception as err:
-            error_df = pd.DataFrame({"Snowflake Return": [str(err)]})
+            error_df = pd.DataFrame({"Snowflake Error Message": [str(err.msg)], "Snowflake Raw Error" : [str(err.raw_msg)], "Messages" : [str(k["response_message"])]})
+            print(str(k["response_code"]))
+            print(err.msg)
             return k["response_message"], error_df
     else:
         return k["response_message"], None

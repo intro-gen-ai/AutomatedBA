@@ -62,7 +62,9 @@ def main():
     p_set.add(1)
 
 
-    layoutProcess(e_set, m_set, p_set, i_set, s_set)
-
+    a1 , b1 =layoutProcess(e_set, m_set, p_set, i_set, s_set)
+    print(a1)
+    print(b1.head(10))
+    
 if __name__ == "__main__":
     main()

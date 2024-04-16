@@ -111,13 +111,6 @@ class SnowflakeManager:
             cursor.close()
 
     def query_df(self, sql):
-        # cursor = self.conn.cursor()
-        # try:
-        #     cursor.execute(sql)
-        #     return cursor.fetch_pandas_all()
-        # finally:
-        #     cursor.close()
-
         cursor = self.conn.cursor()
         try:
             cursor.execute(sql)
@@ -127,7 +120,16 @@ class SnowflakeManager:
         finally:
             cursor.close()
 
-    def connect(self):
+        # cursor = self.conn.cursor()
+        # try:
+        #     cursor.execute(sql)
+        #     return cursor.fetch_pandas_all()
+        # finally:
+        #     cursor.close()
+
+    def connect(self, db = None):
+        if db != None:
+            self.database = db
         if not (self.account or self.user or self.password):
             raise ValueError("Invalid Config !!! Ensure Config is Set")
         try:
