@@ -133,7 +133,3 @@ def form_prompt(base_prompt):
 #     'user_message': prompt.user_message
 #     }
 
-
-#     # TODO add something here w/ some way you determined to input pre_prompt_info once we insert it
-#     return data
-    
