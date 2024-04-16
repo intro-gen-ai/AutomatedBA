@@ -10,6 +10,7 @@ from openai import OpenAI
 from src import semantic_layer
 from src.prompt import prompt_builder
 from src.util import SnowflakeManager
+import pandas as pd
 
 def make_user_prompt():
     return input("Input your prompt: ") 
@@ -100,9 +101,13 @@ def runProcess(steps, args):
         raise KeyError("Model Failed")
     if k["response_code"] is not None:
         snowflake.connect()
-        query_result = snowflake.query_df(k["response_code"])
-        print(query_result.head(10))
-        return k["response_message"], query_result
+        try:
+            query_result = snowflake.query_df(k["response_code"])
+            print(query_result.head(10))
+            return k["response_message"], query_result
+        except Exception as err:
+            error_df = pd.DataFrame({"Snowflake Return": [str(err)]})
+            return k["response_message"], error_df
     else:
         return k["response_message"], None
 
