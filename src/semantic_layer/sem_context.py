@@ -8,9 +8,9 @@ class SemanticContext(BaseSemantics):
         
 
     def run(self, args):
-        table = args.get('table')
-        if table and table in self.schema:
-            args["semantics_context"] = self.schema[table]
+        db = args.get('database')
+        if db and db in self.schema:
+            args["semantics_context"] = self.schema[db]
             return args
         else:
             args["semantics_context"] = self.schema
