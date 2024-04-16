@@ -8,6 +8,7 @@ from src.encoding.encoding import KnowledgeInjectionStep
 from langchain_openai import OpenAIEmbeddings
 from src import semantic_layer
 from src.prompt import prompt_builder
+from src.util import SnowflakeManager
 
 def make_user_prompt():
     return input("Input your prompt: ") 
@@ -70,6 +71,7 @@ def layoutProcess(e_set, m_set, p_set, i_set, s_set, text_prompt = None, databas
 
 def runProcess(steps, args):
     # we can add looping later
+    snowflake = SnowflakeManager()
     print("Running Process")
     k = args
     for i in steps:
@@ -88,7 +90,16 @@ def runProcess(steps, args):
     if k.log is not None:
         print(k.log)
     print(k)
-    if k.message is not None:
-        return k.message
+
+    if k.message is None:
+        raise KeyError("Model Failed")
+    if k.code is not None:
+        query_result = snowflake.query_df(k.code)
+        print(query_result.head(10))
+        return k.message, query_result
+    else:
+        return k.message, None
+
+    
 
 # layoutProcess(None, None, list(1), None, None)

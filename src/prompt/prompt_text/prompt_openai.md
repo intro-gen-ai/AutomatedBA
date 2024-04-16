@@ -1,6 +1,6 @@
 ### Instructions:
 
-Your task is to convert a text question to a SQL query that runs on Snowflake, given a database schema.
+Your task is to convert a text question to a SQL query that runs on Snowflake, given the database schema: 
 `{instruction_set}`
 
 ### Input:
@@ -13,7 +13,7 @@ The following definitions may be of aid:
 
 ### Response:
 
-Given the database schema, here is the SQL query that answers:
+Given the database schema, here is the SQL query that answerse:
 
 ```sql
 

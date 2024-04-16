@@ -1,6 +1,6 @@
 from ..step import Step
 from langchain_openai import OpenAIEmbeddings
-from pymilvus import Collection, connections
+from pymilvus import Collection, connections, utility
 import os
 
 
@@ -24,18 +24,20 @@ class KnowledgeInjectionStep(Step):
         )
         self.model = model
         self.top_k = top_k
-        self.prompt = prompt
+        self.user_in = prompt
 
     def run(self, args):
-        base_prompt = self.prompt #args["prompt"]
+        base_prompt = self.user_in #args["prompt"]
         #if "prompt" not in args:
-        #raise ValueError("Prompt not provided in arguments")
+        #    raise ValueError("Prompt not provided in arguments")
         similar_doc_ids = self.retrieve_similar_documents(base_prompt)
         knowledge_texts = [
             self.fetch_document_text_by_line_number(line_num)
             for line_num in similar_doc_ids
         ]
-        return [base_prompt, knowledge_texts]
+        
+        args["rag_set"]=knowledge_texts
+        return args
 
     def getRequirements(self):
         return [self.file_path]
@@ -46,10 +48,20 @@ class KnowledgeInjectionStep(Step):
             .data[0]
             .embedding
         )
+        self.check_milvus_connection()
         collection = Collection(name=self.collection_name)
+
+        print(self.collection_name)
+        
+        collection.load()
         search_params = {"metric_type": "L2", "params": {"nprobe": 10}}
+
         results = collection.search(
-            [query_vector], "vector", search_params, self.top_k, "id"
+            data=[query_vector], 
+            anns_field="vector", 
+            param = search_params, 
+            limit = self.top_k, 
+            output_fields = ["id"]
         )
         return [
             hit.id for hit in results[0]
@@ -64,3 +76,15 @@ class KnowledgeInjectionStep(Step):
             raise ValueError(f"Document text for line {line_num} not found")
         except FileNotFoundError:
             raise FileNotFoundError(f"File {self.file_path} not found")
+    
+    def check_milvus_connection(self):
+    # TO DO: un-hardcode
+        try:
+            milvus_uri = "https://in03-10fc789d75c4b64.api.gcp-us-west1.zillizcloud.com"
+            token = "bf430bccd895611a762829314dcf5205ba81e416f365fa6104f94f4851542dfe3ba7a00a2453d61b20bd928a80a7d5b1453cc157"
+            connections.connect("default", uri=milvus_uri, token=token)
+            print(f"Connecting to DB: {milvus_uri}")
+        except Exception as e:
+            print(f"Failed to connect to Milvus: {e}")
+            return False
+        return True
