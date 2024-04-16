@@ -1,17 +1,15 @@
 ### Instructions:
 
-Your task is to convert a text question to a SQL query that runs on Snowflake, given a database schema. Return the SQL as a markdown string, nothing else.
-
-### Operational Definitions
-
-The following definitions may be of aid:
-`{rag}`
+Your task is to convert a text question to a SQL query that runs on Snowflake, given a database schema.
+`{instruction_set}`
 
 ### Input:
 
 `{preprompt}`: `{user_question}`.
 This query will run on a database whose schema is represented in this string:
 {table_metadata_string}
+The following definitions may be of aid:
+`{rag}`
 
 ### Response:
 

@@ -10,9 +10,10 @@ class KnowledgeInjectionStep(Step):
         client,
         collection_name,
         file_path,
+        prompt,
         model="text-embedding-3-small",
         top_k=5,
-        order = 0,
+        order = 0
     ):
         super().__init__()
         self.order = order
@@ -23,11 +24,12 @@ class KnowledgeInjectionStep(Step):
         )
         self.model = model
         self.top_k = top_k
+        self.prompt = prompt
 
     def run(self, args):
-        if "prompt" not in args:
-            raise ValueError("Prompt not provided in arguments")
-        base_prompt = args["prompt"]
+        base_prompt = self.prompt #args["prompt"]
+        #if "prompt" not in args:
+        #raise ValueError("Prompt not provided in arguments")
         similar_doc_ids = self.retrieve_similar_documents(base_prompt)
         knowledge_texts = [
             self.fetch_document_text_by_line_number(line_num)

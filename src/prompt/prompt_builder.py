@@ -1,30 +1,37 @@
 from ..util import ControlDict
 from pathlib import Path
-
+import os
 def build(user_in, args):
     
     cwd = Path.cwd()
-    
-    converter = ControlDict()
-    m, p, i, s = args
-    model = converter.convert( 'm', m )
-    pre_prompt = open((cwd / converter.convert( 'p', p )).resolve(), 'r').read()
-    instruction_set = open((cwd / converter.convert( 'i', i )).resolve(), 'r').read()
 
-    if "gpt" in model:
-        prompt = open((cwd / 'prompt_text/prompt_openai.md').resolve(), 'r').read()
+    converter = ControlDict()
+    m, p, i, s, r = args
+    model = converter.convert( 'm', m )
+
+    pre_prompt = open(os.path.join(cwd,converter.convert( 'p', p )), 'r').read()
+    instruction_set = open(os.path.join(cwd,converter.convert( 'i', i )), 'r').read()
+    
+    if "Gpt" in model:
+        prompt = open(os.path.join(cwd,'src/prompt/prompt_text/prompt_openai.md')).read()
+        system_message = "Your task is to convert a text question to a SQL query that runs on Snowflake, given a database schema."
     elif "claude" in model:
-        prompt = open((cwd / 'prompt_text/prompt_anthropic.md').resolve(), 'r').read()
+        prompt = open(os.path.join(cwd,'src/prompt/prompt_text/prompt_anthropic.md')).read()
+        system_message = "Your task is to convert a text question to a SQL query that runs on Snowflake, given a database schema. Return the SQL as a markdown string, nothing else."
     elif "gemini" in model:
-        prompt = open((cwd / 'prompt_text/prompt_gemini.md').resolve(), 'r').read()
+        prompt = open(os.path.join(cwd,'src/prompt/prompt_text/prompt_gemini.md')).read()
+        system_message = "Your task is to convert a text question to a SQL query that runs on Snowflake given a database schema. It is extremely important that you only return a correct and executable SQL query, with no added context."
     elif "mistral" in model:
-        prompt = open((cwd / 'prompt_text/prompt_mistral.md').resolve(), 'r').read()
+        prompt = open(os.path.join(cwd,'src/prompt/prompt_text/prompt_mistral.md')).read()
+        system_message = "Your task is to convert a text question to a SQL query that runs on Snowflake given a database schema. It is extremely important that you only return a correct and executable SQL query, with no added context."
     else:
-        prompt = open((cwd / 'prompt_text/prompt.md').resolve(), 'r').read()
+        prompt = open(os.path.join(cwd,'src/prompt/prompt_text/prompt.md')).read()
+        system_message = "Your task is to convert a text question to a SQL query that runs on Snowflake given a database schema. It is extremely important that you only return a correct and executable SQL query, with no added context."
         
     prompt = prompt.replace('`{preprompt}`', pre_prompt)
-    prompt = prompt.replace('`{instructions}`', instruction_set)
     prompt = prompt.replace('`{user_question}`', user_in)
+    prompt = prompt.replace('`{instruction_set}`', instruction_set)
+    prompt = prompt.replace('`{rag}`', r)
     prompt = prompt.replace('{table_metadata_string}', s)
     
-    return prompt
+    return (prompt, user_in)

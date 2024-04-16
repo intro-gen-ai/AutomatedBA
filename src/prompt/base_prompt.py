@@ -13,7 +13,7 @@ class BasePrompt(Step):
     """
     def __init__(self, args=None):
         
-        i = args.pop('instruction_set', None)
+        """i = args.pop('instruction_set', None)
         pp = args.pop('pre_prompt_info', None)
         user_p = args.pop('user_prompt', None)
         if i is not None:
@@ -30,9 +30,14 @@ class BasePrompt(Step):
             self.user_prompt = user_p
         else:
             self.user_prompt = make_user_prompt()
-        # self.mask = self.args.pop('mask', None)
+        # self.mask = self.args.pop('mask', None)"""
         self.order = args.pop('size', 0) + 10
         self.args = args or {}
+
+
+        self.prompt = args.pop('prompt', None)
+        self.instruction_set = args.pop('instruction_set',None)
+        
 
     def run(self, arg):
         return form_prompt(self)
@@ -47,8 +52,11 @@ def form_prompt(prompt):
     
     data = {
     'system_message': prompt.instruction_set,
-    'user_message': f"{prompt.pre_prompt}\n{prompt.user_prompt}"
+    #'user_message': f"{prompt.pre_prompt}\n{prompt.user_prompt}"
+    'user_message': prompt.prompt
     }
+
+
     # TODO add something here w/ some way you determined to input pre_prompt_info once we insert it
     return data
     

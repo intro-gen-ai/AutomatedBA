@@ -13,7 +13,7 @@ from ..step import Step
 from src.encoding.encoding import KnowledgeInjectionStep
 from langchain_openai import OpenAIEmbeddings
 from src import semantic_layer
-
+from src.prompt import prompt_builder
 
 def layoutProcess(e_set, m_set, p_set, i_set, s_set, text_prompt = None):
     converter = ControlDict()
@@ -32,12 +32,15 @@ def layoutProcess(e_set, m_set, p_set, i_set, s_set, text_prompt = None):
                 file_path=f"src/encoding/data/{config_entry}.txt",  # Example dynamic path based on identifier
                 model="text-embedding-3-small",  # Customize as needed
                 top_k=5,
-                order=int(i))  # Example, setting order based on identifier
+                order=int(i),
+                prompt = text_prompt)  # Example, setting order based on identifier 
+        
         steps.append(step_instance)
 
     for i in m_set:
         print(converter.convert( 'm', i ))
         steps.append(get_instance(model, converter.convert( 'm', i ) ) )
+
 
     for i in p_set:
         i_s.append(converter.convert('p', i))
@@ -51,20 +54,25 @@ def layoutProcess(e_set, m_set, p_set, i_set, s_set, text_prompt = None):
     # if len(i_set) > 1:
         # TODO we need to talk about what to do here to combine them so for now its just an empty case
         # i implemented the single form case
+    i_set, prompt = prompt_builder.build(text_prompt,(m_set[0],p_set[0],i_set[0],"i dont know", "Structured query language (SQL) is a standard language for database creation and manipulation."))
+
     dict = {}
     
-    if len(i_s) > 1:
-        dict['instruction_set']= i_s[0]
-    if len(p_s) > 1:
-        dict['pre_prompt'] = p_s[0]
-    if not text_prompt == None:
-        dict['user_prompt'] = text_prompt
+    
+    dict['instruction_set']= i_set
+    
+    dict['prompt'] = prompt
+    
+
     steps.append(BasePrompt(dict))
     # 
 
     order_steps = sorted(steps, key=lambda x: x.getOrder())
     # snowflake is not set up so we cannot do that set yet.
     # TODO ananth once u build the integrations for this tell me and I will insert it
+
+
+
     return runProcess(order_steps)
 
 def runProcess(steps):

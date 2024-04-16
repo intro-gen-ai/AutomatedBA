@@ -20,6 +20,9 @@ for index, row in df.iterrows():
         not sure how snowflake handles errors, may need try-catch. return empty dataframe if query results in an error
     """
     
+
+
+
     gt_result = pd.DataFrame(df) # DUMMY RESULT, CHANGE
     model_result = pd.DataFrame(df) # DUMMY RESULT, CHANGE
     
