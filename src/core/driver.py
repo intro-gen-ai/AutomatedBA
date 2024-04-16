@@ -21,7 +21,8 @@ def layoutProcess(e_set, m_set, p_set, i_set, s_set, text_prompt = None, databas
     p_s = list()
     i_s = list()
     temp = ""
-    database = "ACADEMIC"
+    if not database:
+        database = "ACADEMIC"
 
     if not text_prompt:
         text_prompt = make_user_prompt()
@@ -83,9 +84,9 @@ def runProcess(steps, args):
         print(i.getOrder())
         j=i.run(k)
         k = j
-        print(k)
+        #print(k)
         
-    if k["response_execution_time"] is not None:
+    """if k["response_execution_time"] is not None:
         print(k["response_execution_time"])
     if k["response_code"] is not None:
         print(k["response_code"]) 
@@ -95,8 +96,7 @@ def runProcess(steps, args):
         print(k["response_confidence"]) 
     if k["response_log"] is not None:
         print(k["response_log"])
-    print(k)
-
+    print(k)"""
     if k["response_message"] is None:
         raise KeyError("Model Failed")
     if k["response_code"] is not None:

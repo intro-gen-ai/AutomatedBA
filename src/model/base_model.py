@@ -30,8 +30,10 @@ class BaseModel(Step):
         if end_index == -1:
             return "No terminating semicolon (';') found after 'select'."
 
+
         # Extract the substring from "select" to the next ";"
         substring = lower_case_string[start_index:end_index + 1]
+
 
         # Append the found substring to the result string
         return substring

@@ -1,0 +1,106 @@
+question,query,db_name,query_category,k_shot_prompt
+What is the ratio of publications presented in conferences to publications published in journals?,"SELECT CAST(COUNT(DISTINCT publication.cid) AS FLOAT) / NULLIF(COUNT(DISTINCT publication.jid), 0) AS ratio FROM publication;",academic,ratio,"EXAMPLE QUESTION 1: What is the total number of publications presented in each conference?
+EXAMPLE QUERY 1: SELECT conference.name, COUNT(publication.pid) AS total_publications FROM publication JOIN conference ON publication.cid = conference.cid GROUP BY conference.name ORDER BY total_publications DESC
+
+EXAMPLE QUESTION 2: What is the ratio of publications to authors in the database?
+EXAMPLE QUERY 2: SELECT CAST(COUNT(DISTINCT publication.pid) AS FLOAT) / NULLIF(COUNT(DISTINCT author.aid), 0) AS publication_to_author_ratio FROM publication, author
+
+"
+"What are the titles of the papers published in the year 2020, ordered alphabetically?",SELECT paper.title FROM paper WHERE paper.year = 2020 ORDER BY paper.title ASC NULLS LAST;,scholar,order_by,"EXAMPLE QUESTION 1: What is the total number of papers published in each journal, ordered by the journal name?
+EXAMPLE QUERY 1: SELECT journal.journalname, COUNT(DISTINCT paper.paperid) AS total_papers FROM paper JOIN journal ON paper.journalid = journal.journalid GROUP BY journal.journalname ORDER BY journal.journalname NULLS LAST
+
+EXAMPLE QUESTION 2: Which authors have published the most papers, ordered by the number of papers they have published in descending order?
+EXAMPLE QUERY 2: SELECT author.authorname, COUNT(DISTINCT writes.paperid) AS number_of_papers FROM author JOIN writes ON author.authorid = writes.authorid GROUP BY author.authorname ORDER BY number_of_papers DESC NULLS LAST
+
+"
+What is the total number of restaurants serving each type of food?,"SELECT restaurant.food_type, COUNT(DISTINCT restaurant.id) AS total_number_of_restaurants FROM restaurant GROUP BY restaurant.food_type;",restaurants,group_by,"EXAMPLE QUESTION 1: What is the average rating of restaurants serving each type of food?
+EXAMPLE QUERY 1: SELECT restaurant.food_type, AVG(restaurant.rating) AS average_rating FROM restaurant GROUP BY restaurant.food_type ORDER BY average_rating DESC NULLS LAST
+
+EXAMPLE QUESTION 2: What is the total count of restaurants in each city?
+EXAMPLE QUERY 2: SELECT location.city_name, COUNT(DISTINCT location.restaurant_id) AS total_count FROM LOCATION GROUP BY location.city_name
+
+"
+How many authors have written a paper that was published prior to exactly one year ago from today's date?,SELECT count(DISTINCT w.authorid) AS num_authors FROM paper p JOIN writes w ON p.paperid = w.paperid WHERE p.year < extract(YEAR FROM CURRENT_DATE - interval '1 year');,scholar,date_functions,"EXAMPLE QUESTION 1: How many authors wrote papers that were published in the journal ""Science"" in the year 2020?
+EXAMPLE QUERY 1: SELECT COUNT(DISTINCT writes.authorid) AS number_of_authors FROM writes JOIN paper ON writes.paperid = paper.paperid JOIN journal ON paper.journalid = journal.journalid WHERE journal.journalname ILIKE '%Science%' AND paper.year = 2020
+
+EXAMPLE QUESTION 2: What is the total number of papers published in each year?
+EXAMPLE QUERY 2: SELECT paper.year, COUNT(paper.paperid) AS total_papers FROM paper GROUP BY paper.year ORDER BY paper.year
+
+"
+What is the ratio of authors who have written 3 or more papers to authors who have written less than 3 papers?,"SELECT CAST(COUNT(DISTINCT CASE WHEN paper_count >= 3 THEN subquery.authorid END) AS FLOAT) / NULLIF(COUNT(DISTINCT CASE WHEN paper_count < 3 THEN subquery.authorid END), 0) AS ratio FROM (SELECT writes.authorid, COUNT(writes.paperid) AS paper_count FROM writes GROUP BY writes.authorid) AS subquery;",scholar,ratio,"EXAMPLE QUESTION 1: What is the ratio of papers that have been cited by 2 or more papers to papers that have been cited by less than 2 papers?
+EXAMPLE QUERY 1: SELECT CAST(COUNT(CASE WHEN paper.numcitedby > 1 THEN 1 END) AS FLOAT) / NULLIF(COUNT(CASE WHEN paper.numcitedby < 2 THEN 1 END), 0) AS ratio FROM paper
+
+EXAMPLE QUESTION 2: How many authors have published more than 2 papers?
+EXAMPLE QUERY 2: SELECT COUNT(*) AS number_of_authors FROM (SELECT writes.authorid FROM writes GROUP BY writes.authorid HAVING COUNT(writes.paperid) > 2) AS subquery
+
+"
+How many restaurants serve Italian food in each region?,"SELECT geographic.region, COUNT(restaurant.id) AS number_of_restaurants FROM restaurant JOIN geographic ON restaurant.city_name = geographic.city_name WHERE LOWER(restaurant.food_type) LIKE '%italian%' GROUP BY geographic.region ORDER BY number_of_restaurants DESC NULLS LAST;",restaurants,table_join,"EXAMPLE QUESTION 1: How many restaurants serve Italian food in each city?
+EXAMPLE QUERY 1: SELECT location.city_name, COUNT(*) AS number_of_restaurants FROM LOCATION JOIN restaurant ON location.restaurant_id = restaurant.id WHERE restaurant.food_type ILIKE '%Italian%' GROUP BY location.city_name ORDER BY number_of_restaurants DESC NULLS LAST
+
+EXAMPLE QUESTION 2: What are the names of the restaurants that serve Italian food?
+EXAMPLE QUERY 2: SELECT restaurant.name FROM restaurant WHERE LOWER(restaurant.food_type) ILIKE '%italian%' ORDER BY restaurant.rating DESC NULLS LAST
+
+"
+What is the ratio of the altitude of Mount Everest to the altitude of Dhaulagiri?,"SELECT (CAST(everest.mountain_altitude AS FLOAT) / NULLIF(dhaulagiri.mountain_altitude, 0)) AS altitude_ratio FROM (SELECT mountain_altitude FROM mountain WHERE LOWER(mountain_name) LIKE '%mount everest%') AS everest, (SELECT mountain_altitude FROM mountain WHERE LOWER(mountain_name) LIKE '%dhaulagiri%') AS dhaulagiri;",geography,ratio,"EXAMPLE QUESTION 1: What is the ratio of the length of the Mississippi River to the length of the Rhine River?
+EXAMPLE QUERY 1: SELECT CAST((SELECT LENGTH FROM river WHERE LOWER(river_name) LIKE '%mississippi%') AS FLOAT) / NULLIF((SELECT LENGTH FROM river WHERE LOWER(river_name) LIKE '%rhine%'), 0) AS ratio
+
+EXAMPLE QUESTION 2: What are the names and altitudes of the mountains in Nepal?
+EXAMPLE QUERY 2: SELECT mountain_name, mountain_altitude FROM mountain WHERE country_name ILIKE '%Nepal%'
+
+"
+How many keyphrases are associated with papers published between 2020 and 2035?,SELECT count(DISTINCT pk.keyphraseid) AS num_keyphrases FROM paper p JOIN paperkeyphrase pk ON p.paperid = pk.paperid WHERE p.year >= 2020 AND p.year <= 2035 ;,scholar,date_functions,"EXAMPLE QUESTION 1: How many keyphrases are associated with each paper?
+EXAMPLE QUERY 1: SELECT paperkeyphrase.paperid, COUNT(paperkeyphrase.keyphraseid) AS keyphrase_count FROM paperkeyphrase GROUP BY paperkeyphrase.paperid ORDER BY keyphrase_count DESC NULLS LAST
+
+EXAMPLE QUESTION 2: What is the total number of keyphrases associated with each paper, ordered by the paper ID in ascending order?
+EXAMPLE QUERY 2: SELECT paperkeyphrase.paperid, COUNT(paperkeyphrase.keyphraseid) AS total_keyphrases FROM paperkeyphrase GROUP BY paperkeyphrase.paperid ORDER BY paperkeyphrase.paperid ASC NULLS LAST
+
+"
+Which states have fewer than a hundred thousand people?,SELECT state_name FROM state WHERE population < 100000;,geography,where,"EXAMPLE QUESTION 1: Which states border the state where lake ontario is?
+EXAMPLE QUERY 1: SELECT border_info.border FROM border_info JOIN lake ON border_info.state_name = lake.state_name WHERE lake.lake_name ilike '%Ontario%'
+
+EXAMPLE QUESTION 2: What are the top 5 cities with the highest population? Give both city names and the population.
+EXAMPLE QUERY 2: SELECT city.city_name, city.population FROM city ORDER BY city.population DESC NULLS LAST LIMIT 5
+
+"
+What is the ratio of restaurants with a rating above 4.0 to restaurants with a rating below 4.0 overall?,"SELECT CAST(SUM(CASE WHEN restaurant.rating > 4.0 THEN 1 ELSE 0 END) AS FLOAT) / NULLIF(SUM(CASE WHEN restaurant.rating < 4.0 THEN 1 ELSE 0 END), 0) AS ratio FROM restaurant;",restaurants,ratio,"EXAMPLE QUESTION 1: What is the ratio of restaurants with a rating above 4 to restaurants with a rating below 4 in New York?
+EXAMPLE QUERY 1: SELECT CAST(COUNT(CASE WHEN rating > 4 THEN 1 END) AS FLOAT) / NULLIF(COUNT(CASE WHEN rating < 4 THEN 1 END), 0) AS ratio FROM restaurant WHERE city_name ILIKE 'New York'
+
+EXAMPLE QUESTION 2: What is the ratio of restaurants with rating > 4.5 to the total number of restaurants in the database.
+EXAMPLE QUERY 2: SELECT COUNT(*)::float / (SELECT COUNT(*) FROM restaurant) AS rating_ratio FROM restaurant WHERE rating > 4.5
+
+"
+What is the average number of citations received by publications in each year?,"SELECT publication.year, AVG(publication.citation_num) AS average_citations FROM publication GROUP BY publication.year ORDER BY publication.year NULLS LAST;",academic,group_by,"EXAMPLE QUESTION 1: What is the total number of citations received by each author?
+EXAMPLE QUERY 1: SELECT author.name, sum(publication.citation_num) AS total_citations FROM author JOIN writes ON author.aid = writes.aid JOIN publication ON writes.pid = publication.pid GROUP BY author.name ORDER BY total_citations DESC NULLS LAST
+
+EXAMPLE QUESTION 2: What is the average number of references cited by publications in each domain name?
+EXAMPLE QUERY 2: SELECT domain.name, AVG(publication.reference_num) AS average_references FROM domain_publication JOIN publication ON domain_publication.pid = publication.pid JOIN DOMAIN ON domain.did = domain_publication.did GROUP BY domain.name
+
+"
+What is the ratio of the total number of publications to the total number of keywords within each domain ID? Show all domain IDs.,"SELECT domain_publication.did, CAST(COUNT(DISTINCT domain_publication.pid) AS FLOAT) / NULLIF(COUNT(DISTINCT domain_keyword.kid), 0) AS publication_to_keyword_ratio FROM domain_publication LEFT JOIN domain_keyword ON domain_publication.did = domain_keyword.did GROUP BY domain_publication.did ORDER BY publication_to_keyword_ratio DESC NULLS LAST;",academic,ratio,"EXAMPLE QUESTION 1: What is the ratio of publications to authors in the database?
+EXAMPLE QUERY 1: SELECT CAST(COUNT(DISTINCT publication.pid) AS FLOAT) / NULLIF(COUNT(DISTINCT author.aid), 0) AS publication_to_author_ratio FROM publication, author
+
+EXAMPLE QUESTION 2: What is the average number of references cited by publications in each domain name?
+EXAMPLE QUERY 2: SELECT domain.name, AVG(publication.reference_num) AS average_references FROM domain_publication JOIN publication ON domain_publication.pid = publication.pid JOIN DOMAIN ON domain.did = domain_publication.did GROUP BY domain.name
+
+"
+"What is the total number of papers published in each journal, ordered by the journal name?","SELECT journal.journalname, COUNT(DISTINCT paper.paperid) AS total_papers FROM paper JOIN journal ON paper.journalid = journal.journalid GROUP BY journal.journalname ORDER BY journal.journalname NULLS LAST;",scholar,table_join,"EXAMPLE QUESTION 1: What is the total number of papers published in each year?
+EXAMPLE QUERY 1: SELECT paper.year, COUNT(paper.paperid) AS total_papers FROM paper GROUP BY paper.year ORDER BY paper.year
+
+EXAMPLE QUESTION 2: Which authors have published the most papers, ordered by the number of papers they have published in descending order?
+EXAMPLE QUERY 2: SELECT author.authorname, COUNT(DISTINCT writes.paperid) AS number_of_papers FROM author JOIN writes ON author.authorid = writes.authorid GROUP BY author.authorname ORDER BY number_of_papers DESC NULLS LAST
+
+"
+How many months between June 2021 and December 2021 had reviews?,SELECT COUNT(DISTINCT MONTH) AS num_months FROM review WHERE YEAR = 2021 AND CASE MONTH WHEN 'January' THEN 1 WHEN 'February' THEN 2 WHEN 'March' THEN 3 WHEN 'April' THEN 4 WHEN 'May' THEN 5 WHEN 'June' THEN 6 WHEN 'July' THEN 7 WHEN 'August' THEN 8 WHEN 'September' THEN 9 WHEN 'October' THEN 10 WHEN 'November' THEN 11 WHEN 'December' THEN 12 END BETWEEN 6 AND 12;,yelp,date_functions,"EXAMPLE QUESTION 1: How many reviews were posted in each month of the year 2021, ordered by the month?
+EXAMPLE QUERY 1: SELECT review.month, COUNT(review.rid) AS review_count FROM review WHERE review.year = 2021 GROUP BY review.month ORDER BY TO_DATE(review.month, 'MONTH') NULLS LAST
+
+EXAMPLE QUESTION 2: How many reviews were there 2 months before the review with id 3?
+EXAMPLE QUERY 2: SELECT count(*) AS review_count FROM review WHERE (cast(review.year AS text) || '-' || review.month || '-01')::date = (SELECT (cast(r.year AS text) || '-' || r.month || '-01')::date - interval '2 months' FROM review r WHERE r.rid = 3)
+
+"
+What month were most students admitted?,"SELECT date_trunc('month', s.admit_term) AS MONTH, COUNT(*) AS total_students FROM student s GROUP BY MONTH ORDER BY total_students DESC LIMIT 1;",advising,date_functions,"EXAMPLE QUESTION 1: How long has it been in days since the last admitted student?
+EXAMPLE QUERY 1: SELECT CURRENT_DATE - max(admit_term) AS duration_since_last_admitted_student FROM student
+
+EXAMPLE QUESTION 2: How many students were predicted to graduate in the last 10 years?
+EXAMPLE QUERY 2: SELECT count(*) AS num_students_graduated FROM student WHERE predicted_graduation_semester >= DATE_TRUNC('year', CURRENT_DATE) - interval '10 year'
+
+"
