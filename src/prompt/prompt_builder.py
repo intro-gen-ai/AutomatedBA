@@ -14,6 +14,11 @@ def build(user_in, args):
 
     converter = ControlDict()
     m, p, i, s, r = args
+    dict ={}
+    dict['database']=s
+    semantics = SemanticContext().run(dict)
+    #test = semantics
+    print(semantics)
     model = converter.convert( 'm', m )
 
     pre_prompt = open(os.path.join(cwd,converter.convert( 'p', p )), 'r').read()
