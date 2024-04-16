@@ -20,7 +20,7 @@ def layoutProcess(e_set, m_set, p_set, i_set, s_set, text_prompt = None, databas
     p_s = list()
     i_s = list()
     temp = ""
-
+    database = "ACADEMIC"
 
     if not text_prompt:
         text_prompt = make_user_prompt()
@@ -52,7 +52,7 @@ def layoutProcess(e_set, m_set, p_set, i_set, s_set, text_prompt = None, databas
     for i in s_set:
         steps.append(get_instance(semantic_layer, converter.convert('s', i) ))
 
-    steps.append(BasePrompt(dict))
+    steps.append(BasePrompt())
     # 
     order_steps = sorted(steps, key=lambda x: x.getOrder())
     # snowflake is not set up so we cannot do that set yet.
@@ -69,7 +69,7 @@ def layoutProcess(e_set, m_set, p_set, i_set, s_set, text_prompt = None, databas
     if not p_s == list():
         bdict['preprompt_file'] = p_s[0]
     if not temp == "":
-        bdict['model_name'] == temp
+        bdict['model_name'] = temp
 
     return runProcess(order_steps, bdict)
 

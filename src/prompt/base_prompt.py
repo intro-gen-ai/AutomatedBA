@@ -10,28 +10,32 @@ class BasePrompt(Step):
     Requires args as a dictionary can include instruction set, pre-prompt information, pre-prompt, user prompt, and a mask
     all other arguements will be tacked onto self.args 
     """
-    def __init__(self, args=None):
+    def __init__(self, args={}):
         
-        """i = args.pop('instruction_set', None)
-        pp = args.pop('pre_prompt_info', None)
-        user_p = args.pop('user_prompt', None)
-        if i is not None:
-            self.instruction_set = get_instance(prompt_text, i)
-        else:
-            self.instruction_set = None
-        if pp is not None:
-            self.pre_prompt_info = get_instance(prompt_text, pp)
-        else:
-            self.pre_prompt_info = None
+        # i = args.pop('instruction_set', None)
+        # pp = args.pop('pre_prompt_info', None)
+        # user_p = args.pop('user_prompt', None)
+        # if i is not None:
+        #     self.instruction_set = get_instance(prompt_text, i)
+        # else:
+        #     self.instruction_set = None
+        # if pp is not None:
+        #     self.pre_prompt_info = get_instance(prompt_text, pp)
+        # else:
+        #     self.pre_prompt_info = None
 
-        self.pre_prompt = args.pop('pre_prompt', None)
-        if user_p is not None:
-            self.user_prompt = user_p
-        else:
-            self.user_prompt = make_user_prompt()
-        # self.mask = self.args.pop('mask', None)"""
-        self.order = args.pop('size', 0) + 10
-        self.args = args or {}
+        # self.pre_prompt = args.pop('pre_prompt', None)
+        # if user_p is not None:
+        #     self.user_prompt = user_p
+        # else:
+        #     self.user_prompt = make_user_prompt()
+        # # self.mask = self.args.pop('mask', None)
+        
+        self.order = 10
+        # if args == None:
+        #     self.args = {}
+        # else:
+        self.args = args
 
 
         self.prompt = args.pop('prompt', None)
