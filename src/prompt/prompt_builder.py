@@ -1,6 +1,13 @@
 from ..util import ControlDict
 from pathlib import Path
+import sys
 import os
+
+# if __name__ == '__main__':
+    # current_dir = Path(__file__).parent.absolute()
+    # project_root = current_dir.parent.parent
+    # sys.path.insert(0, str(project_root))
+
 def build(user_in, args):
     
     cwd = Path.cwd()
@@ -12,7 +19,7 @@ def build(user_in, args):
     pre_prompt = open(os.path.join(cwd,converter.convert( 'p', p )), 'r').read()
     instruction_set = open(os.path.join(cwd,converter.convert( 'i', i )), 'r').read()
     
-    if "Gpt" in model:
+    if "Gpt" in model or "gpt" in model:
         prompt = open(os.path.join(cwd,'src/prompt/prompt_text/prompt_openai.md')).read()
         system_message = "Your task is to convert a text question to a SQL query that runs on Snowflake, given a database schema."
     elif "claude" in model:

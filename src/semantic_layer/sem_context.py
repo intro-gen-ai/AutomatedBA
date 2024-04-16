@@ -19,7 +19,7 @@ class SemanticContext(BaseSemantics):
 def main():
     a = SemanticContext()
     b = a.schema
-    c = a.run({})
+    c = a.run({"database": "ACADEMIC"})
     print(c)
 
 if __name__ == "__main__":
