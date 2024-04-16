@@ -22,6 +22,9 @@ if __name__ == "__main__":
 
 
 from langchain_community.document_loaders import TextLoader
+import sys
+
+
 from src.util import get_requirement_file
 
 
@@ -60,7 +63,7 @@ def check_milvus_connection():
     return True
 
 
-def check_data_folder(path="../data/"):
+def check_data_folder(path="src/encoding/data"):
     if not os.path.exists(path):
         print(f"Data folder '{path}' does not exist.")
         return False
@@ -106,13 +109,13 @@ def vectorize_and_store(client, file_path, collection_name):
 
 
 def main(client):
-    if check_milvus_connection() and check_data_folder("../data"):
+    if check_milvus_connection() and check_data_folder("src/encoding/data"):
         # Vectorize and store BA knowledge
-        ba_file_path = "../data/ba_knowledge.txt"
+        ba_file_path = "src/encoding/data/ba_knowledge.txt"
         vectorize_and_store(client, ba_file_path, "ba_knowledge")
 
         # Vectorize and store SQL knowledge
-        sql_file_path = "../data/sql_knowledge.txt"
+        sql_file_path = "src/encoding/data/sql_knowledge.txt"
         vectorize_and_store(client, sql_file_path, "sql_knowledge")
 
         connections.disconnect("default")
@@ -120,8 +123,7 @@ def main(client):
 
 if __name__ == "__main__":
     openai_api_key, _ = get_requirement_file(".openai_secret")
-    # openai_api_key = os.getenv()
-    if not openai_api_key:
+    if openai_api_key is None:
         raise KeyError("No OpenAI Key Provided")
     client = OpenAI(api_key=openai_api_key)
     main(client)
