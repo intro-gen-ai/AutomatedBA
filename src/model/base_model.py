@@ -20,9 +20,6 @@ class BaseModel(Step):
         # Convert the entire string to lower case
         lower_case_string = msg.lower()
 
-        # Initialize an empty string to append the found substring
-        result_string = ""
-
         # Find the starting index of the substring "select"
         start_index = lower_case_string.find("select")
         if start_index == -1:
@@ -37,9 +34,7 @@ class BaseModel(Step):
         substring = lower_case_string[start_index:end_index + 1]
 
         # Append the found substring to the result string
-        result_string += substring
-
-        return result_string
+        return substring
 
     def run(self, args):
         temp = self.call_model(args)
