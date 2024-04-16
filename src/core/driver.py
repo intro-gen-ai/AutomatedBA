@@ -6,6 +6,7 @@ from src.util import decrypt_externally
 from ..step import Step
 from src.encoding.encoding import KnowledgeInjectionStep
 from langchain_openai import OpenAIEmbeddings
+from openai import OpenAI
 from src import semantic_layer
 from src.prompt import prompt_builder
 from src.util import SnowflakeManager
@@ -19,12 +20,16 @@ def layoutProcess(e_set, m_set, p_set, i_set, s_set, text_prompt = None, databas
     p_s = list()
     i_s = list()
     temp = ""
+
+
+    if not text_prompt:
+        text_prompt = make_user_prompt()
     # TODO DOUBLE CHECK IMPLEMENTATION
     # Apr 11: 02:16
     for i in e_set:
         config_entry = converter.convert('e', i)
         step_instance = KnowledgeInjectionStep(
-                client=OpenAIEmbeddings(api_key = decrypt_externally('.openai_secret')),
+                client=OpenAI(api_key = decrypt_externally('.openai_secret')),
                 collection_name=f"{config_entry}",
                 file_path=f"src/encoding/data/{config_entry}.txt",  # Example dynamic path based on identifier
                 model="text-embedding-3-small",  # Customize as needed
@@ -56,8 +61,7 @@ def layoutProcess(e_set, m_set, p_set, i_set, s_set, text_prompt = None, databas
         return "SEMANTICS REQUIRED" 
 
 
-    if not text_prompt:
-        text_prompt = make_user_prompt()
+
 
     bdict = {'user_input' : text_prompt, "database" : database}
     if not i_s == list():
