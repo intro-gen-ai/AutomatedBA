@@ -1,10 +1,31 @@
-import configparser
 import os
+import sys
+from pathlib import Path
+import configparser
 import time
 from openai import OpenAI, RateLimitError
 from langchain.text_splitter import CharacterTextSplitter
 from pymilvus import connections, Collection, FieldSchema, DataType, CollectionSchema
+
+
+# This check ensures that the following code block runs only when the script is executed directly
+if __name__ == "__main__":
+    # Get the absolute path to the directory containing cmdline.py
+    current_dir = Path(__file__).parent.absolute()
+
+    # Get the project root directory by going up two levels from the current directory
+    # Adjust the number of parents based on your project structure
+    project_root = current_dir.parent.parent.parent
+
+    # Add the project root directory to sys.path
+    sys.path.insert(0, str(project_root))
+
+
 from langchain_community.document_loaders import TextLoader
+import sys
+
+
+from src.util import get_requirement_file
 
 
 def get_embedding_with_retry(
@@ -15,6 +36,7 @@ def get_embedding_with_retry(
         try:
             text = text.replace("\n", " ")
             print("Getting embedding for:", text)
+
             return client.embeddings.create(input=[text], model=model).data[0].embedding
         except RateLimitError:
             wait_time = 2**retry_count  # Exponential backoff
@@ -41,7 +63,7 @@ def check_milvus_connection():
     return True
 
 
-def check_data_folder(path="./data"):
+def check_data_folder(path="src/encoding/data"):
     if not os.path.exists(path):
         print(f"Data folder '{path}' does not exist.")
         return False
@@ -87,21 +109,21 @@ def vectorize_and_store(client, file_path, collection_name):
 
 
 def main(client):
-    if check_milvus_connection() and check_data_folder("./data"):
+    if check_milvus_connection() and check_data_folder("src/encoding/data"):
         # Vectorize and store BA knowledge
-        ba_file_path = "./data/ba_knowledge.txt"
+        ba_file_path = "src/encoding/data/ba_knowledge.txt"
         vectorize_and_store(client, ba_file_path, "ba_knowledge")
 
         # Vectorize and store SQL knowledge
-        sql_file_path = "./data/sql_knowledge.txt"
+        sql_file_path = "src/encoding/data/sql_knowledge.txt"
         vectorize_and_store(client, sql_file_path, "sql_knowledge")
 
         connections.disconnect("default")
 
 
 if __name__ == "__main__":
-    openai_api_key = os.getenv("OPENAI_API_KEY")
-    if not openai_api_key:
-        openai_api_key = "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"
+    openai_api_key, _ = get_requirement_file(".openai_secret")
+    if openai_api_key is None:
+        raise KeyError("No OpenAI Key Provided")
     client = OpenAI(api_key=openai_api_key)
     main(client)
