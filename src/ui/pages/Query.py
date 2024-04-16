@@ -2,6 +2,7 @@ import streamlit as st
 import sys
 import os
 from pathlib import Path
+import pandas as pd
 
 if __name__ == '__main__':
     current_dir = Path(__file__).parent.absolute()
@@ -29,10 +30,11 @@ def response_generator(selection, prompt):
     i_set = selection['i']
     s_set = selection['s']
     response, result = layoutProcess(e_set, m_set, p_set, i_set, s_set, prompt)
-    if result:
-        return response, result
+    if not isinstance(result, pd.DataFrame):
+            # raise ValueError("Query did not return a DataFrame.")
+            return response, None
     else:
-        return response, None
+        return response, result
 
 multiselect = ['e']
 
@@ -131,7 +133,7 @@ if allow_input:
         response, result = response_generator(selected_keys, prompt)
         with st.chat_message("assistant"):
             st.write(response)
-            if not result == None:
+            if isinstance(result, pd.DataFrame):
                 st.dataframe(result)
         # Add assistant response to chat history
         st.session_state.messages.append({"role": "assistant", "content": response})
