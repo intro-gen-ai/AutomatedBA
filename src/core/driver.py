@@ -82,27 +82,29 @@ def runProcess(steps, args):
         print(i.getOrder())
         j=i.run(k)
         k = j
+        print(k)
         
-    if k.execution_time is not None:
-        print(k.execution_time)
-    if k.code is not None:
-        print(k.code) 
-    if k.message is not None:
-        print(k.message)
-    if k.confidence is not None:
-        print(k.confidence) 
-    if k.log is not None:
-        print(k.log)
+    if k["response_execution_time"] is not None:
+        print(k["response_execution_time"])
+    if k["response_code"] is not None:
+        print(k["response_code"]) 
+    if k["response_message"] is not None:
+        print(k["response_message"])
+    if k["response_confidence"] is not None:
+        print(k["response_confidence"]) 
+    if k["response_log"] is not None:
+        print(k["response_log"])
     print(k)
 
-    if k.message is None:
+    if k["response_message"] is None:
         raise KeyError("Model Failed")
-    if k.code is not None:
-        query_result = snowflake.query_df(k.code)
+    if k["response_code"] is not None:
+        snowflake.connect()
+        query_result = snowflake.query_df(k["response_code"])
         print(query_result.head(10))
-        return k.message, query_result
+        return k["response_message"], query_result
     else:
-        return k.message, None
+        return k["response_message"], None
 
     
 
