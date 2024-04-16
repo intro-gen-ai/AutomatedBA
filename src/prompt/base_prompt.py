@@ -35,8 +35,8 @@ class BasePrompt(Step):
         self.args = args or {}
 
 
-        self.prompt = args.pop('prompt', None)
-        self.instruction_set = args.pop('instruction_set',None)
+        self.system_message = args.pop('system_message', None)
+        self.user_message = args.pop('user_message',None)
         
 
     def run(self, arg):
@@ -51,9 +51,9 @@ def form_prompt(prompt):
         raise TypeError("Input must be an instance of BasePrompt")
     
     data = {
-    'system_message': prompt.instruction_set,
+    'system_message': prompt.system_message,
     #'user_message': f"{prompt.pre_prompt}\n{prompt.user_prompt}"
-    'user_message': prompt.prompt
+    'user_message': prompt.user_message
     }
 
 
