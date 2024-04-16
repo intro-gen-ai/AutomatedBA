@@ -18,3 +18,6 @@ class BaseModel(Step):
 
     def run(self, arg):
         return self.call_model(arg)
+
+    def get_sql(self, msg):
+        return
