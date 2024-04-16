@@ -1,9 +1,9 @@
-access plan: A set of instructions, generated at applicationcompilation time, that is created and managed by a DBMS.The access plan predetermines the way an applicationísquery will access the database at run time
+access plan: A set of instructions, generated at applicationcompilation time, that is created and managed by a DBMS.The access plan predetermines the way an application√≠squery will access the database at run time
 active data dictionary: A data dictionary that isautomatically updated by the database management systemevery time the database is accessed, thereby keeping itsinformation current. See also data dictionary
-ActiveX: Microsoftís alternative to Java. A specification forwriting programs that will run inside the Microsoft clientbrowser (Internet Explorer). Oriented mainly to Windowsapplications, it is not portable. It adds ìcontrolsî such asdrop-down windows and calendars to Web pages
+ActiveX: Microsoft√≠s alternative to Java. A specification forwriting programs that will run inside the Microsoft clientbrowser (Internet Explorer). Oriented mainly to Windowsapplications, it is not portable. It adds √¨controls√Æ such asdrop-down windows and calendars to Web pages
 ActiveX Data Objects (ADO): A Microsoft objectframework that provides a high-level application-orientedinterface to interact with OLE-DB, DAO, and RDO. ADOprovides a unified interface to access data from anyprogramming language that uses the underlying OLE-DBobjects
-ad hoc query: A ìspur-of-the-momentî question
-ADO.NET: The data access component of Microsoftís .NETapplication development framework. The Microsoft .NETframework is a component-based platform for developingdistributed, heterogeneous, and interoperable applicationsaimed at manipulating any type of data over any networkunder any operating system and programming language
+ad hoc query: A √¨spur-of-the-moment√Æ question
+ADO.NET: The data access component of Microsoft√≠s .NETapplication development framework. The Microsoft .NETframework is a component-based platform for developingdistributed, heterogeneous, and interoperable applicationsaimed at manipulating any type of data over any networkunder any operating system and programming language
 alias: An alternative name given to a column or table in anySQL statement
 ALTER: The SQL command used to make changes to tablestructure. Followed by a keyword (ADD or MODIFY), it addsa column or changes column characteristics
 American National Standards Institute (ANSI): The groupthat accepted the DBTG recommendations and augmenteddatabase standards in 1975 through its SPARC committee
@@ -11,7 +11,7 @@ AND: The SQL logical operator used to link multipleconditional expressions in a 
 anonymous PL/SQL block: A PL/SQL block that has notbeen given a specific name
 application processor: See transaction processor (TP)
 application programming interface (API): Softwarethrough which programmers interact with middleware.Allows the use of generic SQL code, thereby allowing clientprocesses to be database server-independent
-atomic attribute: An attribute that cannot be furthersubdivided to produce meaningful components. Forexample, a personís last name attribute cannot bemeaningfully subdivided into other name components;therefore, the last name attribute is atomic
+atomic attribute: An attribute that cannot be furthersubdivided to produce meaningful components. Forexample, a person√≠s last name attribute cannot bemeaningfully subdivided into other name components;therefore, the last name attribute is atomic
 atomicity: See atomic transaction property
 atomic transaction property: A property of transactionsthat states that all parts of a transaction must be treated as asingle logical unit of work in which all operations must becompleted (committed) to produce a consistent database
 attribute: A characteristic of an entity or object. An attributehas a name and a data type
@@ -22,9 +22,9 @@ authentication: The process through which a DBMS verifiesthat only registered us
 authorization management: All activities that are dedicatedto enforcing the security, privacy, and integrity of the data ina database
 automatic query optimization: A method by which aDBMS takes care of finding the most efficient access pathfor the execution of a query
 AVG: A SQL aggregate function that outputs the meanaverage for the specified column or expression
-back-end CASE tools: A computer-aided software tool thathas been classified as ìback endî because it providessupport for the coding and implementation phases of theSDLC. In comparison, front-end case tools provide supportfor the planning, analysis, and design phases
+back-end CASE tools: A computer-aided software tool thathas been classified as √¨back end√Æ because it providessupport for the coding and implementation phases of theSDLC. In comparison, front-end case tools provide supportfor the planning, analysis, and design phases
 base table: The table on which a view is based
-batch update routine: A routine that pools transactions intoa single ìbatchî to update a master table in a singleoperation
+batch update routine: A routine that pools transactions intoa single √¨batch√Æ to update a master table in a singleoperation
 binary lock: A lock that has only two states: locked(1) andunlocked(0). If a data item is locked by a transaction, noother transaction can use that data item. See also lock
 binary relationship: An ER term used to describe anassociation (relationship) between two entities. Example:PROFESSOR teaches COURSE
 Boolean algebra: A branch of mathematics that deals withthe use of the logical operators OR, AND, and NOT
@@ -33,7 +33,7 @@ boundaries: The external limits to which any proposedsystem is subjected. These 
 Boyce-Codd normal form (BCNF): A special form of thirdnormal form (3NF) in which every determinant is acandidate key. A table that is in BCNF must be in 3NF. Seealso determinant
 bridge entity: See composite entity
 buffer: See buffer cache
-buffer cache: A shared, reserved memory area that storesthe most recently accessed data blocks in RAM. Also calleddata cache. Used to take advantage of a computerís fastprimary memory compared to the slower secondarymemory, thereby minimizing the number of input/output(I/O) operations between the primary and secondarymemories
+buffer cache: A shared, reserved memory area that storesthe most recently accessed data blocks in RAM. Also calleddata cache. Used to take advantage of a computer√≠s fastprimary memory compared to the slower secondarymemory, thereby minimizing the number of input/output(I/O) operations between the primary and secondarymemories
 business rule: Narrative descriptions of a policy, procedure,or principle within an organization. Examples: A pilotcannot be on duty for more than 10 hours during a 24-hourperiod. A professor may teach up to four classes during anyone semester
 bus topology: Network topology requiring that all computersbe connected to a main network cable. Usually implementedusing coaxial cable; it bears the disadvantage that a singlelost computer can result in network segment breakdown
 Call Level Interface (CLI): A standard developed by theSQL Access Group for database access
@@ -42,20 +42,20 @@ cardinality: Assigns a specific value to connectivity.Expresses the range (minim
 cascading order sequence: Refers to a nested orderingsequence for a set of rows. For example, a list in which alllast names are alphabetically ordered and, within the lastnames, all first names are ordered represents a cascadingsequence
 CASE: See computer-assisted software engineering(CASE)
 centralized database: A database located at a single site
-centralized design: A process in which a single conceptualdesign is modeled to match an organizationís databaserequirements. Typically used when a data componentconsists of a relatively small number of objects andprocedures. Compare to decentralized design
+centralized design: A process in which a single conceptualdesign is modeled to match an organization√≠s databaserequirements. Typically used when a data componentconsists of a relatively small number of objects andprocedures. Compare to decentralized design
 checkpoint: In transaction management, an operation inwhich the database management system writes all of itsupdated buffers to disk.63
 Chen model: See entity relationship (ER) model
-class: A collection of like objects with shared structure(attributes) and behavior (methods). A class encapsulates anobjectís data representation and a methodís implementation.Classes are organized in a class hierarchy
-class hierarchy: The organization of classes in a hierarchicaltree where each ìparentî class is a superclassand eachìchildî class is a subclass. See also inheritance
+class: A collection of like objects with shared structure(attributes) and behavior (methods). A class encapsulates anobject√≠s data representation and a method√≠s implementation.Classes are organized in a class hierarchy
+class hierarchy: The organization of classes in a hierarchicaltree where each √¨parent√Æ class is a superclassand each√¨child√Æ class is a subclass. See also inheritance
 client/server architecture: Refers to the arrangement ofhardware and software components to form a systemcomposed of clients, servers, and middleware. Theclient/server architecture features a user of resources, or aclient, and a provider of resources, or a server
 client-side extensions: These extensions add functionality toa Web browser. Although available in various forms, themost commonly encountered extensions are plug-ins, Java,JavaScript, ActiveX, and VBScript
 closure: A property of relational operators that permits theuse of relational algebra operators on existing tables(relations) to produce new relations
-cohesivity: The strength of the relationships between amoduleís components. Module cohesivity must be high
+cohesivity: The strength of the relationships between amodule√≠s components. Module cohesivity must be high
 COMMIT: The SQL command that permanently saves datachanges to a database
-Common Gateway Interface (CGI): A Web server interfacestandard that uses script files to perform specific functionsbased on a clientís parameters
+Common Gateway Interface (CGI): A Web server interfacestandard that uses script files to perform specific functionsbased on a client√≠s parameters
 completeness constraint: A constraint that specifieswhether each entity supertype occurrence must also be amember of at least one subtype. The completenessconstraint can be partial or total. Partial completenessmeans that not every supertype occurrence is a member ofa subtype; that is, there may be some supertype occurrencesthat are not members of any subtype. Total completenessmeans that every supertype occurrence must be a memberof at least one subtype
 composite attribute: An attribute that can be furthersubdivided to yield additional attributes. For example, aphone number (615-898-2368) may be divided into an areacode (615), an exchange number (898), and a four-digitcode (2368). Compare to simple attribute
-composite entity: An entity designed to transform an M:Nrelationship into two 1:M relationships. The compositeentityís primary key comprises at least the primary keys ofthe entities that it connects. Also known as a bridge entity.See also linking table
+composite entity: An entity designed to transform an M:Nrelationship into two 1:M relationships. The compositeentity√≠s primary key comprises at least the primary keys ofthe entities that it connects. Also known as a bridge entity.See also linking table
 composite key: A multiple-attribute key
 computer-assisted software engineering (CASE): Toolsused to automate part or all of the Systems DevelopmentLife Cycle
 conceptual design: A process that uses data modelingtechniques to create a model of a database structure thatrepresents the real-world objects in the most realistic waypossible. Both software- and hardware-independent
@@ -67,16 +67,16 @@ Conference on Data Systems Languages (CODASYL): Agroup originally formed to help
 connectivity: Describes the classification of the relationshipbetween entities. Classifications include 1:1, 1:M, and M:N
 consistency: A database condition in which all data integrityconstraints are satisfied. To ensure consistency of adatabase, every transaction must begin with the database ina known consistent state. If the database is not in aconsistent state, the transaction will yield an inconsistentdatabase that violates its integrity and business rules
 consistent database state: A database state in which alldata integrity constraints are satisfied
-constraint: A restriction placed on data. Constraints arenormally expressed in the form of rules. Example: ìAstudentís GPA must be between 0.00 and 4.00.î Constraintsare important because they help to ensure dataintegrity
+constraint: A restriction placed on data. Constraints arenormally expressed in the form of rules. Example: √¨Astudent√≠s GPA must be between 0.00 and 4.00.√Æ Constraintsare important because they help to ensure dataintegrity
 coordinator: The transaction processor (TP) node thatcoordinates the execution of a two-phase COMMIT in aDDBMS. See also data processor (DP), transactionprocessor (TP), and two-phase commit protocol
 correlated subquery: A subquery that executes once foreach row in the outer query
 cost-based optimizer: A query optimizer technique that usesan algorithm based on statistics about the objects beingaccessed, that is, number of rows, indexes available, indexessparsity, and so on
 COUNT: A SQL aggregate function that outputs the numberof rows containing not null values for a given column orexpression, sometimes used in conjunction with theDISTINCT clause
 CREATE INDEX: A SQL command that creates indexes onthe basis of any selected attribute or attributes
-CREATE TABLE: A SQL command used to create a tableísstructures, using the characteristics and attributes given
-CREATE VIEW: A SQL command that creates a logical,ìvirtualî table that can be treated as a ìrealî table
+CREATE TABLE: A SQL command used to create a table√≠sstructures, using the characteristics and attributes given
+CREATE VIEW: A SQL command that creates a logical,√¨virtual√Æ table that can be treated as a √¨real√Æ table
 cross join: A join that performs a relational product (alsoknown as the Cartesian product) of two tables
-Crowís Foot notation: A representation of the entityrelationship diagram using a three-pronged symbol torepresent the ìmanyî sides of the relationship
+Crow√≠s Foot notation: A representation of the entityrelationship diagram using a three-pronged symbol torepresent the √¨many√Æ sides of the relationship
 cube cache: In multidimensional OLAP, refers to the shared,reserved memory area where data cubes are held. Using thecube cache assists in speeding up data access
 cursor: A special construct used in procedural SQL to holdthe data rows returned by a SQL query. A cursor may bethought of as a reserved area of memory in which theoutput of the query is stored, like an array holding columnsand rows. Cursors are held in a reserved memory area inthe DBMS server, not in the client computer
 data: Raw facts, that is, facts that have not yet beenprocessed to reveal their meaning to the end user
@@ -110,9 +110,9 @@ metadata: data about data. Thus, the data dictionarycontains the data definition
 Data Encryption Standard(DES): The most widely usedstandard for private-key encryption. DES is used by the U.S.government
 data extraction: A process used to extract and validate datataken from an operational database and external datasources prior to their placement in a data warehouse
 datafile: See data files
-data files: A named physical storage space that stores adatabaseís data. It can reside in a different directory on ahard disk or on one or more different hard disks. All data ina database are stored in data files. A typical enterprisedatabase is normally composed of several data files. A datafile can contain rows from one table, or it can contain rowsfrom many different tables
+data files: A named physical storage space that stores adatabase√≠s data. It can reside in a different directory on ahard disk or on one or more different hard disks. All data ina database are stored in data files. A typical enterprisedatabase is normally composed of several data files. A datafile can contain rows from one table, or it can contain rowsfrom many different tables
 data filtering: See data extraction
-data fragmentation: A characteristic of a DDBMS thatallows a single object to be broken into two or moresegments or fragments. The object might be a userísdatabase, a system database, or a table. Each fragment canbe stored at any site over a computer network
+data fragmentation: A characteristic of a DDBMS thatallows a single object to be broken into two or moresegments or fragments. The object might be a user√≠sdatabase, a system database, or a table. Each fragment canbe stored at any site over a computer network
 data inconsistency: A condition in which different versionsof the same data yield different (inconsistent) results
 data independence: A condition that exists when dataaccess is unaffected by changes in the physical data storagecharacteristics
 data integrity: A condition in which given data always yieldthe same result. Data integrity is mandatory in any database.In a relational database, refers to the characteristic thatallows a DBMS to maintain entity and referential integrity
@@ -121,7 +121,7 @@ data manager (DM): See data processing (DP) manager
 data manipulation language (DML): The language (set ofcommands) that allows an end user to manipulate the datain the database (SELECT, INSERT, UPDATE, DELETE,COMMIT, and ROLLBACK)
 data mart: A small, single-subject data warehouse subset thatprovides decision support to a small group of people
 data mining: A process that employs automated tools toanalyze data in a data warehouse and other sources and toproactively identify possible relationships and anomalies
-data model: A representation, usually graphic, of a complexìreal-worldî data structure. Data models are used in thedatabase design phase of the database life cycle
+data model: A representation, usually graphic, of a complex√¨real-world√Æ data structure. Data models are used in thedatabase design phase of the database life cycle
 data processing (DP) manager: A DP specialist whoevolved into a department supervisor. Roles includemanaging the technical and human resources, supervisingthe senior programmers, and troubleshooting the program.Also known as a data manager (DP)
 data processing (DP) specialist: A now obsolete positionformed in the conversion from manual filing systems tocomputer filing systems; once filled by an employee whocreated and programmed the necessary file structures, wrotethe software that managed the data in those structures, anddesigned the application programs that produced reportsfrom the file data
 data processor (DP): The software component residing on acomputer that stores and retrieves data through a DDBMS.The DP is responsible for managing the local data in thecomputer and coordinating access to that data. See alsotransaction processor (TP)
@@ -131,23 +131,23 @@ DataSet: In ADO.NET, refers to a disconnected memory-resident representation of 
 data source name (DSN): Identifies and defines an ODBCdata source
 data sparsity: A column distribution of values or the numberof different values a column could have
 data store: The component of the decision support systemthat acts as a database for storage of business data andbusiness model data. The data in the data store has alreadybeen extracted and filtered from the external andoperational data and will be stored for access by the end-user query tool for the business data model
-data warehouse: Bill Inmon, the acknowledged ìfather ofthe data warehouse,î defines the term as ìan integrated,subject-oriented, time-variant, nonvolatile collection of datathat provides support for decision making.
-DBMS performance tuning: Refers to the activities requiredto ensure that clientsí requests are responded to in thefastest way possible, while making optimum use of existingresources
+data warehouse: Bill Inmon, the acknowledged √¨father ofthe data warehouse,√Æ defines the term as √¨an integrated,subject-oriented, time-variant, nonvolatile collection of datathat provides support for decision making.
+DBMS performance tuning: Refers to the activities requiredto ensure that clients√≠ requests are responded to in thefastest way possible, while making optimum use of existingresources
 deadlock: A condition that exists when two or moretransactions wait indefinitely for each other to release thelock on a previously locked data item. Also called deadlyembrace.See also lock
 deadly embrace: See deadlock
-decentralized design: A process in which conceptual designis used to model subsets of an organizationís databaserequirements. After verification of the views, processes, andconstraints, the subsets are then aggregated into a completedesign. Such modular designs are typical of complexsystems in which the data component consists of a relativelylarge number of objects and procedures. Compare tocentralized design
+decentralized design: A process in which conceptual designis used to model subsets of an organization√≠s databaserequirements. After verification of the views, processes, andconstraints, the subsets are then aggregated into a completedesign. Such modular designs are typical of complexsystems in which the data component consists of a relativelylarge number of objects and procedures. Compare tocentralized design
 decision support system (DSS): An arrangement ofcomputerized tools used to assist managerial decisionmaking within a business
 deferred update: When transaction operations do notimmediately update a physical database. Also calleddeferred write
 deferred write: See deferred update
 DELETE: A SQL command that allows specific data rows tobe deleted from a table
 denormalization: A process by which a table is changedfrom a higher level normal form to a lower level normalform. Usually done to increase processing speed. Potentiallyyields data anomalies
 dependency diagram: A representation of all datadependencies within a table
-derived attribute: An attribute that does not physically existwithin the entity and is derived via an algorithm. Example:Age = current date ñ birth date
-description of operations: A document that provides aprecise, detailed, up-to-date, and thoroughly revieweddescription of the activities that define an organizationísoperating environment
+derived attribute: An attribute that does not physically existwithin the entity and is derived via an algorithm. Example:Age = current date √± birth date
+description of operations: A document that provides aprecise, detailed, up-to-date, and thoroughly revieweddescription of the activities that define an organization√≠soperating environment
 design trap: Occurs when a relationship is improperly orincompletely identified and, therefore, is represented in away that is not consistent with the real world. The mostcommon design trap is known as a fan trap
 desktop database: A single-user database that runs on apersonal computer
 determinant: Any attribute in a specific row whose valuedirectly determines other values in that row. See also Boyce-Codd normal form (BCNF).64
-determination: The role of a key. In the context of adatabase table, the statement ìA determines Bî indicatesthat knowing the value of attribute A means that (determine)the value of attribute B can be looked up (determined)
+determination: The role of a key. In the context of adatabase table, the statement √¨A determines B√Æ indicatesthat knowing the value of attribute A means that (determine)the value of attribute B can be looked up (determined)
 differential backup: A level of database backup in whichonly the last modifications to the database (when comparedwith a previous full backup copy) are copied
 dimensions: Qualifying characteristics that provide additionalperspectives to a given fact
 dimension tables: In a data warehouse, used to search,filter, or classify facts within a star schema. The fact table isin a one-to-many relationship with dimension tables
@@ -163,12 +163,12 @@ distributed processing: The activity of sharing (dividing) thelogical processing
 distributed request: A database request that allows a singleSQL statement to access data in several remote DPs in adistributed database
 distributed transaction: A database transaction thataccesses data in several remote DPs in a distributeddatabase
 distribution transparency: A DDBMS feature that allows adistributed database to be treated as though it were a singlelogical database
-document type definition (DTD): A file with a .dtd filenameextension that describes XML elements; in effect, a DTD file642provides the description of a documentís composition anddefines the syntax rules or valid tags for each type of XMLdocument
-domain: Used to organize and describe an attributeís set ofpossible values
-DO-UNDO-REDO protocol: Used by a DP to roll backand/or roll forward transactions with the help of a systemístransaction log entries
+document type definition (DTD): A file with a .dtd filenameextension that describes XML elements; in effect, a DTD file642provides the description of a document√≠s composition anddefines the syntax rules or valid tags for each type of XMLdocument
+domain: Used to organize and describe an attribute√≠s set ofpossible values
+DO-UNDO-REDO protocol: Used by a DP to roll backand/or roll forward transactions with the help of a system√≠stransaction log entries
 drill down: To decompose data into more atomiccomponents, that is, data at lower levels of aggregation.Used primarily in a decision support system to focus onspecific geographic areas, business types, and so on. Seealso roll up
 DROP: A SQL command used to delete database objectssuch as tables, views, indexes, and users
-durability: The transaction property indicating thepermanence of a databaseís consistent state. Transactionsthat have been completed will not be lost in the event of asystem failure if the database has proper durability
+durability: The transaction property indicating thepermanence of a database√≠s consistent state. Transactionsthat have been completed will not be lost in the event of asystem failure if the database has proper durability
 dynamic-link libraries (DLLs): Shared code libraries that aretreated as part of the operating system or server process sothey can be dynamically invoked at run time
 dynamic query optimization: Refers to the process ofdetermining the SQL access strategy at run time, using themost up-to-date information about the database. Contrastwith static query optimization
 dynamic SQL: A term used to describe an environment inwhich the SQL statement is not known in advance, butinstead is generated at run time. In a dynamic SQLenvironment, a program can generate the SQL statementsat run time that are required to respond to ad hoc queries
@@ -180,11 +180,11 @@ end-user presentation tool: Used by a data analyst toorganize and present select
 end-user query tool: Used by a data analyst to create thequeries that access the specific desired information from thedata store
 enterprise database: The overall company datarepresentation, which provides support for present andexpected future needs
 entity: Something about which someone wants to store data;typically a person, a place, a thing, a concept, or an event.See also attribute
-entity cluster: A ìvirtualî entity type used to representmultiple entities and relationships in the ERD. An entitycluster is formed by combining multiple interrelated entitiesinto a single abstract entity object. An entity cluster isconsidered ìvirtualî or ìabstractî in the sense that it is notactually an entity in the final ERD
+entity cluster: A √¨virtual√Æ entity type used to representmultiple entities and relationships in the ERD. An entitycluster is formed by combining multiple interrelated entitiesinto a single abstract entity object. An entity cluster isconsidered √¨virtual√Æ or √¨abstract√Æ in the sense that it is notactually an entity in the final ERD
 entity instance: A term used in ER modeling to refer to aspecific table row. Also known as an entity occurrence
 entity integrity: The property of a relational table thatguarantees that each entity has a unique value in a primarykey and that there are no null values in the primary key
 entity occurrence: See entity instance
-entity relationship diagram (ERD): A diagram that depictsan entity relationship modelís entities, attributes, andrelations
+entity relationship diagram (ERD): A diagram that depictsan entity relationship model√≠s entities, attributes, andrelations
 entity relationship (ER) model: A data model developed byP. Chen in 1975. It describes relationships (1:1, 1:M, andM:N) among entities at the conceptual level with the help ofER diagrams
 entity set: In a relational model, refers to a grouping ofrelated entities
 entity subtype: In a generalization/specialization hierarchy,refers to a subset of an entity supertype where the entitysupertype contains the common characteristics and theentity subtypes contain the unique characteristics of eachentity subtype
@@ -195,16 +195,16 @@ existence-dependent: A property of an entity whoseexistence depends on one or mo
 existence-independent: An entity that can exist apart fromone or more related entities. It must be created first whenreferencing an existence-dependent table to it
 explicit cursor: In procedural SQL, a cursor created to holdthe output of a SQL statement that may return two or morerows (but could return zero rows or only one row)
 extended entity relationship (EER) model: Sometimesreferred to as the enhanced entity relationship model; theresult of adding more semantic constructs (entity supertypes,entity subtypes, and entity clustering) to the original entityrelationship (ER) model
-extended relational data model (ERDM): A model thatincludes the object-oriented modelís best features in aninherently simpler relational database structuralenvironment
-extends: In a DBMS environment, refers to the data filesíability to automatically expand in size, using predefinedincrements
-Extensible Markup Language (XML): Derived from SGML,this is a metalanguage used to represent and manipulatedata elements. Unlike other markup languages, XMLpermits the manipulation of a documentís data elements
-external model: The application programmerís view of thedata environment. Given its business-unit focus, an externalmodel works with a data subset of the global databaseschema
-external schema: The specific representation of an externalview, that is, the end userís view of the data environment
+extended relational data model (ERDM): A model thatincludes the object-oriented model√≠s best features in aninherently simpler relational database structuralenvironment
+extends: In a DBMS environment, refers to the data files√≠ability to automatically expand in size, using predefinedincrements
+Extensible Markup Language (XML): Derived from SGML,this is a metalanguage used to represent and manipulatedata elements. Unlike other markup languages, XMLpermits the manipulation of a document√≠s data elements
+external model: The application programmer√≠s view of thedata environment. Given its business-unit focus, an externalmodel works with a data subset of the global databaseschema
+external schema: The specific representation of an externalview, that is, the end user√≠s view of the data environment
 facts: Measurements (values) that represent a specificbusiness aspect or activity. For example, sales figures arenumeric measurements that represent product and/orservice sales. Facts commonly used in business data analysisare units, costs, prices, and revenues
 fact table: In a data warehouse, refers to the star schemacenter table containing facts that are linked and classifiedthrough their common dimensions. A fact table is in a one-to-many relationship with each associated dimension table
 failure transparency: A DDBMS feature that allowscontinuous operation of a DDBMS, even in the event of afailure in one of the nodes of the network
 fan trap: A design trap that occurs when one entity is in two1:M relationships to other entities, thus producing anassociation among the other entities that is not expressed inthe model
-field: A character or group of characters (alphabetic ornumeric) that defines a characteristic of a person, place,orthing. For example, a personís Social Security number,address, phone number, and bank balance all constitutefields.64
+field: A character or group of characters (alphabetic ornumeric) that defines a characteristic of a person, place,orthing. For example, a person√≠s Social Security number,address, phone number, and bank balance all constitutefields.64
 field-level lock: Allows concurrent transactions to access thesame row as long as they require the use of different fields(attributes) within that row. Yields the most flexible multiuserdata access but requires a high level of computer overhead
 file: A named collection of related records
 first normal form (1NF): The first stage in the normalizationprocess. It describes a relation depicted in tabular format,with no repeating groups and with a primary key identified.All nonkey attributes in the relation are dependent on theprimary key
@@ -213,26 +213,26 @@ foreign key: See key
 fourth-generation language (4GL): A computer languagethat allows a user to specify what must be done withoutspecifying how it must be done. The most prominent 4GLin the database environment is SQL
 fourth normal form (4NF): A table is in 4NF when it is in3NF and contains no multiple independent sets ofmultivalued dependencies
 fragmentation transparency: A DDBMS feature that allowsa system to treat a distributed database as a single databaseeven though the database is divided into two or morefragments
-front-end CASE tools: A computer-aided software tool thathas been classified as ìfront endî because it providessupport for the planning, analysis, and design phases of theSDLC. In comparison, back-end case tools provide supportfor the coding and implementation phases
+front-end CASE tools: A computer-aided software tool thathas been classified as √¨front end√Æ because it providessupport for the planning, analysis, and design phases of theSDLC. In comparison, back-end case tools provide supportfor the coding and implementation phases
 full backup (database dump): A complete copy of an entiredatabase saved and periodically updated in a separatememory location. Ensures a full recovery of all data in theevent of a physical disaster or a database integrity failure
 full functional dependence: A condition in which anattribute is functionally dependent on a composite key butnot on any subset of that composite key.fully heterogeneous distributed database system (full
 heterogeneous DDBMS): Integrates different types ofdatabase management systems (hierarchical, network, andrelational) over a network. It supports different databasemanagement systems that may even support different datamodels running under different computer systems, such asmainframes, minicomputers, and microcomputers. See alsoheterogeneous DDBMSand homogeneous DDBMS
 fully replicated database: Stores multiple copies of eachdatabase fragment at multiple sites. See also partiallyreplicated database
-functional dependence: Within a relation R, an attribute Bis functionally dependent on an attribute A if and only if a644given value of the attribute A determines exactly one valueof the attribute B. The relationship ìB is dependent on Aî isequivalent to ìA determines Bî and is written as A->B
-granularity: Refers to the level of detail represented by thevalues stored in a tableís row. Data stored at their lowestlevel of granularity are said to be atomicdata
+functional dependence: Within a relation R, an attribute Bis functionally dependent on an attribute A if and only if a644given value of the attribute A determines exactly one valueof the attribute B. The relationship √¨B is dependent on A√Æ isequivalent to √¨A determines B√Æ and is written as A->B
+granularity: Refers to the level of detail represented by thevalues stored in a table√≠s row. Data stored at their lowestlevel of granularity are said to be atomicdata
 GROUP BY: A SQL clause used to create frequencydistributions when combined with any of the aggregatefunctions in a SELECT statement
 hardware independence: Means that a model does notdepend on the hardware used in the implementation of themodel. Therefore, changes in the hardware will have noeffect on the database design at the conceptual level
 HAVING: A particularly useful extension of the GROUP BYfeature. The HAVING clause is applied to the output of aGROUP BY operation to restrict the selected rows
 heterogeneity transparency: A DDBMS feature that allowsa system to integrate several different centralized DBMSsinto one logical DDBMS
 heterogeneous DDBMS: Integrates different types ofcentralized database management systems over a network.See also fully heterogeneous distributed database system(fully heterogeneous DDBMS)and homogeneous DDBMS
-hierarchical model: No longer a major player in the currentdatabase market; important to know, however, because thebasic concepts and characteristics form the basis forsubsequent database development. This model is based onan ìupside-downî tree structure in which each record iscalled a segment. The top record is the root segment. Eachsegment has a 1:M relationship to the segment directlybelow it
+hierarchical model: No longer a major player in the currentdatabase market; important to know, however, because thebasic concepts and characteristics form the basis forsubsequent database development. This model is based onan √¨upside-down√Æ tree structure in which each record iscalled a segment. The top record is the root segment. Eachsegment has a 1:M relationship to the segment directlybelow it
 homogeneous DDBMS: Integrates only one particular typeof centralized database management system over a network.See also heterogeneous DDBMSand fully heterogeneousdistributed database system (fully heterogeneous DDBMS)
 homonym: Indicates the use of the same name to labeldifferent attributes; generally should be avoided. Somerelational software automatically checks for homonyms andeither alerts the user to their existence or automaticallymakes the appropriate adjustments. See also synonym
 horizontal fragmentation: The distributed database designprocess that breaks up a table into subsets consisting ofunique rows. See also database fragments andverticalfragmentation
 host language: A term used to describe any language thatcontains embedded SQL statements
 identifiers: The ERM uses identifiers to uniquely identifyeach entity instance. In the relational model, such identifiersare mapped to primary keys in tables
-identifying relationship: A relationship that exists when therelated entities are existence-dependent. Also called a strongrelationshipor strong identifying relationshipbecause thedependent entityís primary key contains the primary key ofthe parent entity
-immediate update: When a database is immediately updatedby transaction operations during the transactionís execution,even before the transaction reaches its commit point
+identifying relationship: A relationship that exists when therelated entities are existence-dependent. Also called a strongrelationshipor strong identifying relationshipbecause thedependent entity√≠s primary key contains the primary key ofthe parent entity
+immediate update: When a database is immediately updatedby transaction operations during the transaction√≠s execution,even before the transaction reaches its commit point
 implicit cursor: A cursor that is automatically created inprocedural SQL when the SQL statement returns onlyonevalue
 inconsistent retrievals: A concurrency control problem thatarises when a transaction calculating summary (aggregate
 functions over a set of data: while other transactions ar
@@ -242,11 +242,11 @@ index: An ordered array composed of index key values androw ID values (pointers)
 index key: See index
 index selectivity: A measure of how likely an index will beused in query processing
 information: The result of processing raw data to reveal itsmeaning. Information consists of transformed data andfacilitates decision making
-information engineering (IE): A methodology thattranslates a companyís strategic goals into data andapplications that will help the company achieve its goals
+information engineering (IE): A methodology thattranslates a company√≠s strategic goals into data andapplications that will help the company achieve its goals
 information resource dictionary: See data dictionary
 information resource manager (IRM): See dataadministrator (DA)
 information system (IS): A system that provides for datacollection, storage, and retrieval; facilitates thetransformation of data into information and themanagement of both data and information. An informationsystem is composed of hardware, software (DMBS andapplications), the database(s), people, and procedures
-information systems architecture (ISA): The output of theinformation engineering (IE) process that serves as the basisfor planning, developing, and controlling future informationsystems. (IE allows for the translation of a companyísstrategic goals into the data and applications that will helpthe company achieve those goals. IE focuses on thedescription of the corporate data instead of the processes.
+information systems architecture (ISA): The output of theinformation engineering (IE) process that serves as the basisfor planning, developing, and controlling future informationsystems. (IE allows for the translation of a company√≠sstrategic goals into the data and applications that will helpthe company achieve those goals. IE focuses on thedescription of the corporate data instead of the processes.
 information systems (IS) department: An evolution of thedata-processing department when responsibilities werebroadened to include service and production functions
 inheritance: In the object-oriented data model, the ability ofan object to inherit the data structure and methods of theclasses above it in the class hierarchy. See also classhierarchy
 inner join: A join operation in which only rows that meet agiven criteria are selected. The join criteria can be anequality condition (natural join or equijoin) or an inequalitycondition (theta join). Inner join is the most commonly usedtype of join. Contrast with outer join
@@ -254,28 +254,28 @@ inner query: A query that is embedded (or nested) insideanother query. Also know
 input/output (IO) request: A low-level (read or write) dataaccess operation to/from computer devices (such asmemory, hard disks, video, and printers)
 INSERT: A SQL command that allows the insertion of datarows into a table, one row at a time or multiple rows at atime, using a subquery
 internal model: In database modeling, refers to a level ofdata abstraction that adapts the conceptual model to aspecific DBMS model for implementation
-internal schema: Depicts a specific representation of aninternal model, using the database constructs supported bythe chosen database. (The internal model is therepresentation of a database as ìseenî by the DBMS. Inother words, the internal model requires a designer to matchthe conceptual modelís characteristics and constraints tothose of the selected implementation model.
+internal schema: Depicts a specific representation of aninternal model, using the database constructs supported bythe chosen database. (The internal model is therepresentation of a database as √¨seen√Æ by the DBMS. Inother words, the internal model requires a designer to matchthe conceptual model√≠s characteristics and constraints tothose of the selected implementation model.
 islands of information: A term used in the old-style filesystem environment to refer to independent, oftenduplicated, and inconsistent data pools created andmanaged by different organizational departments
 isolation: A property of a database transaction thatguarantees that a data item used by one transaction is notavailable to other transactions until the first transaction ends
 iterative process: A process based on repetition of stepsand procedures
-Java: An object-oriented programming language developedby Sun Microsystems that runs on top of the Web browsersoftware. Java applications are compiled and stored in theWeb server. Javaís main advantage is its ability to letapplication developers develop their applications once andrun them in many environments
+Java: An object-oriented programming language developedby Sun Microsystems that runs on top of the Web browsersoftware. Java applications are compiled and stored in theWeb server. Java√≠s main advantage is its ability to letapplication developers develop their applications once andrun them in many environments
 JavaScript: A scripting language (one that enables therunning of a series of commands or macros) developed byNetscape that allows Web authors to design interactive Websites. JavaScript code is embedded in Web pages. This645JavaScript is downloaded with the page and is activatedwhen a specific event takes place, such as a mouse click onanobject
 join columns: A term used to refer to the columns that jointwo tables. The join columns generally share similar values
 key: An entity identifier based on the concept of functionaldependence; may be classified as follows: Superkey:Anattribute (or combination of attributes) that uniquelyidentifies each entity in a table. Candidate key:A minimalsuperkey, that is, one that does not contain a subset ofattributes that is itself a superkey. Primary key (PK):Acandidate key selected as a unique entity identifier.Secondary key:A key that is used strictly for data retrievalpurposes. For example, a customer is not likely to know hisor her customer number (primary key), but the combinationof last name, first name, middle initial, and telephonenumber is likely to make a match to the appropriate tablerow. Foreign key:An attribute (or combination of attributes)in one table whose values must match the primary key inanother table or whose values must be null
 key attribute(s): The attribute(s) that form(s) a primary key.See also prime attribute
-knowledge: The body of information and facts about aspecific subject. Knowledge implies familiarity, awareness,and understanding of information as it applies to anenvironment. A key characteristic of knowledge is thatìnewî knowledge can be derived from ìoldî knowledge
+knowledge: The body of information and facts about aspecific subject. Knowledge implies familiarity, awareness,and understanding of information as it applies to anenvironment. A key characteristic of knowledge is that√¨new√Æ knowledge can be derived from √¨old√Æ knowledge
 left outer join: In a pair of tables to be joined, a left outerjoin yields all of the rows in the left table, including thosethat have no matching values in the other table. Forexample, a left outer join of Customer with Agent will yieldall of the Customer rows, including the ones that do nothave a matching Agent row. See also outer join and rightouter join
 linking table: In the relational model, a table thatimplements a M:M relationship. See also composite entity
 local mapping transparency: A property of a DDBMS inwhich access to the data requires the end user to know boththe name and the location of the fragments in order toaccess the database. See also location transparency
 location transparency: The property of a DDBMS in whichaccess to the data requires that only the name of thedatabase fragments be known. (Fragment locations need notbe known.) See alsolocal mapping transparency
-lock: A device that is employed to guarantee unique use of adata item to a particular transaction operation, therebypreventing other transactions from using that data item. Atransaction requires a lock prior to data access, and that lock646is released (unlocked) after the operationís execution toenable other transactions to lock the data item for their use
+lock: A device that is employed to guarantee unique use of adata item to a particular transaction operation, therebypreventing other transactions from using that data item. Atransaction requires a lock prior to data access, and that lock646is released (unlocked) after the operation√≠s execution toenable other transactions to lock the data item for their use
 lock granularity: Indicates the level of lock use. Locking cantake place at the following levels: database, table, page, row,and field (attribute)
 lock manager: A DBMS component that is responsible forassigning and releasing locks
 logical data format: The way in which a human beingviewsdata
 logical design: A stage in the design phase that matches theconceptual design to the requirements of the selected DBMSand is, therefore, software-dependent. It is used to translatethe conceptual design into the internal model for a selecteddatabase management system, such as DB2, SQL Server,Oracle, IMS, Informix, Access, and Ingress
 logical independence: A condition that exists when theinternal model can be changed without affecting theconceptual model. (The internal model is hardware-independent because it is unaffected by the choice ofcomputer on which the software is installed. Therefore, achange in storage devices or even a change in operatingsystems will not affect the internal model.
 lost updates: A concurrency control problem in which dataupdates are lost during the concurrent execution oftransactions
-mandatory participation: A term used to describe arelationship in which one entity occurrence must have acorresponding occurrence in another entity. Example:EMPLOYEE works in DIVISION. (A person cannot be anemployee if he or she is not assigned to a companyísdivision.
+mandatory participation: A term used to describe arelationship in which one entity occurrence must have acorresponding occurrence in another entity. Example:EMPLOYEE works in DIVISION. (A person cannot be anemployee if he or she is not assigned to a company√≠sdivision.
 manual query optimization: An operation mode thatrequires the end user or programmer to define the accesspath for the execution of a query
 manual statistical generation mode: One mode ofgenerating statistical data access information used for queryoptimization. In this mode, the DBA must periodically run aroutine to generate the data access statistics; for example,running the RUNSTAT command in an IBM DB2 database
 many-to-many(M:N or M:M) relationships: One of threetypes of relationships (associations among two or moreentities) in which one occurrence of an entity is associatedwith many occurrences of a related entity and oneoccurrence of the related entity is associated with manyoccurrences of the first entity
@@ -285,7 +285,7 @@ metadata: Data about data, that is, data concerning datacharacteristics and rela
 method: In the object-oriented data model, a named set ofinstructions to perform an action. Methods represent real-world actions. Methods are invoked through messages
 metrics: In a data warehouse, numeric facts that measuresomething of interest to the end user
 MIN: A SQL aggregate function that yields the minimumattribute value encountered in a given column
-minimal data rule: Defined as ìAll that is needed is there,and all that is there is needed.î In other words, all dataelements required by database transactions must be definedin the model, and all data elements defined in the modelmust be used by at least one database transaction
+minimal data rule: Defined as √¨All that is needed is there,and all that is there is needed.√Æ In other words, all dataelements required by database transactions must be definedin the model, and all data elements defined in the modelmust be used by at least one database transaction
 mixed fragmentation: Regarding data fragmentation, refersto a combination of horizontal and vertical strategies,meaning a table may be divided into several rows, each rowhaving a subset of the attributes (columns)
 module: (1) A design segment that can be implemented asan autonomous unit, sometimes linked to produce a system.(2) An information system component that handles aspecific function, such as inventory, orders, or payroll
 module coupling: A description of the extent to whichmodules are independent of one another
@@ -295,14 +295,14 @@ multidimensional online analytical processing (MOLAP): Extends online analytical
 multiple-site processing, multiple-site data (MPMD): Ascenario describing a fully distributed database managementsystem with support for multiple DPs and transactionprocessors at multiple sites
 multiple-site processing, single-site data (MPSD): Ascenario in which multiple processes run on differentcomputers sharing a single data repository
 multiuser database: A database that supports multipleconcurrent users
-multivalued attribute: An attribute that can have manyvalues for a single entity occurrence. For example, anEMP_DEGREE attribute might store the string ìBBA, MBA,PHDî to indicate three different degrees held
+multivalued attribute: An attribute that can have manyvalues for a single entity occurrence. For example, anEMP_DEGREE attribute might store the string √¨BBA, MBA,PHD√Æ to indicate three different degrees held
 mutual consistency rule: A data replication rule requiringthat all copies of data fragments be identical
 mutual exclusiverule: A condition in which only onetransaction at a time can own an exclusive lock on thesameobject
 natural join: A relational operation that links tables byselecting only the rows with common values in theircommon attribute(s)
 natural key (natural identifier): A real-world, generallyaccepted identifier used to identify real-world objects. As itsname implies, a natural key is familiar to end users andforms part of their day-to-day business vocabulary
 network model: A data model standard created by theCODASYL Data Base Task Group in the late 1960s. Itrepresented data as a collection of record types andrelationships as predefined sets with an owner record typeand a member record type in a 1:M relationship
 network schema: In a network data base model, defines theconceptual organization of the entire database as viewed bythe database administrator. The schema includes a definitionof the database name, the record type for each record, andthe components that make up those records
-network subschema: In a network database model, definesthe portion of the database ìseenî by the applicationprograms that actually produce the desired informationfromthe data contained within the database. The existenceof subschema definitions allows all application programssimply to invoke the subschema required to access theappropriate data
+network subschema: In a network database model, definesthe portion of the database √¨seen√Æ by the applicationprograms that actually produce the desired informationfromthe data contained within the database. The existenceof subschema definitions allows all application programssimply to invoke the subschema required to access theappropriate data
 non-identifying relationship: A relationship that occurswhen the primary key of the dependent (many side) entitydoes not contain the primary key of the related parententity. Also known as a weak relationship
 nonkey attribute: See nonprime attribute
 nonprime attribute: An attribute that is not part of a key
@@ -310,16 +310,16 @@ normalization: A process that assigns attributes to entities insuch a way that d
 NOT: A SQL logical operator that negates a given predicate
 null: In SQL, refers to the absence of an attribute value.Note: A null is not a blank
 object: An abstract representation of a real-world entity thathas a unique identity, embedded properties, and the abilityto interact with other objects and with itself.64
-Object Linking and Embedding for Database (OLE-DB): Based on Microsoftís Component Object Model (COM),OLE-DB is database middleware that adds object-orientedfunctionality for accessing relational and nonrelational data.OLE-DB was the first part of Microsoftís strategy to providea unified object-oriented framework for the development ofnext-generation applications.object-oriented database management syste
+Object Linking and Embedding for Database (OLE-DB): Based on Microsoft√≠s Component Object Model (COM),OLE-DB is database middleware that adds object-orientedfunctionality for accessing relational and nonrelational data.OLE-DB was the first part of Microsoft√≠s strategy to providea unified object-oriented framework for the development ofnext-generation applications.object-oriented database management syste
 (OODBMS): Data management software used to managedata found within an object-oriented database model
 object-oriented data model (OODM): A data model whosebasic modeling structure is an object
-object-oriented programming (OOP): An alternative toconventional programming methods based on object-oriented concepts. It reduces programming time and lines ofcode and increases programmersí productivity.object/relational database management syste
-(O/RDBMS): A DBMS based on the extended relationalmodel (ERDM.) The ERDM, championed by many relationaldatabase researchers, constitutes the relational modelísresponse to the OODM. This model includes many of theobject-oriented modelís best features within an inherentlysimpler relational database structural environment
+object-oriented programming (OOP): An alternative toconventional programming methods based on object-oriented concepts. It reduces programming time and lines ofcode and increases programmers√≠ productivity.object/relational database management syste
+(O/RDBMS): A DBMS based on the extended relationalmodel (ERDM.) The ERDM, championed by many relationaldatabase researchers, constitutes the relational model√≠sresponse to the OODM. This model includes many of theobject-oriented model√≠s best features within an inherentlysimpler relational database structural environment
 one-to-many (1:M)relationship: One of three types ofrelationships (associations among two or more entities) thatare used by data models. In a 1:M relationship, one entityinstance is associated with many instances of the relatedentity
 one-to-one (1:1) relationship: One of three types ofrelationships (associations among two or more entities)that are used by data models. In a 1:1 relationship, oneentity instance is associated with only one instance of therelated entity
 online analytical processing (OLAP): Decision supportsystem (DSS) tools that use multidimensional dataanalysis techniques. OLAP creates an advanced dataanalysis environment that supports decision making,business modeling, and operations research activities
 Open Database Connectivity (ODBC): Databasemiddleware developed by Microsoft to provide a databaseaccess API to Windows applications
-operational database: A database that is designedprimarily to support a companyís day-to-day operations.Also known as atransactionaldatabase or productiondatabase
+operational database: A database that is designedprimarily to support a company√≠s day-to-day operations.Also known as atransactionaldatabase or productiondatabase
 optimizer hints: Special instructions for the query optimizerthat are embedded inside the SQL command text
 optional participation: Means that one entity occurrencedoes not require a corresponding entity occurrence in aparticular relationship.64
 OR: The SQL logical operator used to link multipleconditional expressions in a WHERE or HAVING clause. Itrequires that only one of the conditional expressions be true
@@ -339,16 +339,16 @@ performance tuning: Activities that make a databaseperform more efficiently in t
 periodicity: Usually expressed as current year only, previousyears, or all years; provides information about the time spanof data stored in a table
 persistent stored module (PSM): A block of code(containing standard SQL statements and proceduralextensions) that is stored and executed at the DBMS server
 personalization: Customization of a Web page forindividualusers
-physical data format: The way in which a computer ìseesî(stores) data
+physical data format: The way in which a computer √¨sees√Æ(stores) data
 physical design: A stage of database design that maps thedata storage and access characteristics of a database. Sincethese characteristics are a function of the types of devicessupported by the hardware, the data access methodssupported by the system (and the selected DBMS) physicaldesign is both hardware- and software-dependent. See alsophysical model
 physical independence: A condition that exists when thephysical model can be changed without affecting theinternalmodel
 physical model: A model in which the physicalcharacteristics (location, path, and format) are described forthe data. Both hardware- and software-dependent. See alsophysical design
 plug-in: In the World Wide Web (WWW), a client-side,external application that is automatically invoked by thebrowser when it is needed to manage specific types of data
-policies: General statements of direction that are used tomanage company operations through the communicationand support of the organizationís objectives
+policies: General statements of direction that are used tomanage company operations through the communicationand support of the organization√≠s objectives
 predicate logic: Used extensively in mathematics, provides aframework in which an assertion (statement of fact) can beverified as either true or false. For example, suppose that astudent with a student ID of 12345678 is named MelissaSanduski. That assertion can easily be demonstrated to betrue or false
 primary key (PK): In the relational model, an identifiercomposed of one or more attributes that uniquely identifiesa row. See also key
 prime attribute: A key attribute, that is, an attribute that ispart of a key or is the whole key. See also key attribute
-privacy: Control of data usage dealing with the rights ofindividuals and organizations to determine the ìwho, what,when, where, and howî of data access
+privacy: Control of data usage dealing with the rights ofindividuals and organizations to determine the √¨who, what,when, where, and how√Æ of data access
 procedural SQL (PL/SQL): A type of SQL that allows theuse of procedural code and SQL statements that are storedin a database as a single callable object that can be invokedby name
 procedure cache: A shared, reserved memory area thatstores the most recently executed SQL statements orPL/SQL procedures (including triggers and functions).Alsocalled SQL cache
 procedures: Series of steps to be followed during theperformance of a given activity or process
@@ -362,10 +362,10 @@ RAID: An acronym that means Redundant Array ofIndependent Disks. RAID is used to
 record: A collection of related (logically connected) fields
 recursive query: A nested query that joins a table to itself.For example, a recursive query joins the EMPLOYEE tableto itself
 recursive relationship: A relationship that is found within asingle entity type. For example, an EMPLOYEE is marriedto an EMPLOYEE or a PART is a component of anotherPART
-redundant transaction logs: Most database managementsystems keep several copies of the transaction log to ensurethat the physical failure of a disk will not impair the DBMSísability to recover data
-referential integrity: A condition by which a dependenttableís foreign key must have either a null entry or amatching entry in the related table. Even though an attributemay not have a correspondingattribute, it is impossible tohave an invalid entry
+redundant transaction logs: Most database managementsystems keep several copies of the transaction log to ensurethat the physical failure of a disk will not impair the DBMS√≠sability to recover data
+referential integrity: A condition by which a dependenttable√≠s foreign key must have either a null entry or amatching entry in the related table. Even though an attributemay not have a correspondingattribute, it is impossible tohave an invalid entry
 relational algebra: A set of mathematical principles thatform the basis of the manipulation of relational tablecontents; composed of eight main functions: SELECT,PROJECT, JOIN, INTERSECT, UNION, DIFFERENCE,PRODUCT, and DIVIDE.64
-relational database management system (RDBMS): Acollection of programs that manages a relational database.The RDBMS software translates a userís logical requests(queries) into commands that physically locate and retrievethe requested data. A good RDBMS also creates andmaintains a data dictionary (system catalog) to help providedata security, data integrity, concurrent access, easy access,and system administration to the data in the databasethrough a query language (SQL) and application programs
+relational database management system (RDBMS): Acollection of programs that manages a relational database.The RDBMS software translates a user√≠s logical requests(queries) into commands that physically locate and retrievethe requested data. A good RDBMS also creates andmaintains a data dictionary (system catalog) to help providedata security, data integrity, concurrent access, easy access,and system administration to the data in the databasethrough a query language (SQL) and application programs
 relational model: Developed by E. F. Codd (of IBM) in1970, it represents a major breakthrough for users anddesigners because of its conceptual simplicity. The relationalmodel, based on mathematical set theory, represents data asindependent relations. Each relation (table) is conceptuallyrepresented as a matrix of intersecting rows and columns.The relations are related to each other through the sharingof common entity characteristics (values in columns)
 relational online analytical processing (ROLAP): Providesonline analytical processing functionality by using relationaldatabases and familiar relational query tools to store andanalyze multidimensional data
 relational schema: The description of the organization of arelational database as seen by the database administrator
@@ -377,7 +377,7 @@ remote request: A DDBMS feature that allows a single SQLstatement to access data
 remote transaction: A DDBMS feature that allows atransaction (formed by several requests) to access data in asingle remote DP. See also remote request
 repeating groups: In a relation, a characteristic describing agroup of multiple entries of the same type that exist for asingle key attribute occurrence. For example, a car can havemultiple colors (top, interior, bottom, trim, and so on)
 replicated data allocation: A data allocation strategy bywhich copies of one or more database fragments are storedat several sites
-replica transparency: Refers to the DDBMSís ability to hidethe existence of multiple copies of data from the user.65
+replica transparency: Refers to the DDBMS√≠s ability to hidethe existence of multiple copies of data from the user.65
 replication: The process of creating and managing duplicateversions of a database. Used to place copies in differentlocations and to improve access time and fault tolerance
 reserved words: Words that are used by a system and thatcannot be used for any other purpose. For example, inOracle SQL , the word INITIAL cannot be used to nametables or columns
 right outer join: In a pair of tables to be joined, a right outerjoin yields all of the rows in the right table, including theones with no matching values in the other table. Forexample, a right outer join of CUSTOMER with AGENT willyield all of the agent rows, including the ones that do nothave a matching CUSTOMER row. See also left outer joinand outer join
@@ -404,7 +404,7 @@ server-side extension: A program that interacts directly withthe server process 
 set theory: A mathematical science component that dealswith sets, or groups of things, and is used as the basis fordata manipulation in the relational model
 shared lock: A lock that is issued when a transactionrequests permission to read data from a database and noexclusive locks are held on that data by another transaction.A shared lock allows other read-only transactions to accessthe database. See also exclusive lock
 simple attribute: An attribute that cannot be subdivided intomeaningful components. Compare to composite attribute
-single-site processing, single-site data (SPSD): A scenarioin which all processing is done on a single CPU or hostcomputer (mainframe, minicomputer, or PC) and all data arestored on the host computerís local disk
+single-site processing, single-site data (SPSD): A scenarioin which all processing is done on a single CPU or hostcomputer (mainframe, minicomputer, or PC) and all data arestored on the host computer√≠s local disk
 single-user DBMS: A database management systemclassification that depicts a DBMS that supports only oneuser at atime
 single-valued attribute: An attribute that can have onlyonevalue
 slice and dice: Multidimensional jargon meaning the abilityto cut slices off of the data cube to perform a more detailedanalysis
@@ -416,7 +416,7 @@ SQL cache: A shared, reserved memory area that stores themost recently executed 
 SQL performance tuning: Activities oriented towardgenerating a SQL query that returns the correct answer inthe least amount of time, using the minimum amount ofresources at the server end
 standards: A detailed and specific set of instructions thatdescribes the minimum requirements for a given activity.Standards are used to evaluate the quality of the output
 star schema: A data modeling technique used to mapmultidimensional decision support data into a relationaldatabase. The star schema represents data, using a centraltable known as a fact table, in a 1:M relationship with oneor more dimension tables
-stateless system: Describes the fact that at any given time, aWeb server does not know the status of any of the clientscommunicating with it. The Web does not reserve memoryto maintain an open communications ìstateî between theclient and the server
+stateless system: Describes the fact that at any given time, aWeb server does not know the status of any of the clientscommunicating with it. The Web does not reserve memoryto maintain an open communications √¨state√Æ between theclient and the server
 statement-level trigger: A SQL trigger that is assumed if theFOR EACH ROW keywords are omitted. This type oftrigger is executed once, before or after the triggeringstatement completes, and is the default case
 static query optimization: A query optimization mode inwhich the access path to a database is predetermined atcompilation time. Contrast with dynamic queryoptimization
 static SQL: A style of embedded SQL in which the SQLstatements do not change while the application is running.65
@@ -460,7 +460,7 @@ transaction log: A feature used by the DBMS to keep trackof all transaction oper
 transaction log backup: Backs up only the transaction logoperations that are not reflected in a previous backup copyof the database
 transaction manager (TM): See transactionprocessor(TP)
 transaction processor (TP): In a DDBMS, the softwarecomponent on each computer that requests data. The TP isresponsible for the execution and coordination of alldatabases issued by a local application that access data onany DP. Also called transaction manager (TM).See alsodata processor (DP)
-transaction transparency: A DDBMS property that ensuresthat database transactions will maintain the distributeddatabaseís integrity and consistency. They ensure that atransaction will be completed only when all database sitesinvolved in the transaction complete their part of thetransaction
+transaction transparency: A DDBMS property that ensuresthat database transactions will maintain the distributeddatabase√≠s integrity and consistency. They ensure that atransaction will be completed only when all database sitesinvolved in the transaction complete their part of thetransaction
 transitive dependency: A condition in which an attribute isdependent on another attribute that is not part of theprimary key
 trigger: A procedural SQL code that is automatically invokedby the relational database management system upon theoccurrence of a data manipulation event
 tuple: In the relational model, a table row
@@ -477,7 +477,7 @@ unreplicated database: A distributed database in whicheach database fragment is 
 updatable view: A view that can be used to update attributesin base tables that are used in the view
 UPDATE: A SQL command that allows attribute values to bechanged in one or more rows of a table
 user: In a system, a uniquely identifiable object that allows agiven person or process to log on to the database
-VBScript: A client-side extension in the form of a Microsoftlanguage product used to extend a browserís functionality;derived from Visual Basic
+VBScript: A client-side extension in the form of a Microsoftlanguage product used to extend a browser√≠s functionality;derived from Visual Basic
 vertical fragmentation: In distributed database design, theprocess that breaks up a table into fragments consisting of asubset of columns from the original table. Fragments mustshare a common primary key. See also database fragmentsandhorizontal fragmentation
 very large databases (VLDBs): As the name implies
 databases that contain huge amounts of data: gigabyte,terabyte, and petabytes ranges are not unusual
@@ -486,13 +486,13 @@ wait/die: A concurrency control scheme in which the oldertransaction waits and t
 weak entity: An entity that displays existence dependenceand inherits the primary key of its parent entity. Example: ADEPENDENT requires the existence of an EMPLOYEE
 weak relationship: A relationship that exists when the PK ofthe related entity does not contain a PK component of theparent entity. Also known as a non-identifyingrelationship
 Web application server: A middleware application thatexpands the functionality of Web servers by linking them toa wide range of services, such as databases, directorysystems, and search engines
-Web-to-database middleware: A database server-sideextension program that retrieves data from databases andpasses it on to the Web server, which sends it to the clientísbrowser for display purposes
+Web-to-database middleware: A database server-sideextension program that retrieves data from databases andpasses it on to the Web server, which sends it to the client√≠sbrowser for display purposes
 wildcard character: A symbol that can be used as a generalsubstitute for one or more characters
 workgroup database: A multiuser database that supports arelatively small number of users (usually fewer than 50) orthat is used for a specific department in an organization.65
 wound/wait: A concurrency control scheme in which theolder transaction rolls back the younger transaction andreschedules it
 write-ahead-log protocol: In concurrency control, a processthat ensures that transaction logs are always written topermanent storage before any database data are actuallyupdated. Also called write-ahead protocol
 write-ahead protocol: See write-ahead-log protocol
-write-through: In concurrency control, a process thatensures that a database is immediately updated bytransaction operations during the transactionísexecution, even before the transaction reaches itscommitpoint
+write-through: In concurrency control, a process thatensures that a database is immediately updated bytransaction operations during the transaction√≠sexecution, even before the transaction reaches itscommitpoint
 XML schema: An advanced data definition language that isused to describe the structure (elements, data types,relationship types, ranges, and default values) of XML datadocuments. One of the main advantages of an XML schemais that it more closely maps to database terminology andfeatures. For example, an XML schema will be able todefine common database types such as date, integer ordecimal, minimum and maximum values, list of valid values,and required elements. Using the XML schema, a companycould validate the data for values that may be out of range,incorrect dates, valid values, and so on
 XML schema definition (XSD): A file containing thedescription of an XML document
 XSL(Extensible Style Language): A specification used todefine the rules by which XML data are formatted anddisplayed. The XSL specification is divided into two parts:Extensible Style Language Transformations (XSLT) and XSLstyle sheets

@@ -5,8 +5,9 @@
     },
     "m": {
       "1": "Gpt_3_5_Turbo",
-      "2": "Open_mistral_7b",
-      "3": "Llama_7b_chat"
+      "2": "Gpt_4_turbo",
+      "3": "Open_mistral_7b",
+      "4": "Llama_7b_chat"
     },
     "p": {
       "1": "src/util/pre_prompts/input_semantics_1.txt",

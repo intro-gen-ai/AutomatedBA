@@ -16,5 +16,36 @@ class BaseModel(Step):
     def call_model(self, input) -> ModelResult:
         pass  # No need to raise NotImplementedError here due to @abstractmethod
 
-    def run(self, arg):
-        return self.call_model(arg)
+    def get_sql(self, msg):
+        # Convert the entire string to lower case
+        lower_case_string = msg.lower()
+
+        # Initialize an empty string to append the found substring
+        result_string = ""
+
+        # Find the starting index of the substring "select"
+        start_index = lower_case_string.find("select")
+        if start_index == -1:
+            return "The keyword 'select' was not found."
+
+        # Find the index of the next semicolon after "select"
+        end_index = lower_case_string.find(";", start_index)
+        if end_index == -1:
+            return "No terminating semicolon (';') found after 'select'."
+
+        # Extract the substring from "select" to the next ";"
+        substring = lower_case_string[start_index:end_index + 1]
+
+        # Append the found substring to the result string
+        result_string += substring
+
+        return result_string
+
+    def run(self, args):
+        temp = self.call_model(args)
+        args['response_log'] = temp.log
+        args['response_confidence'] = temp.confidence
+        args['response_message'] = temp.message
+        args['response_code'] = self.get_sql(temp.message)
+        args['response_execution_time'] = temp.execution_time
+        return args
