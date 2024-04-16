@@ -29,22 +29,6 @@ class SnowflakeManager:
                 print(f"Config file '{config_file}' not found.")
             except json.JSONDecodeError:
                 print(f"Error decoding JSON from '{config_file}'.")
-            # Initialize your Snowflake connection here
-            # try:
-            #     config = get_requirement_file(config_file)[1]
-            #     cls._instance.conn = snowflake.connector.connect(
-            #         user= config['user'],
-            #         password= config['password'],
-            #         account= config['account']
-            #     )
-            # except FileNotFoundError:
-            #     print(f"Config file '{config_file}' not found.")
-            # except json.JSONDecodeError:
-            #     print(f"Error decoding JSON from '{config_file}'.")
-            # try:
-            #     cls._instance.set_schema()
-            # except:
-            #     print('setting schema failed')
         return cls._instance
 
     def set_config(self, config_file="config_storage/snowflake_connector.json", args = None):

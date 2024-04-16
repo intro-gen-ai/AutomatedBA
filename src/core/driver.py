@@ -1,10 +1,4 @@
 from ..util import ControlDict
-# import os
-# import sys
-# current_dir = os.path.dirname(os.path.abspath(__file__))
-# parent_dir = os.path.dirname(current_dir)
-# sys.path.append(parent_dir)
-# print(current_dir)
 from src import model
 from src.prompt import BasePrompt
 from src.get_instance import get_instance
@@ -15,13 +9,13 @@ from langchain_openai import OpenAIEmbeddings
 from src import semantic_layer
 from src.prompt import prompt_builder
 
-def layoutProcess(e_set, m_set, p_set, i_set, s_set, text_prompt = None):
+
+def layoutProcess(e_set, m_set, p_set, i_set, s_set, text_prompt = None, database = None):
     converter = ControlDict()
     steps = list()
     p_s = list()
     i_s = list()
-    print("entering layout")
-    
+    temp = ""
     # TODO DOUBLE CHECK IMPLEMENTATION
     # Apr 11: 02:16
     for i in e_set:
@@ -38,9 +32,8 @@ def layoutProcess(e_set, m_set, p_set, i_set, s_set, text_prompt = None):
         steps.append(step_instance)
 
     for i in m_set:
-        print(converter.convert( 'm', i ))
-        steps.append(get_instance(model, converter.convert( 'm', i ) ) )
-
+        temp = converter.convert( 'm', i )
+        steps.append(get_instance(model, temp) )
 
     for i in p_set:
         i_s.append(converter.convert('p', i))
@@ -51,34 +44,27 @@ def layoutProcess(e_set, m_set, p_set, i_set, s_set, text_prompt = None):
     for i in s_set:
         steps.append(get_instance(semantic_layer, converter.convert('s', i) ))
 
-    # if len(i_set) > 1:
-        # TODO we need to talk about what to do here to combine them so for now its just an empty case
-        # i implemented the single form case
-    i_set, prompt = prompt_builder.build(text_prompt,(m_set[0],p_set[0],i_set[0],"i dont know", "Structured query language (SQL) is a standard language for database creation and manipulation."))
-
-    dict = {}
-    
-    
-    dict['instruction_set']= i_set
-    
-    dict['prompt'] = prompt
-    
-
     steps.append(BasePrompt(dict))
     # 
-
     order_steps = sorted(steps, key=lambda x: x.getOrder())
     # snowflake is not set up so we cannot do that set yet.
     # TODO ananth once u build the integrations for this tell me and I will insert it
 
 
+    bdict = {'user_input' : text_prompt, "database" : database}
+    if not i_s == list():
+        bdict['instructions_file'] = i_s[0]
+    if not p_s == list():
+        bdict['preprompt_file'] = p_s[0]
+    if not temp == "":
+        bdict['model_name'] == temp
 
-    return runProcess(order_steps)
+    return runProcess(order_steps, bdict)
 
-def runProcess(steps):
+def runProcess(steps, args):
     # we can add looping later
     print("Running Process")
-    k = {}
+    k = args
     for i in steps:
         print(i.getOrder())
         j=i.run(k)

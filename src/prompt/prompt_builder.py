@@ -1,5 +1,6 @@
 from ..util import ControlDict
 from pathlib import Path
+from src.semantic_layer import SemanticContext
 import sys
 import os
 
@@ -8,12 +9,17 @@ import os
     # project_root = current_dir.parent.parent
     # sys.path.insert(0, str(project_root))
 
-def build(user_in, args):
+def build_prompt(user_in, args):
     
     cwd = Path.cwd()
 
     converter = ControlDict()
     m, p, i, s, r = args
+    # m = model number 
+    # p = preprompt number
+    # i =  instruction set number
+    # s = database name in all caops
+    # r = RAG as a string (hopefully)
     dict ={}
     dict['database']=s
     semantics = SemanticContext().run(dict)
