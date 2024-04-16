@@ -16,8 +16,14 @@ class BaseModel(Step):
     def call_model(self, input) -> ModelResult:
         pass  # No need to raise NotImplementedError here due to @abstractmethod
 
-    def run(self, arg):
-        return self.call_model(arg)
+    def run(self, args):
+        temp = self.call_model(args)
+        args['response_log'] = temp.log
+        args['response_confidence'] = temp.confidence
+        args['response_message'] = temp.message
+        args['response_code'] = temp.code
+        args['response_execution_time'] = temp.execution_time
+        return args
 
     def get_sql(self, msg):
         return
