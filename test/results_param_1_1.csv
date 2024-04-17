@@ -1,11 +1,11 @@
-eqauality,database,query_category
+equality,database,query_category
 False,academic,date_functions
 False,academic,date_functions
 False,academic,date_functions
 False,academic,date_functions
 True,academic,group_by
 False,academic,group_by
-True,academic,order_by
+False,academic,order_by
 False,academic,order_by
 False,academic,order_by
 False,academic,ratio
@@ -37,7 +37,7 @@ False,advising,where
 False,atis,date_functions
 False,atis,group_by
 True,atis,group_by
-False,atis,group_by
+True,atis,group_by
 False,atis,order_by
 False,atis,order_by
 False,atis,order_by
@@ -57,10 +57,10 @@ False,geography,group_by
 True,geography,group_by
 False,geography,group_by
 False,geography,order_by
-True,geography,order_by
-True,geography,order_by
-True,geography,order_by
 False,geography,order_by
+False,geography,order_by
+True,geography,order_by
+True,geography,order_by
 False,geography,ratio
 False,geography,ratio
 False,geography,ratio
@@ -79,10 +79,10 @@ False,restaurants,group_by
 False,restaurants,group_by
 True,restaurants,group_by
 False,restaurants,group_by
-False,restaurants,group_by
+True,restaurants,group_by
 False,restaurants,order_by
 False,restaurants,order_by
-False,restaurants,order_by
+True,restaurants,order_by
 True,restaurants,order_by
 False,restaurants,ratio
 False,restaurants,ratio
@@ -92,16 +92,16 @@ False,restaurants,ratio
 False,restaurants,table_join
 False,restaurants,table_join
 False,restaurants,table_join
+True,restaurants,where
 False,restaurants,where
 False,restaurants,where
 False,restaurants,where
-False,restaurants,where
 False,scholar,date_functions
 False,scholar,date_functions
 False,scholar,date_functions
 False,scholar,date_functions
 False,scholar,date_functions
-False,scholar,group_by
+True,scholar,group_by
 True,scholar,group_by
 False,scholar,group_by
 False,scholar,group_by
@@ -140,4 +140,4 @@ False,yelp,where
 False,yelp,where
 False,yelp,where
 False,yelp,where
-Completion; Accuracy,0.7092198581560284,0.09929078014184398
+Completion; Accuracy,0.7092198581560284,0.12056737588652482
