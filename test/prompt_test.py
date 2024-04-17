@@ -2,6 +2,17 @@ import pandas as pd
 import os
 from src.core.driver import layoutProcess
 from src.util import SnowflakeManager, ControlDict
+
+from pandas.testing import assert_frame_equal
+
+def assertFrameEqual(df1, df2, **kwds ):
+    
+    try:
+        assert_frame_equal(df1,df2, check_like=True)
+        return True
+    except:
+        return False
+
 path = os.path.dirname(os.path.realpath(__file__))
 """
 OUTPUT KEY:
@@ -13,13 +24,13 @@ OUTPUT KEY:
 converter = ControlDict()
 df = pd.read_csv(os.path.join(path, 'test_data_working.csv'))
 
-sample_size = 15
+sample_size = 5
 df = df.sample(sample_size)
 
 
 snowflake = SnowflakeManager()
 result = []
-for p_ind in range(1,31):
+for p_ind in range(1,4):
     prompt_result = [os.path.basename(converter.convert('p', str(p_ind)))]
 
     success_count = 0
@@ -52,18 +63,22 @@ for p_ind in range(1,31):
 
         try:
 
-            response, model_result = layoutProcess('1', '1', str(p_ind), str(p_ind), '1', question,database.upper())
+            response, model_result = layoutProcess('2', '1', str(p_ind), str(p_ind), '1', question,database.upper())
             if isinstance(model_result, pd.DataFrame):
-                gpt_success = True
+                if 'Snowflake Raw Error' not in model_result:
+
+                        gpt_success = True
         except:
             pass
 
 
         if gt_success and gpt_success:
             completion_count +=1
-            gt_result_sorted = gt_result.sort_values(by=gt_result.columns.tolist()).reset_index(drop=True)
-            model_result_sorted = model_result.sort_values(by=model_result.columns.tolist()).reset_index(drop=True)
-            if gt_result_sorted.equals(model_result_sorted):
+            gt_result = gt_result.reindex(sorted(gt_result.columns), axis=1)
+            model_result = model_result.reindex(sorted(model_result.columns), axis=1)
+            gt_result = gt_result.sort_values(by=gt_result.columns.tolist()).reset_index(drop=True)
+            model_result = model_result.sort_values(by=model_result.columns.tolist()).reset_index(drop=True)
+            if assertFrameEqual(gt_result, model_result):
 
                 
                 success_count +=1

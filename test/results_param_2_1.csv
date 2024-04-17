@@ -2,8 +2,8 @@ equality,database,query_category
 True,academic,date_functions
 False,academic,date_functions
 False,academic,date_functions
-False,academic,date_functions
-True,academic,group_by
+True,academic,date_functions
+False,academic,group_by
 False,academic,group_by
 True,academic,order_by
 True,academic,order_by
@@ -13,7 +13,7 @@ False,academic,ratio
 False,academic,ratio
 False,academic,ratio
 False,academic,ratio
-False,academic,table_join
+True,academic,table_join
 False,academic,table_join
 False,academic,where
 False,advising,date_functions
@@ -54,7 +54,7 @@ False,atis,where
 True,geography,group_by
 False,geography,group_by
 False,geography,group_by
-True,geography,group_by
+False,geography,group_by
 False,geography,group_by
 False,geography,order_by
 True,geography,order_by
@@ -82,7 +82,7 @@ False,restaurants,group_by
 False,restaurants,group_by
 False,restaurants,order_by
 False,restaurants,order_by
-False,restaurants,order_by
+True,restaurants,order_by
 True,restaurants,order_by
 False,restaurants,ratio
 False,restaurants,ratio
@@ -90,23 +90,23 @@ False,restaurants,ratio
 False,restaurants,ratio
 False,restaurants,ratio
 False,restaurants,table_join
-False,restaurants,table_join
+True,restaurants,table_join
 False,restaurants,table_join
 True,restaurants,where
 False,restaurants,where
 False,restaurants,where
 False,restaurants,where
 False,scholar,date_functions
-False,scholar,date_functions
+True,scholar,date_functions
 False,scholar,date_functions
 False,scholar,date_functions
 False,scholar,date_functions
 True,scholar,group_by
-False,scholar,group_by
+True,scholar,group_by
 False,scholar,group_by
 False,scholar,group_by
 True,scholar,order_by
-True,scholar,order_by
+False,scholar,order_by
 True,scholar,order_by
 False,scholar,ratio
 False,scholar,ratio
@@ -124,13 +124,13 @@ False,scholar,where
 False,yelp,date_functions
 False,yelp,date_functions
 False,yelp,date_functions
-True,yelp,group_by
-True,yelp,group_by
 False,yelp,group_by
 True,yelp,group_by
+False,yelp,group_by
+False,yelp,group_by
+False,yelp,order_by
 False,yelp,order_by
 True,yelp,order_by
-True,yelp,order_by
 False,yelp,ratio
 False,yelp,ratio
 False,yelp,ratio
@@ -140,4 +140,4 @@ False,yelp,where
 False,yelp,where
 False,yelp,where
 False,yelp,where
-Completion; Accuracy,0.8680851063829788,0.11347517730496454
+Completion; Accuracy,0.6099290780141844,0.20567375886524822
