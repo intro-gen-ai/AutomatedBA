@@ -73,7 +73,7 @@ selected_value = st.selectbox(
 
 if not selected_value == options[0]:
     type, value = option_list[selected_value]
-    st.write(f"Printing type: {type} and printing value: {value}")
+    # st.write(f"Printing type: {type} and printing value: {value}")
     reqs, passed = get_req(type, value)
 
     if not reqs == []:
